@@ -1,0 +1,40 @@
+# Dockerfile for Aquila development environment
+
+# To Run:
+# docker build -f docker/Dockerfile.dev -t aquila-dev .
+# docker run -it --rm -v $(pwd):/workspace/aquila aquila-dev bash
+
+# Inside Image:
+# cmake -S . -B build
+# cmake --build build
+# ctest --output-on-failure
+# pytest sim/tests
+# exit
+
+FROM ubuntu:22.04
+
+# Avoid interactive prompts
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Basic tools
+RUN apt-get update && apt-get install -y \
+    build-essential \
+    cmake \
+    git \
+    python3 \
+    python3-pip \
+    python3-venv \
+    && rm -rf /var/lib/apt/lists/*
+
+# Create a non-root user and set workdir to /workspace/aquila.
+RUN useradd -ms /bin/bash dev
+USER dev
+WORKDIR /workspace/aquila
+
+# Copy requirements and install Python deps
+COPY --chown=dev:dev sim/requirements.txt /workspace/aquila/sim/requirements.txt
+RUN python3 -m pip install --upgrade pip && \
+    python3 -m pip install -r sim/requirements.txt
+
+# Default command
+CMD ["/bin/bash"]
