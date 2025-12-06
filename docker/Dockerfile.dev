@@ -1,16 +1,3 @@
-# Dockerfile for Aquila development environment
-
-# To Run:
-# docker build -f docker/Dockerfile.dev -t aquila-dev .
-# docker run -it --rm -v $(pwd):/workspace/aquila aquila-dev bash
-
-# Inside Image:
-# cmake -S . -B build
-# cmake --build build
-# ctest --output-on-failure
-# pytest sim/tests
-# exit
-
 FROM ubuntu:22.04
 
 # Avoid interactive prompts
