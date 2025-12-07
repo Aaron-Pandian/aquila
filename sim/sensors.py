@@ -9,6 +9,7 @@ and will be moved to config files as the project matures.
 from __future__ import annotations
 
 from dataclasses import dataclass
+from .dynamics import _vel_components
 from typing import Dict
 
 import math
@@ -91,19 +92,26 @@ def simulate_imu(state: PointMassState, dt_s: float) -> ImuMeasurement:
 
 def simulate_gps(state: PointMassState) -> GpsMeasurement:
     """
-    Simulate GPS position and velocity in NED frame.
+    Simulate GPS position and velocity.
+
+    Position is the true NED position plus noise.
+    Velocity is derived from the current speed and angles.
     """
-    pos = np.array([state.x_m, state.y_m, state.z_m], dtype=float)
-    # Approximate velocity in NED from speed and heading
-    vx = state.v_mps * math.cos(state.psi_rad)
-    vy = state.v_mps * math.sin(state.psi_rad)
-    vz = 0.0
-    vel = np.array([vx, vy, vz], dtype=float)
+    # True position in NED
+    pos_ned = np.array([state.x_m, state.y_m, state.z_m], dtype=float)
 
-    pos_meas = pos + np.random.normal(0.0, GPS_POS_NOISE_M, size=3)
-    vel_meas = vel + np.random.normal(0.0, GPS_VEL_NOISE_MPS, size=3)
+    # Velocity from speed + flight-path + heading
+    vn, ve, vd = _vel_components(state.v_mps, state.gamma_rad, state.psi_rad)
+    vel_ned = np.array([vn, ve, vd], dtype=float)
 
-    return GpsMeasurement(position_ned_m=pos_meas, velocity_ned_mps=vel_meas)
+    # Add noise
+    pos_meas = pos_ned + np.random.normal(0.0, GPS_POS_NOISE_M, size=3)
+    vel_meas = vel_ned + np.random.normal(0.0, GPS_VEL_NOISE_MPS, size=3)
+
+    return GpsMeasurement(
+        position_ned_m=pos_meas,
+        velocity_ned_mps=vel_meas,
+    )
 
 
 def simulate_baro(state: PointMassState) -> BaroMeasurement:
