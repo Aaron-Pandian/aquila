@@ -53,62 +53,55 @@ ActuatorCommands SimpleController::compute_commands(const NavState& state) {
     const double y = state.position_ned[1];
     const double z = state.position_ned[2];
 
-    // Compute current altitude (positive up) from NED z
+    // Altitude (positive up) from NED z
     const double alt_m = -z;
 
-    // Check if current waypoint is reached
-    const Waypoint& wp = waypoints_[wp_index_];
-    const double dist_to_wp = distance_2d(x, y, wp.x_m, wp.y_m);
+    // ---- Waypoint Logic ----
+    const auto& current_wp = waypoints_[wp_index_];
+    const double dist_to_wp = distance_2d(x, y, current_wp.x_m, current_wp.y_m);
     if (dist_to_wp < wp_reached_thresh_m_) {
         wp_index_ = (wp_index_ + 1U) % waypoints_.size();
     }
+    const auto& wp = waypoints_[wp_index_];
 
-    const Waypoint& current_wp = waypoints_[wp_index_];
+    // ---- Heading / Aileron Control ----
 
+    const double psi_des = heading_to_waypoint(x, y, wp.x_m, wp.y_m);
 
-    // --- Heading control (maps to aileron) ---
-    // Desired heading toward waypoint
-    const double psi_des = heading_to_waypoint(
-        x, y, current_wp.x_m, current_wp.y_m);
-
-    // Extract current yaw from quaternion
+    // Extract current yaw from quaternion (assumes yaw-dominant attitude)
     const auto& q = state.quat_nb;
-    // For a yaw-only quaternion, yaw ≈ 2*atan2(qz, qw)
     const double yaw_current = wrap_pi(2.0 * std::atan2(q[3], q[0]));
 
     double heading_err = wrap_pi(psi_des - yaw_current);
 
-    // Proportional heading controller
-    const double k_heading = 0.4;
-    double aileron_cmd = k_heading * heading_err;
+    // P controller on heading error
+    double aileron_cmd = k_heading_ * heading_err;
 
-    // Clamp to [-0.7, 0.7], less violent turns 
-    if (aileron_cmd > 0.7) aileron_cmd = 0.7;
-    if (aileron_cmd < -0.7) aileron_cmd = -0.7;
+    // Saturate to keep turns within reasonable limits
+    if (aileron_cmd > max_bank_cmd_)  aileron_cmd = max_bank_cmd_;
+    if (aileron_cmd < -max_bank_cmd_) aileron_cmd = -max_bank_cmd_;
 
-    
-    // --- Altitude control (maps to elevator) ---
+    // ---- Altitude / Elevator Control ----
+
     const double alt_err = target_altitude_m_ - alt_m;
-    const double k_alt = 0.02; // small gain to start
+    double elevator_cmd = k_alt_ * alt_err;
 
-    double elevator_cmd = k_alt * alt_err;
-    if (elevator_cmd > 1.0) elevator_cmd = 1.0;
+    if (elevator_cmd > 1.0)  elevator_cmd = 1.0;
     if (elevator_cmd < -1.0) elevator_cmd = -1.0;
 
-    
-    // --- Speed / throttle control ---
+    // ---- Speed / Throttle Control ----
+
     const double vx = state.velocity_ned[0];
     const double vy = state.velocity_ned[1];
     const double speed = std::sqrt(vx * vx + vy * vy);
 
     const double speed_err = desired_speed_mps_ - speed;
-    const double k_speed = 0.05;
+    double throttle_cmd = 0.6 + k_speed_ * speed_err;
 
-    double throttle_cmd = 0.6 + k_speed * speed_err;
     if (throttle_cmd > 1.0) throttle_cmd = 1.0;
     if (throttle_cmd < 0.0) throttle_cmd = 0.0;
 
-    // Rudder: neutral for now
+    // ---- Rudder ----
     double rudder_cmd = 0.0;
 
     cmd.aileron  = aileron_cmd;

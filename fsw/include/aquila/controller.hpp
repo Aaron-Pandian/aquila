@@ -22,6 +22,9 @@ public:
 };
 
 // Simple waypoint-following controller.
+// - Holds altitude near a target value
+// - Steers towards a sequence of waypoints in NED (x, y)
+// - Regulates airspeed via throttle
 class SimpleController : public Controller {
 public:
     SimpleController();
@@ -37,10 +40,16 @@ private:
     std::vector<Waypoint> waypoints_;
     std::size_t wp_index_{0};
 
-    double target_altitude_m_{100.0}; // positive up in body reference frame
+    // Mission / guidance parameters
+    double wp_reached_thresh_m_{10.0};
+    double target_altitude_m_{100.0}; // positive up
     double desired_speed_mps_{15.0};
 
-    double wp_reached_thresh_m_{10.0};
+    // Control gains and limits (tunable, later loadable from config)
+    double k_heading_{0.4};    // heading P gain
+    double max_bank_cmd_{0.7}; // max |aileron| command
+    double k_alt_{0.02};       // altitude P gain
+    double k_speed_{0.10};     // speed P gain
 
     static double wrap_pi(double angle);
 };

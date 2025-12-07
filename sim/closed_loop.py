@@ -87,18 +87,18 @@ def _map_commands_to_controls(cmd: FswCommandRow) -> Dict[str, float]:
     can be refined later (e.g., with more realistic control laws or a
     proper lateral/longitudinal dynamics model).
     """
-    # Max heading rate (rad/s) for full aileron deflection
-    max_heading_rate_radps = float(np.deg2rad(15.0))  # ≈ 0.262 rad/s
+    # Max heading rate (rad/s) for full aileron deflection.
+    max_heading_rate_radps = float(np.deg2rad(10.0))  # ≈ 0.175 rad/s
 
     heading_rate_cmd = max_heading_rate_radps * cmd.cmd_aileron
 
     # Map throttle deltas to longitudinal acceleration
     throttle_nominal = 0.6
-    k_throttle = 4.0  # [m/s^2] per 1.0 throttle delta
+    k_throttle = 3.0  # [m/s^2] per 1.0 throttle delta (moderate)
     accel_cmd = k_throttle * (cmd.cmd_throttle - throttle_nominal)
 
-    # Clamp to keep behavior similar to the open-loop scenario
-    accel_cmd = float(np.clip(accel_cmd, -2.0, 2.0))
+    # Clamp to keep behavior near the open-loop scenario
+    accel_cmd = float(np.clip(accel_cmd, -1.5, 1.5))
 
     return {
         "heading_rate_cmd": heading_rate_cmd,
