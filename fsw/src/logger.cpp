@@ -10,16 +10,16 @@ CsvLogger::CsvLogger(std::ostream& os)
 
 void CsvLogger::write_header() {
     os_ << "t,"
-        << "pn,pe,pd,"
-        << "vn,ve,vd,"
-        << "qw,qx,qy,qz,"
-        << "wx,wy,wz,"
+        << "est_pn,est_pe,est_pd,"
+        << "est_vn,est_ve,est_vd,"
+        << "est_qw,est_qx,est_qy,est_qz,"
+        << "est_wx,est_wy,est_wz,"
         << "imu_ax,imu_ay,imu_az,"
         << "imu_gx,imu_gy,imu_gz,"
         << "gps_pn,gps_pe,gps_pd,"
         << "gps_vn,gps_ve,gps_vd,"
         << "baro_alt,"
-        << "aileron,elevator,rudder,throttle\n";
+        << "cmd_aileron,cmd_elevator,cmd_rudder,cmd_throttle\n";
 }
 
 void CsvLogger::log(double timestamp_s,
