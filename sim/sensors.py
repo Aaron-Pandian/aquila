@@ -50,26 +50,43 @@ class BaroMeasurement:
 
 def simulate_imu(state: PointMassState, dt_s: float) -> ImuMeasurement:
     """
-    Simulate a crude IMU measurement from point-mass state.
+    Simulate IMU measurement from point-mass state.
 
-    Assumptions:
-    - No body-frame rotation (other than yaw) in this simple model.
-    - Accelerometer mostly sees longitudinal acceleration; we ignore gravity
-      for now since we're not modeling vertical motion in detail yet.
+    - Accelerometer measures specific force in body frame:
+        f_body = R_bn * (a_ned - g_ned)
+      where g_ned = [0, 0, 9.81] in NED, and R_bn is rotation from NED to body.
+      With a yaw-only attitude, R_bn is a simple z-rotation.
+
+    - Gyro measures body angular rates; here we only have yaw rate.
     """
-    # Longitudinal acceleration is approximated as zero here; we will
-    # refine this once we move to a richer dynamics model.
-    accel_body = np.zeros(3, dtype=float)
+    # Inertial acceleration in NED
+    a_ned = np.array([state.ax_n_mps2, state.ay_n_mps2, state.az_n_mps2],dtype=float,)
 
-    # Gyro only measures yaw rate in this simple model
-    # For now, we treat yaw rate as zero; this is fine for the first iteration.
-    gyro_body = np.zeros(3, dtype=float)
+    # Gravity in NED (down positive)
+    g_ned = np.array([0.0, 0.0, 9.81], dtype=float)
+
+    # Rotation from NED to body for yaw-only attitude
+    c = math.cos(state.psi_rad)
+    s = math.sin(state.psi_rad)
+    R_bn = np.array(
+        [
+            [c,  s, 0.0],
+            [-s, c, 0.0],
+            [0.0, 0.0, 1.0],
+        ],
+        dtype=float,)
+
+    # Specific force in body frame, matrix multiplication
+    f_body = R_bn @ (a_ned - g_ned)
+
+    # Gyro: only yaw rate in this model
+    gyro_body = np.array([0.0, 0.0, state.yaw_rate_radps], dtype=float)
 
     # Add noise
-    accel_body += np.random.normal(0.0, ACCEL_NOISE_MPS2, size=3)
-    gyro_body += np.random.normal(0.0, GYRO_NOISE_RADPS, size=3)
+    accel_meas = f_body + np.random.normal(0.0, ACCEL_NOISE_MPS2, size=3)
+    gyro_meas = gyro_body + np.random.normal(0.0, GYRO_NOISE_RADPS, size=3)
 
-    return ImuMeasurement(accel_mps2=accel_body, gyro_radps=gyro_body)
+    return ImuMeasurement(accel_mps2=accel_meas, gyro_radps=gyro_meas)
 
 
 def simulate_gps(state: PointMassState) -> GpsMeasurement:

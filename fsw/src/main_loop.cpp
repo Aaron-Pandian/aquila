@@ -170,11 +170,31 @@ int main() {
         estimator.update_baro(baro);
         state = estimator.get_state();
 
-        // Mode management (currently trivial)
-        mode_manager.update(state);
+        // Mode management
+        mode_manager.update(row.t_s, state);
+        const FlightMode mode = mode_manager.mode();
 
-        // Control
-        cmd = controller.compute_commands(state);
+        // Control depends on mode
+        switch (mode) {
+        case FlightMode::STANDBY:
+            // Surfaces neutral, throttle idle
+            cmd.aileron  = 0.0;
+            cmd.elevator = 0.0;
+            cmd.rudder   = 0.0;
+            cmd.throttle = 0.0;
+            break;
+        case FlightMode::CRUISE:
+            cmd = controller.compute_commands(state);
+            break;
+        case FlightMode::FAILSAFE:
+            // Simple FAILSAFE placeholder: cut throttle, neutral surfaces.
+            // Later you can replace this with glide-home or loiter.
+            cmd.aileron  = 0.0;
+            cmd.elevator = 0.0;
+            cmd.rudder   = 0.0;
+            cmd.throttle = 0.0;
+            break;
+        }
 
         // Log everything
         logger.log(row.t_s, state, imu, gps, baro, cmd);
