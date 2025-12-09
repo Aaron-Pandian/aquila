@@ -15,6 +15,7 @@ add_library(aquila_fsw
 target_include_directories(aquila_fsw
     PUBLIC
         ${CMAKE_CURRENT_SOURCE_DIR}/include
+        ${CMAKE_CURRENT_SOURCE_DIR}/../third_party/eigen
 )
 
 target_compile_options(aquila_fsw PRIVATE -Wall -Wextra -Wpedantic)

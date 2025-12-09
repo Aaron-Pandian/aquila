@@ -109,14 +109,21 @@ int main() {
 
     CsvLogger logger(output_file);
 
+    #define USE_EKF 1   // 1 = True
+
+    #if USE_EKF
+    EkfEstimator estimator;
+    #else
     SimpleEstimator estimator;
+    #endif
+    
     SimpleController controller;
     ModeManager mode_manager;
 
     NavState state{};
-    ImuData imu{};
-    GpsData gps{};
-    BaroData baro{};
+    ImuMeasurement imu{};
+    GpsMeasurement gps{};
+    BaroMeasurement baro{};
     ActuatorCommands cmd{};
 
     // Read and discard header line

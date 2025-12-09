@@ -13,9 +13,9 @@ public:
     virtual ~Logger() = default;
     virtual void log(double timestamp_s,
                      const NavState& state,
-                     const ImuData& imu,
-                     const GpsData& gps,
-                     const BaroData& baro,
+                     const ImuMeasurement& imu,
+                     const GpsMeasurement& gps,
+                     const BaroMeasurement& baro,
                      const ActuatorCommands& cmd) = 0;
 };
 
@@ -25,9 +25,9 @@ public:
 
     void log(double timestamp_s,
              const NavState& state,
-             const ImuData& imu,
-             const GpsData& gps,
-             const BaroData& baro,
+             const ImuMeasurement& imu,
+             const GpsMeasurement& gps,
+             const BaroMeasurement& baro,
              const ActuatorCommands& cmd) override;
 
 private:

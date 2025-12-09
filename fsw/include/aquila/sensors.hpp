@@ -5,21 +5,21 @@
 
 namespace aquila {
 
-struct ImuData {
+struct ImuMeasurement {
     double timestamp_s{};
     std::array<double, 3> accel_mps2{};
     std::array<double, 3> gyro_rads{};
     bool valid{true};
 };
 
-struct GpsData {
+struct GpsMeasurement {
     double timestamp_s{};
     std::array<double, 3> position_ned{};
     std::array<double, 3> velocity_ned{};
     bool valid{true};
 };
 
-struct BaroData {
+struct BaroMeasurement {
     double timestamp_s{};
     double altitude_m{};
     bool valid{true};

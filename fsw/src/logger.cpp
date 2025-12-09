@@ -24,9 +24,9 @@ void CsvLogger::write_header() {
 
 void CsvLogger::log(double timestamp_s,
                     const NavState& state,
-                    const ImuData& imu,
-                    const GpsData& gps,
-                    const BaroData& baro,
+                    const ImuMeasurement& imu,
+                    const GpsMeasurement& gps,
+                    const BaroMeasurement& baro,
                     const ActuatorCommands& cmd) {
     if (!header_written_) {
         write_header();

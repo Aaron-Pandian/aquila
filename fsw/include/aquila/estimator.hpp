@@ -1,5 +1,6 @@
 #pragma once
 
+#include <Eigen/Dense>
 #include "state.hpp"
 #include "sensors.hpp"
 
@@ -9,22 +10,21 @@ class Estimator {
 public:
     virtual ~Estimator() = default;
 
-    virtual void predict(double dt_s, const ImuData& imu) = 0;
-    virtual void update_gps(const GpsData& gps) = 0;
-    virtual void update_baro(const BaroData& baro) = 0;
+    virtual void predict(double dt_s, const ImuMeasurement& imu) = 0;
+    virtual void update_gps(const GpsMeasurement& gps) = 0;
+    virtual void update_baro(const BaroMeasurement& baro) = 0;
 
     virtual NavState get_state() const = 0;
 };
 
 // Lightweight IMU + GPS + Barometer fusion.
-// This is intentionally kept simple (no matrices, O(1) per update) but
 class SimpleEstimator : public Estimator {
 public:
     SimpleEstimator();
 
-    void predict(double dt_s, const ImuData& imu) override;
-    void update_gps(const GpsData& gps) override;
-    void update_baro(const BaroData& baro) override;
+    void predict(double dt_s, const ImuMeasurement& imu) override;
+    void update_gps(const GpsMeasurement& gps) override;
+    void update_baro(const BaroMeasurement& baro) override;
 
     NavState get_state() const override { return state_; }
 
@@ -44,6 +44,43 @@ private:
 
     static double wrap_pi(double angle);
     static std::array<double, 4> quat_from_yaw(double yaw_rad);
+};
+
+// Extended Kalman Filter for GPS + Barometer fusion.
+class EkfEstimator : public Estimator {
+public:
+    EkfEstimator();
+
+    void predict(double dt_s, const ImuMeasurement& imu) override;
+    void update_gps(const GpsMeasurement& gps) override;
+    void update_baro(const BaroMeasurement& baro) override;
+    NavState get_state() const override;
+
+private:
+    using Vec7 = Eigen::Matrix<double, 7, 1>;
+    using Mat7 = Eigen::Matrix<double, 7, 7>;
+
+    Vec7 x_;   // [pn, pe, pd, vn, ve, vd, psi]
+    Mat7 P_;   // 7x7 covariance
+
+    // Process noise params
+    double accel_noise_std_mps2_;
+    double yaw_rate_noise_std_radps_;
+
+    // Measurement noise params
+    double gps_pos_noise_std_m_;
+    double gps_vel_noise_std_mps_;
+    double baro_noise_std_m_;
+
+    // Cached measurement covariances
+    Eigen::Matrix<double, 6, 6> R_gps_;
+    Eigen::Matrix<double, 1, 1> R_baro_;
+
+    // Helpers
+    static Eigen::Matrix3d R_nb(double yaw_rad);
+    static double wrap_pi(double angle);
+
+    void build_process_noise(double dt_s, Mat7& Q) const;
 };
 
 } // namespace aquila
