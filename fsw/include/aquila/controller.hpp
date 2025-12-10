@@ -30,6 +30,9 @@ public:
 
     ActuatorCommands compute_commands(const NavState& state) override;
 
+    void set_target_altitude(double alt_m) { target_altitude_m_ = alt_m; }
+    void set_desired_speed(double speed_mps) { desired_speed_mps_ = speed_mps; }
+
 private:
     struct Waypoint {
         double x_m{};

@@ -19,7 +19,8 @@ void CsvLogger::write_header() {
         << "gps_pn,gps_pe,gps_pd,"
         << "gps_vn,gps_ve,gps_vd,"
         << "baro_alt,"
-        << "cmd_aileron,cmd_elevator,cmd_rudder,cmd_throttle\n";
+        << "cmd_aileron,cmd_elevator,cmd_rudder,cmd_throttle,"
+        << "mode\n";
 }
 
 void CsvLogger::log(double timestamp_s,
@@ -27,7 +28,8 @@ void CsvLogger::log(double timestamp_s,
                     const ImuMeasurement& imu,
                     const GpsMeasurement& gps,
                     const BaroMeasurement& baro,
-                    const ActuatorCommands& cmd) {
+                    const ActuatorCommands& cmd,
+                    int mode_index) {
     if (!header_written_) {
         write_header();
         header_written_ = true;
@@ -75,7 +77,10 @@ void CsvLogger::log(double timestamp_s,
     os_ << cmd.aileron << ","
         << cmd.elevator << ","
         << cmd.rudder << ","
-        << cmd.throttle << "\n";
+        << cmd.throttle << ",";
+
+    // Flight Mode
+    os_ << mode_index << "\n";
 }
 
 } // namespace aquila

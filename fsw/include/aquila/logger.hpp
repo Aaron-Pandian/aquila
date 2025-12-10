@@ -16,7 +16,8 @@ public:
                      const ImuMeasurement& imu,
                      const GpsMeasurement& gps,
                      const BaroMeasurement& baro,
-                     const ActuatorCommands& cmd) = 0;
+                     const ActuatorCommands& cmd,
+                     int mode_index) = 0;
 };
 
 class CsvLogger : public Logger {
@@ -28,7 +29,8 @@ public:
              const ImuMeasurement& imu,
              const GpsMeasurement& gps,
              const BaroMeasurement& baro,
-             const ActuatorCommands& cmd) override;
+             const ActuatorCommands& cmd,
+             int mode_index) override;
 
 private:
     std::ostream& os_;

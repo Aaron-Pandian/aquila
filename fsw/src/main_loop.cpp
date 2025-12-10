@@ -180,6 +180,11 @@ int main() {
         // Mode management
         mode_manager.update(row.t_s, state);
         const FlightMode mode = mode_manager.mode();
+        int mode_index = flight_mode_to_int(mode);
+
+        // Update controller targets from mode manager
+        controller.set_target_altitude(mode_manager.target_altitude_m());
+        controller.set_desired_speed(mode_manager.target_speed_mps());
 
         // Control depends on mode
         switch (mode) {
@@ -190,12 +195,25 @@ int main() {
             cmd.rudder   = 0.0;
             cmd.throttle = 0.0;
             break;
-        case FlightMode::CRUISE:
+
+        case FlightMode::CLIMB:
+            // Normal closed-loop control, but ModeManager has set a "climb" target
             cmd = controller.compute_commands(state);
             break;
+
+        case FlightMode::CRUISE:
+            // Normal closed-loop cruise (follow square track, etc.)
+            cmd = controller.compute_commands(state);
+            break;
+
+        case FlightMode::RTL:
+            // Return-to-launch: still uses the same controller, but ModeManager should have set RTL altitude / heading / speed targets
+            cmd = controller.compute_commands(state);
+            break;
+
         case FlightMode::FAILSAFE:
+        default:
             // Simple FAILSAFE placeholder: cut throttle, neutral surfaces.
-            // Later you can replace this with glide-home or loiter.
             cmd.aileron  = 0.0;
             cmd.elevator = 0.0;
             cmd.rudder   = 0.0;
@@ -204,7 +222,7 @@ int main() {
         }
 
         // Log everything
-        logger.log(row.t_s, state, imu, gps, baro, cmd);
+        logger.log(row.t_s, state, imu, gps, baro, cmd, mode_index);
     }
 
     std::cout << "Aquila FSW exiting. Wrote log to " << output_log_path << std::endl;
