@@ -33,6 +33,10 @@ public:
     void set_target_altitude(double alt_m) { target_altitude_m_ = alt_m; }
     void set_desired_speed(double speed_mps) { desired_speed_mps_ = speed_mps; }
 
+    // Debug / telemetry accessors
+    double k_alt_p() const { return k_alt_p_; }
+    double max_elevator_cmd() const { return max_elevator_cmd_; }
+
 private:
     struct Waypoint {
         double x_m{};

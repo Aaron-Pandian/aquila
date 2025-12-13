@@ -42,16 +42,16 @@ def plot_open_vs_closed(open_log: Path, closed_log: Path) -> None:
 
     # Open-loop truth
     t_open = open_data["t_s"]
-    x_open = open_data["x_m"]
-    y_open = open_data["y_m"]
-    z_open = open_data["z_m"]
+    x_open = open_data["n_m"]
+    y_open = open_data["e_m"]
+    z_open = open_data["d_m"]
     alt_open = -z_open  # NED z down
 
     # Closed-loop truth
     t_closed = closed_data["t_s"]
-    x_closed = closed_data["x_m"]
-    y_closed = closed_data["y_m"]
-    z_closed = closed_data["z_m"]
+    x_closed = closed_data["n_m"]
+    y_closed = closed_data["e_m"]
+    z_closed = closed_data["d_m"]
     alt_closed = -z_closed
 
     fig, axes = plt.subplots(1, 2, figsize=(10, 4))

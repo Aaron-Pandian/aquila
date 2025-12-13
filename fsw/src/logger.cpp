@@ -20,6 +20,7 @@ void CsvLogger::write_header() {
         << "gps_vn,gps_ve,gps_vd,"
         << "baro_alt,"
         << "cmd_aileron,cmd_elevator,cmd_rudder,cmd_throttle,"
+        << "dbg_alt_cmd_m,dbg_alt_m,dbg_alt_err_m,dbg_elevator_unsat,"
         << "mode\n";
 }
 
@@ -29,7 +30,12 @@ void CsvLogger::log(double timestamp_s,
                     const GpsMeasurement& gps,
                     const BaroMeasurement& baro,
                     const ActuatorCommands& cmd,
-                    int mode_index) {
+                    int mode_index,
+                    double dbg_alt_cmd_m,
+                    double dbg_alt_m,
+                    double dbg_alt_err_m,
+                    double dbg_elevator_unsat) {
+                        
     if (!header_written_) {
         write_header();
         header_written_ = true;
@@ -78,6 +84,12 @@ void CsvLogger::log(double timestamp_s,
         << cmd.elevator << ","
         << cmd.rudder << ","
         << cmd.throttle << ",";
+
+    // Debug telemetry (altitude loop)
+    os_ << dbg_alt_cmd_m << ","
+        << dbg_alt_m << ","
+        << dbg_alt_err_m << ","
+        << dbg_elevator_unsat << ",";
 
     // Flight Mode
     os_ << mode_index << "\n";

@@ -76,9 +76,9 @@ double SimpleController::heading_control(double psi_cmd_rad, double psi_rad) con
     return aileron_cmd;
 }
 
-double SimpleController::altitude_control(double alt_cmd_m,
-                                          double alt_m) const {
-    const double alt_err = alt_cmd_m - alt_m;
+double SimpleController::altitude_control(double alt_cmd_m, double alt_m) const {
+    // Both are altitude [m], positive UP                                        
+    const double alt_err = alt_cmd_m - alt_m; 
     double elevator_cmd = k_alt_p_ * alt_err;
 
     if (elevator_cmd > max_elevator_cmd_)  elevator_cmd = max_elevator_cmd_;
@@ -113,7 +113,7 @@ ActuatorCommands SimpleController::compute_commands(const NavState& state) {
     const auto& q = state.quat_nb;
     const double yaw_current = wrap_pi(2.0 * std::atan2(q[3], q[0]));
 
-    const double alt_m = -state.position_ned[2]; // NED z down
+    const double alt_m = -state.position_ned[2]; // NED z down, alt is positive up
 
     const double vx = state.velocity_ned[0];
     const double vy = state.velocity_ned[1];

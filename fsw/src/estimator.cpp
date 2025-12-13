@@ -209,6 +209,7 @@ EkfEstimator::EkfEstimator()
       baro_noise_std_m_(1.0) {
 
     x_.setZero();
+
     // Initial position NED = (0,0,-100), velocity zero, yaw 0
     x_(2) = -100.0;
 
@@ -339,13 +340,13 @@ void EkfEstimator::update_gps(const GpsMeasurement& gps) {
 // --- Baro update ---
 
 void EkfEstimator::update_baro(const BaroMeasurement& baro) {
-    // z = altitude [m], positive up
+    // z = altitude [m]
     const double z = baro.altitude_m;
 
     // h(x) = -pd
     const double hx = -x_(2);
 
-    const double y = z - hx; // innovation
+    const double y = z - hx; 
 
     Eigen::Matrix<double, 1, 7> H;
     H.setZero();

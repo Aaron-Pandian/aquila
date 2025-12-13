@@ -37,9 +37,9 @@ def plot_imu_consistency(sim_log: Path) -> None:
     data = _load_sim_log(sim_log)
 
     t = data["t_s"]
-    x = data["x_m"]
-    y = data["y_m"]
-    z = data["z_m"]
+    x = data["n_m"]
+    y = data["e_m"]
+    z = data["d_m"]
     psi = data["psi_rad"]
 
     imu_ax = data["imu_ax_mps2"]

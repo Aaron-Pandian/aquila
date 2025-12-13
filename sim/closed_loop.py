@@ -2,7 +2,7 @@
 Closed-loop simulation driven by FSW commands.
 
 This module replays actuator commands from logs/fsw_output.csv into the
-point-mass dynamics, generating a new sensor log:
+6-DOF rigid-body dynamics, generating a new sensor log:
 
     logs/sim_closedloop.csv
 
@@ -21,9 +21,8 @@ from typing import Dict, List
 
 import numpy as np
 
-from .dynamics import PointMassState, step_dynamics
-from .sensors import simulate_imu, simulate_gps, simulate_baro
-
+from sim.dynamics_6dof import SixDofAircraft, AircraftParams
+from .sensors import (measure_imu_from_state, measure_gps_from_state, measure_baro_from_state, ImuParams, GpsParams, BaroParams)
 
 # Resolve repo root and log paths
 _REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -76,36 +75,6 @@ def _load_fsw_commands(path: Path) -> List[FswCommandRow]:
     return cmds
 
 
-def _map_commands_to_controls(cmd: FswCommandRow) -> Dict[str, float]:
-    """
-    Map FSW actuator commands to the simplified point-mass controls.
-
-    - heading_rate_cmd [rad/s] is driven by aileron.
-    - accel_cmd [m/s^2] is driven by throttle relative to a nominal value.
-
-    These mappings are intentionally simple and centralized here so they
-    can be refined later (e.g., with more realistic control laws or a
-    proper lateral/longitudinal dynamics model).
-    """
-    # Max heading rate (rad/s) for full aileron deflection.
-    max_heading_rate_radps = float(np.deg2rad(10.0))  # ≈ 0.175 rad/s
-    heading_rate_cmd = max_heading_rate_radps * cmd.cmd_aileron
-
-    # Map throttle deltas to longitudinal acceleration
-    throttle_nominal = 0.6
-    k_throttle = 3.0  # [m/s^2] per 1.0 throttle delta
-    accel_cmd = k_throttle * (cmd.cmd_throttle - throttle_nominal)
-
-    # Clamp to keep behavior near the open-loop scenario
-    accel_cmd = float(np.clip(accel_cmd, -1.5, 1.5))
-
-    return {
-        "heading_rate_cmd": heading_rate_cmd,
-        "accel_cmd": accel_cmd,
-        "elevator_cmd": cmd.cmd_elevator,
-    }
-
-
 def _write_header(writer: csv.writer) -> None:
     """
     Write a header compatible with sim_sensors.csv so that existing
@@ -114,9 +83,9 @@ def _write_header(writer: csv.writer) -> None:
     writer.writerow(
         [
             "t_s",
-            "x_m",
-            "y_m",
-            "z_m",
+            "n_m",
+            "e_m",
+            "d_m",
             "psi_rad",
             "v_mps",
             "imu_ax_mps2",
@@ -132,18 +101,40 @@ def _write_header(writer: csv.writer) -> None:
             "gps_vy_mps",
             "gps_vz_mps",
             "baro_alt_m",
+            "baro_pressure_pa",
         ]
     )
 
 
+def _initial_state_6dof() -> np.ndarray:
+    """
+    Same initial state as scenarios.py:
+    N,E,D = (0,0,-100), forward flight 15 m/s, level attitude, zero rates.
+    """
+    p_ned = np.array([0.0, 0.0, -100.0])
+    vb = np.array([15.0, 0.0, 0.0])
+    q = np.array([1.0, 0.0, 0.0, 0.0])
+    omega_b = np.zeros(3)
+    return np.concatenate([p_ned, vb, q, omega_b])
+
+
+def rk4_step(model, t, x, u, dt):
+    k1 = model.derivatives(t, x, u)
+    k2 = model.derivatives(t + 0.5*dt, x + 0.5*dt*k1, u)
+    k3 = model.derivatives(t + 0.5*dt, x + 0.5*dt*k2, u)
+    k4 = model.derivatives(t + dt, x + dt*k3, u)
+    return x + (dt/6.0)*(k1 + 2*k2 + 2*k3 + k4)
+
+
 def run_closed_loop_from_fsw() -> None:
     """
-    Replay FSW commands into the dynamics to generate a closed-loop trajectory.
+    Replay FSW commands into the 6-DOF dynamics to generate a closed-loop trajectory.
 
     This uses:
     - logs/fsw_output.csv as the command source
-    - step_dynamics() for state propagation
-    - simulate_imu/gps/baro() for sensor generation
+    - SixDofAircraft.derivatives() for state propagation
+    - measure_imu_from_state / measure_gps_from_state / measure_baro_from_state
+      for sensor generation
 
     Output:
     - logs/sim_closedloop.csv
@@ -154,58 +145,103 @@ def run_closed_loop_from_fsw() -> None:
     if not cmds:
         raise RuntimeError("No FSW commands loaded for closed-loop sim.")
 
-    state = PointMassState()
+    # Aircraft model (same as scenarios.py)
+    params = AircraftParams(
+        mass_kg=8.0,
+        Ixx=0.25,
+        Iyy=0.30,
+        Izz=0.45,
+        S=0.8,
+        b=2.0,
+        c_bar=0.4,
+        rho=1.225,
+        T_max=50.0,
+    )
+    model = SixDofAircraft(params)
+
+    # Initial state
+    state = _initial_state_6dof()
+    state_prev = state.copy()
+
+    # Sensor models
+    rng = np.random.default_rng(seed=1)
+    imu_bias = {"accel": np.zeros(3), "gyro": np.zeros(3)}
+    imu_params = ImuParams()
+    gps_params = GpsParams()
+    baro_params = BaroParams()
 
     with CLOSED_LOOP_LOG_PATH.open("w", newline="") as f:
         writer = csv.writer(f)
         _write_header(writer)
 
         prev_t = None
-        t = 0.0
 
         for row in cmds:
             if prev_t is None:
-                dt_s = 0.0
+                # ensure matches scenarios.py
+                dt_s = 0.05
             else:
-                dt_s = row.t_s - prev_t
-                if dt_s < 0.0:
-                    dt_s = 0.0
+                dt_s = max(1e-3, row.t_s - prev_t)
             prev_t = row.t_s
             t = row.t_s
 
-            controls = _map_commands_to_controls(row)
-            state = step_dynamics(state, controls, dt_s)
+            # Use FSW commands directly as control inputs [da, de, dr, dt]
+            controls = np.array(
+                [
+                    row.cmd_aileron,
+                    -row.cmd_elevator,
+                    row.cmd_rudder,
+                    row.cmd_throttle,
+                ],
+                dtype=float,
+            )
 
-            imu_meas = simulate_imu(state, dt_s)
-            gps_meas = simulate_gps(state)
-            baro_meas = simulate_baro(state)
+            # Integrate 6-DOF dynamics
+            state = rk4_step(model, t, state, controls, dt_s)
+            
+            # Renormalize quaternion
+            state[6:10] /= np.linalg.norm(state[6:10])
 
-            # Approximate heading and speed for logging (consistent with scenarios.py)
-            vx = state.v_mps * np.cos(state.psi_rad)
-            vy = state.v_mps * np.sin(state.psi_rad)
-            v_mps = state.v_mps
+            # Sensors from state
+            imu_meas, imu_bias = measure_imu_from_state(state, state_prev, dt_s, imu_bias, imu_params, rng)
+            gps_meas = measure_gps_from_state(state, gps_params, rng)
+            baro_meas = measure_baro_from_state(state, baro_params, rng)
+
+            state_prev = state.copy()
+
+            # Position
+            N, E, D = state[0:3]
+
+            # Velocity in NED
+            v_n = gps_meas["gps_vn"]
+            v_e = gps_meas["gps_ve"]
+            v_mps = float(np.hypot(v_n, v_e))
+
+            # Heading: use GPS track as approximation
+            psi_rad = float(np.arctan2(v_e, v_n))
 
             writer.writerow(
                 [
                     f"{t:.3f}",
-                    f"{state.x_m:.3f}",
-                    f"{state.y_m:.3f}",
-                    f"{state.z_m:.3f}",
-                    f"{state.psi_rad:.6f}",
+                    f"{N:.3f}",
+                    f"{E:.3f}",
+                    f"{D:.3f}",
+                    f"{psi_rad:.6f}",
                     f"{v_mps:.3f}",
-                    f"{imu_meas.accel_mps2[0]:.6f}",
-                    f"{imu_meas.accel_mps2[1]:.6f}",
-                    f"{imu_meas.accel_mps2[2]:.6f}",
-                    f"{imu_meas.gyro_radps[0]:.6f}",
-                    f"{imu_meas.gyro_radps[1]:.6f}",
-                    f"{imu_meas.gyro_radps[2]:.6f}",
-                    f"{gps_meas.position_ned_m[0]:.3f}",
-                    f"{gps_meas.position_ned_m[1]:.3f}",
-                    f"{gps_meas.position_ned_m[2]:.3f}",
-                    f"{gps_meas.velocity_ned_mps[0]:.3f}",
-                    f"{gps_meas.velocity_ned_mps[1]:.3f}",
-                    f"{gps_meas.velocity_ned_mps[2]:.3f}",
-                    f"{baro_meas.altitude_m:.3f}",
+                    f"{imu_meas['imu_ax']:.6f}",
+                    f"{imu_meas['imu_ay']:.6f}",
+                    f"{imu_meas['imu_az']:.6f}",
+                    f"{imu_meas['imu_gx']:.6f}",
+                    f"{imu_meas['imu_gy']:.6f}",
+                    f"{imu_meas['imu_gz']:.6f}",
+                    f"{gps_meas['gps_n']:.3f}",
+                    f"{gps_meas['gps_e']:.3f}",
+                    f"{gps_meas['gps_d']:.3f}",
+                    f"{gps_meas['gps_vn']:.3f}",
+                    f"{gps_meas['gps_ve']:.3f}",
+                    f"{gps_meas['gps_vd']:.3f}",
+                    f"{baro_meas['baro_alt']:.3f}",
+                    f"{baro_meas['baro_p']:.3f}",
                 ]
             )
 
