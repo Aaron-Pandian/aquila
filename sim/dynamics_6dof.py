@@ -67,7 +67,7 @@ class SixDofAircraft:
 
     # ---------- Public API ----------
 
-    def derivatives(self, t: float, x: np.ndarray, u: np.ndarray) -> np.ndarray:
+    def derivatives(self, dt_s: float, x: np.ndarray, u: np.ndarray) -> np.ndarray:
         """
         Compute state derivatives xdot at time t.
 
