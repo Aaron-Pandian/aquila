@@ -187,15 +187,19 @@ void EkfEstimator::build_process_noise(double dt_s, Mat7& Q) const {
 
     const double sa2 = accel_noise_std_mps2_ * accel_noise_std_mps2_;
     const double so2 = yaw_rate_noise_std_radps_ * yaw_rate_noise_std_radps_;
-
     const double dt2 = dt_s * dt_s;
 
-    // Simple diagonal model: position and velocity affected by accel noise,
-    // yaw affected by yaw-rate noise.
-    for (int i = 0; i < 3; ++i) {
-        Q(i, i)       = 0.5 * sa2 * dt2; // position
-        Q(i + 3, i+3) = sa2 * dt2;       // velocity
+    // Horizontal position/velocity affected by accel noise
+    for (int i = 0; i < 2; ++i) { // only N,E
+        Q(i, i)       = 0.5 * sa2 * dt2;
+        Q(i + 3, i+3) = sa2 * dt2;
     }
+
+    // Vertical: model vd as random walk (tunable)
+    const double svd2 = 1.0 * 1.0; // (m/s)^2 per second-ish (tune)
+    Q(5, 5) = svd2 * dt_s;
+    Q(2, 2) = 0.25 * svd2 * dt2; // small induced pd uncertainty
+
     Q(6, 6) = so2 * dt2;
 }
 
@@ -249,6 +253,8 @@ void EkfEstimator::predict(double dt_s, const ImuMeasurement& imu) {
     const double fb_y = imu.accel_mps2[1];
     const double fb_z = imu.accel_mps2[2];
     const double wz   = imu.gyro_rads[2]; 
+    // Store full body rates for downstream control (pitch damper etc.)
+    omega_body_radps_ = imu.gyro_rads;
 
     // Convert specific force to NED acceleration
     Eigen::Vector3d f_b(fb_x, fb_y, fb_z);
@@ -258,12 +264,15 @@ void EkfEstimator::predict(double dt_s, const ImuMeasurement& imu) {
     Eigen::Vector3d a_n = Rnb * f_b + g_n;
     const double an = a_n(0);
     const double ae = a_n(1);
-    const double ad = a_n(2);
+    // Disable IMU-driven ad until we estimate roll/pitch ---
+    // const double ad = a_n(2);
 
     // Integrate velocity
     const double vn_next = vn + an * dt_s;
     const double ve_next = ve + ae * dt_s;
-    const double vd_next = vd + ad * dt_s;
+    // Keep vd as constant (random-walk modeled by process noise)
+    // const double vd_next = vd + ad * dt_s;
+    const double vd_next = vd;
 
     // Integrate position (using updated velocity)
     const double pn_next = pn + vn_next * dt_s;
@@ -384,6 +393,8 @@ NavState EkfEstimator::get_state() const {
     s.quat_nb[1] = 0.0;
     s.quat_nb[2] = 0.0;
     s.quat_nb[3] = sy;
+    // Export body angular rates (rad/s) so controller can use q-rate damping
+    s.omega_body = omega_body_radps_;
 
     return s;
 }

@@ -82,7 +82,8 @@ def measure_imu_from_state(
     a_b = (vb - vb_prev) / max(dt, 1e-6)
 
     # Subtract gravity to get specific force
-    C_bn = quat_to_dcm(q)
+    C_nb = quat_to_dcm(q)
+    C_bn = C_nb.T
     g_n = np.array([0.0, 0.0, imu_params.g])
     g_b = C_bn @ g_n
     f_b = a_b - g_b   # "specific force" the IMU would measure

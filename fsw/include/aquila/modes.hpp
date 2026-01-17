@@ -13,14 +13,14 @@ enum class FlightMode {
 };
 
 struct ModeManagerConfig {
-    double standby_duration_s{3.0};
+    double standby_duration_s{60.0};
     double target_cruise_alt_m{100.0};
     double climb_altitude_m{110.0};    // step up during CLIMB
     double target_speed_mps{15.0};
-    double rtl_trigger_time_s{55.0};   // near end of 60s scenario
+    double rtl_trigger_time_s{60.0};   // near end of 60s scenario
     double failsafe_min_speed_mps{3.0};
     double failsafe_min_altitude_m{20.0};
-    double max_climb_time_s{10.0};     // avoid climbing forever in offline simulation, modes.hpp and modes.cpp hold changes
+    double max_climb_time_s{20.0};     // avoid climbing forever in offline simulation, modes.hpp and modes.cpp hold changes
 };
 
 class ModeManager {
@@ -39,7 +39,7 @@ private:
     FlightMode mode_{FlightMode::STANDBY};
 
     double target_altitude_m_{100.0};
-    double target_speed_mps_{15.0};
+    double target_speed_mps_{20.0};
 
     bool has_exited_standby_{false};
 

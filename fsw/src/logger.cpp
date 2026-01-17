@@ -4,7 +4,6 @@
 
 namespace aquila {
 
-// Output stream constructor
 CsvLogger::CsvLogger(std::ostream& os)
     : os_(os) {}
 
@@ -21,6 +20,9 @@ void CsvLogger::write_header() {
         << "baro_alt,"
         << "cmd_aileron,cmd_elevator,cmd_rudder,cmd_throttle,"
         << "dbg_alt_cmd_m,dbg_alt_m,dbg_alt_err_m,dbg_elevator_unsat,"
+        << "dbg_est_phi_rad,dbg_est_theta_rad,dbg_est_psi_rad,"
+        << "dbg_alt_dot_mps,dbg_vd_mps,dbg_q_radps,dbg_elev_times_q,"
+        << "dbg_theta_rad,dbg_theta_cmd_rad,dbg_theta_err_rad,dbg_climb_cmd_mps,"
         << "mode\n";
 }
 
@@ -34,8 +36,19 @@ void CsvLogger::log(double timestamp_s,
                     double dbg_alt_cmd_m,
                     double dbg_alt_m,
                     double dbg_alt_err_m,
-                    double dbg_elevator_unsat) {
-                        
+                    double dbg_elevator_unsat,
+                    double dbg_est_phi_rad,
+                    double dbg_est_theta_rad,
+                    double dbg_est_psi_rad,
+                    double dbg_alt_dot_mps,
+                    double dbg_vd_mps,
+                    double dbg_q_radps,
+                    double dbg_elev_times_q,
+                    double dbg_theta_rad,
+                    double dbg_theta_cmd_rad,
+                    double dbg_theta_err_rad,
+                    double dbg_climb_cmd_mps) {
+
     if (!header_written_) {
         write_header();
         header_written_ = true;
@@ -90,6 +103,21 @@ void CsvLogger::log(double timestamp_s,
         << dbg_alt_m << ","
         << dbg_alt_err_m << ","
         << dbg_elevator_unsat << ",";
+
+    // --- Debug telemetry (sign/frame sanity) ---
+    os_ << dbg_est_phi_rad << ","
+        << dbg_est_theta_rad << ","
+        << dbg_est_psi_rad << ","
+        << dbg_alt_dot_mps << ","
+        << dbg_vd_mps << ","
+        << dbg_q_radps << ","
+        << dbg_elev_times_q << ",";
+
+    // --- Debug telemetry (controller) ---
+    os_ << dbg_theta_rad << ","
+        << dbg_theta_cmd_rad << ","
+        << dbg_theta_err_rad << ","
+        << dbg_climb_cmd_mps << ",";
 
     // Flight Mode
     os_ << mode_index << "\n";

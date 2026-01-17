@@ -1,6 +1,7 @@
 #pragma once
 
 #include <Eigen/Dense>
+#include <array>
 #include "state.hpp"
 #include "sensors.hpp"
 
@@ -56,13 +57,15 @@ public:
     void update_baro(const BaroMeasurement& baro) override;
     NavState get_state() const override;
 
-private:
+private:  
     using Vec7 = Eigen::Matrix<double, 7, 1>;
     using Mat7 = Eigen::Matrix<double, 7, 7>;
 
     Vec7 x_;   // [pn, pe, pd, vn, ve, vd, psi]
     Mat7 P_;   // 7x7 covariance
 
+    // Gyro rates in body frame [rad/s]
+    std::array<double,3> omega_body_radps_{0.0, 0.0, 0.0};  
     // Process noise params
     double accel_noise_std_mps2_;
     double yaw_rate_noise_std_radps_;

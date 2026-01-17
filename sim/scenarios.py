@@ -189,37 +189,67 @@ def rate_limit(u_prev: float, u_cmd: float, dt: float, rate_per_s: float) -> flo
     return u_prev + np.clip(u_cmd - u_prev, -du_max, du_max)
 
 
-def compute_trim(V: float = 15.0) -> Tuple[float, float]:
+def quat_from_pitch(theta: float) -> np.ndarray:
+    return np.array([np.cos(theta/2), 0.0, np.sin(theta/2), 0.0], dtype=float)
+
+
+def compute_trim_longitudinal(V: float = 15.0) -> Tuple[float, float, float]:
+    """
+    Solve for (alpha_rad, de_rad, throttle) such that:
+      1) Lift balances weight
+      2) Pitch moment is zero
+    Assumes q_hat=0 (steady) and uses your linear CL/Cm model.
+    """
     g = 9.80665
     qbar = 0.5 * params.rho * V * V
     W = params.mass_kg * g
 
     CL_req = W / (qbar * params.S)
-    alpha = (CL_req - params.CL0) / params.CL_alpha   # radians
 
-    CL = params.CL0 + params.CL_alpha * alpha
+    # Solve:
+    # [CL_alpha  CL_de] [alpha] = [CL_req - CL0]
+    # [Cm_alpha  Cm_de] [de   ]   [-Cm0]
+    A = np.array([
+        [params.CL_alpha, params.CL_de],
+        [params.Cm_alpha, params.Cm_de],
+    ], dtype=float)
+
+    b = np.array([
+        CL_req - params.CL0,
+        -params.Cm0,
+    ], dtype=float)
+
+    alpha, de = np.linalg.solve(A, b)
+
+    # Drag + throttle (using trimmed CL)
+    CL = params.CL0 + params.CL_alpha * alpha + params.CL_de * de
     CD = params.CD0 + params.CD_k * CL * CL
     D = qbar * params.S * CD
+    throttle = float(np.clip(D / params.T_max, 0.0, 1.0))
 
-    throttle = np.clip(D / params.T_max, 0.0, 1.0)
-    return alpha, float(throttle)
+    return float(alpha), float(de), throttle
 
 
-def initial_state() -> Tuple[np.ndarray, float]:
+def initial_state() -> Tuple[np.ndarray, float, float]:
+    
     V = 15.0
-    alpha, throttle = compute_trim(V)
+    alpha, de_trim_rad, throttle = compute_trim_longitudinal(V)
 
-    # Start at altitude +100 m => NED D = -100
     p_ned = np.array([0.0, 0.0, -100.0])
 
-    # Body velocity consistent with alpha (so aero sees alpha)
-    vb = np.array([V*np.cos(alpha), 0.0, V*np.sin(alpha)])
+    # Body velocity consistent with alpha (z-down body):
+    vb = np.array([V*np.cos(alpha), 0.0, -V*np.sin(alpha)])
 
-    # Level attitude for now
-    q = np.array([1.0, 0.0, 0.0, 0.0])
+    # Set attitude so body is pitched up by theta=alpha (gamma≈0 assumption)
+    theta = alpha
+    q = quat_from_pitch(theta)
 
     omega_b = np.zeros(3)
-    return np.concatenate([p_ned, vb, q, omega_b]), throttle
+
+    # IMPORTANT: store elevator trim somewhere accessible if you want to apply it as bias later
+    # For now, just return it so run_scenario can initialize u_act[1]
+    state = np.concatenate([p_ned, vb, q, omega_b])
+    return state, throttle, de_trim_rad
 
 
 def _truth_aero_debug(state: np.ndarray, controls_norm: np.ndarray) -> Dict[str, float]:
@@ -233,13 +263,13 @@ def _truth_aero_debug(state: np.ndarray, controls_norm: np.ndarray) -> Dict[str,
     p_rate, q_rate, r_rate = omega_b
 
     V = float(np.linalg.norm(vb) + 1e-6)
-    alpha = float(np.arctan2(w_b, u_b))
+    alpha = float(np.arctan2(-w_b, u_b)) # updated to match downward w, corresponds to positive alpha
     beta = float(np.arcsin(np.clip(v_b / V, -1.0, 1.0)))
     qbar = float(0.5 * params.rho * V * V)
 
     # Convert normalized surfaces -> radians (must match dynamics_6dof.py)
     da = float(np.clip(controls_norm[0], -1.0, 1.0)) * np.deg2rad(params.da_max_deg)
-    de = -1 * float(np.clip(controls_norm[1], -1.0, 1.0)) * np.deg2rad(params.de_max_deg)
+    de = float(np.clip(controls_norm[1], -1.0, 1.0)) * np.deg2rad(params.de_max_deg)
     dr = float(np.clip(controls_norm[2], -1.0, 1.0)) * np.deg2rad(params.dr_max_deg)
     dt = float(np.clip(controls_norm[3], 0.0, 1.0))
 
@@ -323,10 +353,13 @@ def run_scenario() -> None:
     wp_index = 0
     wp_reached_thresh_m = 10.0
 
-    state, throttle_trim = initial_state()
+    state, throttle_trim, de_trim_rad = initial_state()
+
+    # Convert de_rad to normalized elevator command [-1,1]
+    de_trim_norm = float(np.clip(de_trim_rad / np.deg2rad(params.de_max_deg), -1.0, 1.0))
 
     # Actuator state (rate-limited)
-    u_act = np.array([0.0, 0.0, 0.0, throttle_trim], dtype=float)
+    u_act = np.array([0.0, de_trim_norm, 0.0, throttle_trim], dtype=float)
 
     # Initialize sensors
     rng = np.random.default_rng(seed=0)
@@ -430,9 +463,9 @@ def run_scenario() -> None:
             delta_r = max(-1.0, min(1.0, (-0.05 * r_rate)))
 
             # rate limit each channel
-            u_cmd = np.array([delta_a, delta_e, delta_r, delta_t], dtype=float)
+            u_cmd = np.array([delta_a, de_trim_norm + delta_e, delta_r, delta_t], dtype=float)
             u_act[0] = rate_limit(u_act[0], u_cmd[0], dt_s, rate_per_s=2.0)   # aileron
-            u_act[1] = -1 * rate_limit(u_act[1], u_cmd[1], dt_s, rate_per_s=2.0)  # elevator sign flip (as you had)
+            u_act[1] = rate_limit(u_act[1], u_cmd[1], dt_s, rate_per_s=2.0)   # elevator 
             u_act[2] = rate_limit(u_act[2], u_cmd[2], dt_s, rate_per_s=2.0)   # rudder
             u_act[3] = rate_limit(u_act[3], u_cmd[3], dt_s, rate_per_s=1.0)   # throttle
 

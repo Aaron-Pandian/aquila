@@ -87,28 +87,47 @@ class SixDofAircraft:
         else:
             q = q / q_norm
 
-        # Clamp body rates to something reasonable
-        omega_b = np.clip(omega_b, -10.0, 10.0)
-
         # Controls
         delta_a, delta_e, delta_r, delta_t = u
         delta_t = float(np.clip(delta_t, 0.0, 1.0))
         # Convert to radians
-        da = float(np.clip(delta_a, -1.0, 1.0)) * np.deg2rad(self.p.da_max_deg)
-        de = float(np.clip(delta_e, -1.0, 1.0)) * np.deg2rad(self.p.de_max_deg)
-        dr = float(np.clip(delta_r, -1.0, 1.0)) * np.deg2rad(self.p.dr_max_deg)
+        da_max = np.deg2rad(self.p.da_max_deg)
+        de_max = np.deg2rad(self.p.de_max_deg)
+        dr_max = np.deg2rad(self.p.dr_max_deg)
+        # Treat inputs as radians (matches live_loop + your logged saturation at 0.349 rad)
+        da = float(np.clip(delta_a, -da_max, da_max))
+        de = float(np.clip(delta_e, -de_max, de_max))
+        dr = float(np.clip(delta_r, -dr_max, dr_max))
+
 
         # Rotation matrices
-        C_bn = self.quat_to_dcm(q)      # NED -> body
-        C_nb = C_bn.T                   # body -> NED
+        C_nb = self.quat_to_dcm(q) # body -> NED
+        
+        # --- Sanity Checks ---
+        # For identity quaternion, C_nb should be identity if it truly maps body->NED
+        if np.allclose(q, np.array([1.0, 0.0, 0.0, 0.0]), atol=1e-6):
+            if not np.allclose(C_nb, np.eye(3), atol=1e-6):
+                raise RuntimeError(f"quat_to_dcm is not identity for identity quaternion:\n{C_nb}")
+            
+        # Orthogonality check (always true for a proper DCM)
+        M = C_nb @ C_nb.T
+        if (not np.all(np.isfinite(C_nb))) or (not np.all(np.isfinite(M))):
+            raise RuntimeError(f"C_nb contains NaN/Inf. q={q}")
+        if not np.allclose(M, np.eye(3), atol=1e-5):
+            raise RuntimeError(f"C_nb not orthonormal. q={q}\nC_nb=\n{C_nb}\nC_nb*C_nb^T=\n{M}")
+        
+        C_bn = C_nb.T # NED -> body
 
         # Position kinematics
         v_ned = C_nb @ vb
         p_dot = v_ned
 
         # Aerodynamic forces and moments (body frame)
-        # F_aero_b, M_aero_b = self.aero_forces_moments(vb, omega_b, delta_a, delta_e, delta_r)
         F_aero_b, M_aero_b = self.aero_forces_moments(vb, omega_b, da, de, dr)
+
+        # Prevent numeric blow-up while debugging (tune later / remove later)
+        M_limit = 200.0  # N*m per-axis cap (debug safety)
+        M_aero_b = np.clip(M_aero_b, -M_limit, M_limit)
 
         # Thrust (body x-axis)
         F_thrust_b = np.array([self.p.T_max * delta_t, 0.0, 0.0])
@@ -121,18 +140,18 @@ class SixDofAircraft:
         F_total_b = F_aero_b + F_thrust_b + F_g_b
 
         # --- Clamp forces and moments before computing accelerations ---
-        g_limit = 5.0  # +/- 5 g per axis
-        F_limit = g_limit * self.p.mass_kg * self.g
-        F_total_b = np.clip(F_total_b, -F_limit, F_limit)
+        # g_limit = 5.0  # +/- 5 g per axis
+        # F_limit = g_limit * self.p.mass_kg * self.g
+        # F_total_b = np.clip(F_total_b, -F_limit, F_limit)
 
-        M_limit = 50.0  # N·m limit on each axis
-        M_b = np.clip(M_aero_b, -M_limit, M_limit)
+        # M_limit = 50.0  # N·m limit on each axis
+        # M_b = np.clip(M_aero_b, -M_limit, M_limit)
 
         # Translational dynamics (body frame)
         v_dot_b = F_total_b / self.p.mass_kg - np.cross(omega_b, vb)
 
         # Rotational dynamics
-        omega_dot_b = self.I_inv @ (M_b - np.cross(omega_b, self.I @ omega_b))
+        omega_dot_b = self.I_inv @ (M_aero_b - np.cross(omega_b, self.I @ omega_b))
 
         # Attitude kinematics
         q_dot = self.quat_dot(q, omega_b)
@@ -187,66 +206,90 @@ class SixDofAircraft:
                             da: float,
                             de: float,
                             dr: float) -> Tuple[np.ndarray, np.ndarray]:
+        
         u, v, w = vb
         p, q_rate, r = omega_b
 
-        V = np.linalg.norm(vb) + 1e-3
-        alpha = np.arctan2(w, u)
-        beta = np.arcsin(np.clip(v / V, -1.0, 1.0))
+        # Raw airspeed
+        V_raw = float(np.linalg.norm(vb) + 1e-6)
+
+        # Keep the model in a reasonable envelope while debugging
+        V = float(np.clip(V_raw, 0.1, 120.0))
+
+        # With body z positive DOWN, standard AoA (nose-up positive) uses -w
+        alpha_raw = float(np.arctan2(-w, u))
+        beta_raw  = float(np.arcsin(np.clip(v / V_raw, -1.0, 1.0)))
+
+        # --- SIMPLE STALL / SANITY LIMITS ---
+        alpha_eff = float(np.clip(alpha_raw, -0.35, 0.35))  # +/- 20 deg
+        beta_eff  = float(np.clip(beta_raw,  -0.35, 0.35))
 
         qbar = 0.5 * self.p.rho * V * V
         S, b, c = self.p.S, self.p.b, self.p.c_bar
 
-        # Non-dimensional rates
-        p_hat = p * b / (2.0 * V)
-        q_hat = q_rate * c / (2.0 * V)
-        r_hat = r * b / (2.0 * V)
+        # Non-dimensional rates (use V (clamped) to avoid insane hats)
+        p_hat = float(p * b / (2.0 * V))
+        q_hat = float(q_rate * c / (2.0 * V))
+        r_hat = float(r * b / (2.0 * V))
 
-        # Lift / Drag / Side force coefficients
+        # Lift / Drag / Side force coefficients (use alpha_eff/beta_eff)
         CL = (self.p.CL0 +
-              self.p.CL_alpha * alpha +
-              self.p.CL_q * q_hat +
-              self.p.CL_de * de)
+            self.p.CL_alpha * alpha_eff +
+            self.p.CL_q * q_hat +
+            self.p.CL_de * de)
 
         CD = self.p.CD0 + self.p.CD_k * CL * CL
 
-        CY = self.p.CY_beta * beta + self.p.CY_dr * dr
+        CY = self.p.CY_beta * beta_eff + self.p.CY_dr * dr
 
-        # Moments coefficients
-        Cl = (self.p.Cl_beta * beta +
-              self.p.Cl_p * p_hat +
-              self.p.Cl_r * r_hat +
-              self.p.Cl_da * da)
+        # Moments coefficients (use alpha_eff/beta_eff)
+        Cl = (self.p.Cl_beta * beta_eff +
+            self.p.Cl_p * p_hat +
+            self.p.Cl_r * r_hat +
+            self.p.Cl_da * da)
 
         Cm = (self.p.Cm0 +
-              self.p.Cm_alpha * alpha +
-              self.p.Cm_q * q_hat +
-              self.p.Cm_de * de)
+            self.p.Cm_alpha * alpha_eff +
+            self.p.Cm_q * q_hat +
+            self.p.Cm_de * de)
 
-        Cn = (self.p.Cn_beta * beta +
-              self.p.Cn_p * p_hat +
-              self.p.Cn_r * r_hat +
-              self.p.Cn_dr * dr)
+        Cn = (self.p.Cn_beta * beta_eff +
+            self.p.Cn_p * p_hat +
+            self.p.Cn_r * r_hat +
+            self.p.Cn_dr * dr)
 
         # Forces in wind axes
         L = qbar * S * CL
         D = qbar * S * CD
         Y = qbar * S * CY
 
-        # Wind -> body rotation
-        ca, sa = np.cos(alpha), np.sin(alpha)
-        cb, sb = np.cos(beta), np.sin(beta)
-        C_bw = np.array([
-            [ca*cb, -sb, sa*cb],
-            [ca*sb,  cb, sa*sb],
-            [-sa,   0.0, ca   ],
-        ])
+        # --- Wind axes built directly from velocity direction (robust & convention-safe) ---
+        V = np.linalg.norm(vb) + 1e-9
+        xw_b = vb / V # wind x-axis (along velocity, in body coords)
 
-        Xw = -D
-        Yw = Y
-        Zw = -L
-        F_w = np.array([Xw, Yw, Zw])
+        ez_b = np.array([0.0, 0.0, 1.0]) # body +z (DOWN in your convention)
+        zproj = ez_b - xw_b * np.dot(xw_b, ez_b)
+
+        # If velocity is near-parallel to ez_b, fall back to another reference axis
+        nz = np.linalg.norm(zproj)
+        if nz < 1e-6:
+            ey_b = np.array([0.0, 1.0, 0.0])
+            zproj = ey_b - xw_b * np.dot(xw_b, ey_b)
+            nz = np.linalg.norm(zproj)
+            if nz < 1e-6:
+                zproj = np.array([0.0, 0.0, 1.0])  # last-resort
+
+        zw_b = zproj / (nz + 1e-12)
+        yw_b = np.cross(zw_b, xw_b) # right-handed
+
+        # Columns are wind axes expressed in body coords
+        C_bw = np.column_stack((xw_b, yw_b, zw_b))
+
+        # Forces in wind axes: drag opposite xw, lift opposite zw (since +zw is "down-ish")
+        F_w = np.array([-D, Y, -L], dtype=float)
         F_b = C_bw @ F_w
+        if np.dot(F_b, vb) > 1e-6:
+            print("WARNING: aero forces adding energy! dot(F,v) =", np.dot(F_b, vb))
 
         # Moments in body axes
         L_roll = qbar * S * b * Cl
