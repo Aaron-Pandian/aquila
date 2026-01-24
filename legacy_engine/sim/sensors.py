@@ -131,8 +131,8 @@ def measure_gps_from_state(
     vb = x[3:6]
     q = x[6:10] / np.linalg.norm(x[6:10])
 
-    C_bn = quat_to_dcm(q)
-    C_nb = C_bn.T
+    C_nb = quat_to_dcm(q) # body -> NED
+    C_bn = C_nb.T # NED -> body
     v_ned = C_nb @ vb
 
     pos_meas = p_ned + gps_params.pos_noise_std * rng.normal(size=3)

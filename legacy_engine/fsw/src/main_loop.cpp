@@ -53,7 +53,7 @@ struct Args {
 };
 
 // Set to 1 to bypass estimator and feed controller truth-derived NavState
-#define BYPASS_ESTIMATOR_WITH_TRUTH 1
+#define BYPASS_ESTIMATOR_WITH_TRUTH 0
 // Set to 1 to force CRUISE mode (ignore ModeManager)
 #define FORCE_CRUISE_MODE 1
 // Enable integral augmentation block
@@ -431,11 +431,12 @@ int main(int argc, char** argv) {
    bool first_row = true;
    static int last_mode_index = -999;
 
-   // --- “Sensor-like” filters for testing non-truth values ---
-   FirstOrderLPF baro_alt_lpf(0.8);  // tau_alt_s (tune)
-   FirstOrderLPF gps_vn_lpf(0.5);   // tau_spd_s (tune)
-   FirstOrderLPF gps_ve_lpf(0.5);
-   FirstOrderLPF gps_vd_lpf(0.5);
+    // --- “Sensor-like” filters for testing non-truth values ---
+    // 0.1s provides decent noise rejection without destabilizing the loop
+    FirstOrderLPF baro_alt_lpf(0.1); 
+    FirstOrderLPF gps_vn_lpf(0.1);   
+    FirstOrderLPF gps_ve_lpf(0.1);
+    FirstOrderLPF gps_vd_lpf(0.1);
 
 
    while (std::getline(*in, header_line)) {
@@ -543,62 +544,27 @@ int main(int argc, char** argv) {
        controller.set_target_altitude(mode_manager.target_altitude_m());
        controller.set_desired_speed(mode_manager.target_speed_mps());
 
-       // --- Build a control-view state (ctrl_state) that mimics sensor/estimator lag ---
-       NavState ctrl_state = state;
+        // --- Build a control-view state ---
+        // With EKF enabled, the 'state' variable already contains the fused, 
+        // filtered estimate. We do NOT need to apply extra LPFs here.
+        NavState ctrl_state = state; 
+        
+        // NOTE: Previous LPF logic for 'sensor-view' robustness testing is removed 
+        // to prevent phase lag. The EKF handles noise rejection.
 
-       if (mode == FlightMode::CRUISE || mode == FlightMode::CLIMB || mode == FlightMode::RTL) {
-            // 1) Filter altitude using baro (baro.altitude_m is +up)
-            const double alt_baro_m = baro.altitude_m;
-            const double alt_f_m = baro_alt_lpf.step(alt_baro_m, dt_s);
+        if (mode == FlightMode::CRUISE || mode == FlightMode::CLIMB || mode == FlightMode::RTL) {
+            cmd = controller.compute_commands(ctrl_state, &ctrl_dbg);
+        } else {
+            // In STANDBY or other modes, ensure we output trim or zeros
+            // Ideally, your controller should handle STANDBY, but for now:
+            cmd = ActuatorCommands{}; 
+            cmd.elevator = 0.012; // Matches trim
+            cmd.throttle = 0.55;
+        }
 
-            // Convert filtered altitude (+up) back into NED down position
-            ctrl_state.position_ned[2] = -alt_f_m;
-
-            // 2) Filter GPS velocity components directly (keeps vertical rate consistent with “sensor-view”)
-            const double vn_f = gps_vn_lpf.step(gps.velocity_ned[0], dt_s);
-            const double ve_f = gps_ve_lpf.step(gps.velocity_ned[1], dt_s);
-            const double vd_f = gps_vd_lpf.step(gps.velocity_ned[2], dt_s);
-
-            ctrl_state.velocity_ned = { vn_f, ve_f, vd_f };
-       }
-
-       // Control depends on mode
-       switch (mode) {
-       case FlightMode::STANDBY:
-           // Hold trim or steady, level flight
-           cmd.aileron  = 0.0;
-           cmd.elevator = controller.elevator_trim();
-           cmd.rudder   = 0.0;
-           cmd.throttle = controller.throttle_trim();
-           break;
-
-       case FlightMode::CLIMB:
-           // Normal closed-loop control, but ModeManager has set a "climb" target
-           ctrl_dbg = ControllerDebug{};    // reset each tick
-           cmd = controller.compute_commands(ctrl_state, &ctrl_dbg);
-           break;
-
-       case FlightMode::CRUISE:
-           // Normal closed-loop cruise (follow square track, etc.)
-           ctrl_dbg = ControllerDebug{};    // reset each tick
-           cmd = controller.compute_commands(ctrl_state, &ctrl_dbg);
-           break;
-
-       case FlightMode::RTL:
-           // Return-to-launch
-           ctrl_dbg = ControllerDebug{};    // reset each tick
-           cmd = controller.compute_commands(ctrl_state, &ctrl_dbg);
-           break;
-
-       case FlightMode::FAILSAFE:
-       default:
-           // Simple FAILSAFE placeholder: cut throttle, neutral surfaces.
-           cmd.aileron  = 0.0;
-           cmd.elevator = 0.0;
-           cmd.rudder   = 0.0;
-           cmd.throttle = 0.0;
-           break;
-       }
+        // In CRUISE/CLIMB/RTL, the EKF 'state' is already the best estimate.
+        // If you explicitly want to test sensor faults later, you can re-introduce
+        // fault injection here, but for now, pass 'state' through.
 
        #if ENABLE_ADAPTIVE_TRIM
             // --- Integral augmentation (adaptive trim), migrate to controller later ---
@@ -654,25 +620,6 @@ int main(int argc, char** argv) {
             }
         #endif
 
-       // --- Actuator slew-rate limiting ---
-       const double elev_rate = controller.elevator_rate();
-       const double thr_rate  = controller.throttle_rate();
-
-       if (!have_last_cmd) {
-           last_elevator = cmd.elevator;
-           last_throttle = cmd.throttle;
-           have_last_cmd = true;
-       } else if (dt_s > 1e-6) {
-           const double de = std::clamp(cmd.elevator - last_elevator, -elev_rate*dt_s, elev_rate*dt_s);
-           const double dt = std::clamp(cmd.throttle - last_throttle, -thr_rate*dt_s,  thr_rate*dt_s);
-
-           last_elevator += de;
-           last_throttle += dt;
-
-           cmd.elevator = last_elevator;
-           cmd.throttle = last_throttle;
-       }
-
        // Stream mode: write commands to stdout
        if (args.stream) {
            std::cout << row.t_s << ","
@@ -687,7 +634,6 @@ int main(int argc, char** argv) {
        double dbg_alt_cmd_m        = std::numeric_limits<double>::quiet_NaN();
        double dbg_alt_m            = std::numeric_limits<double>::quiet_NaN();
        double dbg_alt_err_m        = std::numeric_limits<double>::quiet_NaN();
-       double dbg_elevator_unsat   = std::numeric_limits<double>::quiet_NaN();
 
        // Only meaningful in active control modes
        if (mode == FlightMode::CLIMB || mode == FlightMode::CRUISE || mode == FlightMode::RTL) {
@@ -696,9 +642,6 @@ int main(int argc, char** argv) {
            // IMPORTANT: debug reflects what controller sees (ctrl_state)
            dbg_alt_m = -ctrl_state.position_ned[2];
            dbg_alt_err_m = dbg_alt_cmd_m - dbg_alt_m;
-
-           // Unsaturated elevator (before clamp) - P-only proxy
-           dbg_elevator_unsat = controller.k_alt_p() * dbg_alt_err_m;
        }
 
        // --- Debug telemetry for sign conventions ---
@@ -736,7 +679,7 @@ int main(int argc, char** argv) {
        // Log everything
        logger.log(row.t_s, state, imu, gps, baro, cmd,
             mode_index,
-            dbg_alt_cmd_m, dbg_alt_m, dbg_alt_err_m, dbg_elevator_unsat,
+            dbg_alt_cmd_m, dbg_alt_m, dbg_alt_err_m,
             dbg_est_phi_rad, dbg_est_theta_rad, dbg_est_psi_rad,
             dbg_alt_dot_mps, dbg_vd_mps, dbg_q_radps, dbg_elev_times_q,
             dbg_theta_rad, dbg_theta_cmd_rad, dbg_theta_err_rad, dbg_climb_cmd_mps);

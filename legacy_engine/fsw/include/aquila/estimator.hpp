@@ -84,6 +84,8 @@ private:
     static double wrap_pi(double angle);
 
     void build_process_noise(double dt_s, Mat7& Q) const;
+
+    Eigen::Quaterniond quat_est_{1.0, 0.0, 0.0, 0.0};
 };
 
 } // namespace aquila

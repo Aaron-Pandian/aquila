@@ -19,7 +19,7 @@ void CsvLogger::write_header() {
         << "gps_vn,gps_ve,gps_vd,"
         << "baro_alt,"
         << "cmd_aileron,cmd_elevator,cmd_rudder,cmd_throttle,"
-        << "dbg_alt_cmd_m,dbg_alt_m,dbg_alt_err_m,dbg_elevator_unsat,"
+        << "dbg_alt_cmd_m,dbg_alt_m,dbg_alt_err_m,"
         << "dbg_est_phi_rad,dbg_est_theta_rad,dbg_est_psi_rad,"
         << "dbg_alt_dot_mps,dbg_vd_mps,dbg_q_radps,dbg_elev_times_q,"
         << "dbg_theta_rad,dbg_theta_cmd_rad,dbg_theta_err_rad,dbg_climb_cmd_mps,"
@@ -36,7 +36,6 @@ void CsvLogger::log(double timestamp_s,
                     double dbg_alt_cmd_m,
                     double dbg_alt_m,
                     double dbg_alt_err_m,
-                    double dbg_elevator_unsat,
                     double dbg_est_phi_rad,
                     double dbg_est_theta_rad,
                     double dbg_est_psi_rad,
@@ -101,8 +100,7 @@ void CsvLogger::log(double timestamp_s,
     // Debug telemetry (altitude loop)
     os_ << dbg_alt_cmd_m << ","
         << dbg_alt_m << ","
-        << dbg_alt_err_m << ","
-        << dbg_elevator_unsat << ",";
+        << dbg_alt_err_m << ",";
 
     // --- Debug telemetry (sign/frame sanity) ---
     os_ << dbg_est_phi_rad << ","

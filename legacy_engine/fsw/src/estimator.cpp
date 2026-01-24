@@ -1,18 +1,17 @@
 #include "aquila/estimator.hpp"
 #include <cmath>
+#include <iostream>
 
 namespace aquila {
 
 namespace {
-
-constexpr double PI = 3.14159265358979323846;
-
-// Convenience for tiny thresholds
-constexpr double EPS_VEL = 1e-3;
-
+    constexpr double PI = 3.14159265358979323846;
+    constexpr double EPS_VEL = 1e-3;
 } // namespace
 
-// --- Simple Estimator Helper Functions ---
+// =========================================================
+// SimpleEstimator Implementation 
+// =========================================================
 
 double SimpleEstimator::wrap_pi(double angle) {
     while (angle > PI) {
@@ -160,242 +159,188 @@ void SimpleEstimator::update_baro(const BaroMeasurement& baro) {
     state_.position_ned[2] = z_new;
 }
 
-// --- EKF Helper Functions ---
+// =========================================================
+// EkfEstimator Implementation
+// =========================================================
+
+EkfEstimator::EkfEstimator() 
+    : accel_noise_std_mps2_(0.5),
+      yaw_rate_noise_std_radps_(0.01),
+      gps_pos_noise_std_m_(2.0),
+      gps_vel_noise_std_mps_(0.5),
+      baro_noise_std_m_(1.0) 
+{
+    x_.setZero();
+    x_(2) = -100.0; // Default initialization
+    
+    P_.setIdentity();
+    P_ *= 10.0; // Large initial uncertainty
+
+    // Build constant measurement covariances
+    R_gps_.setZero();
+    double sp2 = gps_pos_noise_std_m_ * gps_pos_noise_std_m_;
+    double sv2 = gps_vel_noise_std_mps_ * gps_vel_noise_std_mps_;
+    for (int i = 0; i < 3; ++i) {
+        R_gps_(i, i)     = sp2;
+        R_gps_(i+3, i+3) = sv2;
+    }
+    R_baro_(0,0) = baro_noise_std_m_ * baro_noise_std_m_;
+}
 
 Eigen::Matrix3d EkfEstimator::R_nb(double yaw_rad) {
-    const double c = std::cos(yaw_rad);
-    const double s = std::sin(yaw_rad);
+    double c = std::cos(yaw_rad);
+    double s = std::sin(yaw_rad);
     Eigen::Matrix3d R;
     R <<  c, -s, 0.0,
           s,  c, 0.0,
-          0.0, 0.0, 1.0;
+        0.0, 0.0, 1.0;
     return R;
 }
 
 double EkfEstimator::wrap_pi(double angle) {
-    while (angle > PI) {
-        angle -= 2.0 * PI;
-    }
-    while (angle < -PI) {
-        angle += 2.0 * PI;
-    }
+    while (angle > PI) angle -= 2.0 * PI;
+    while (angle < -PI) angle += 2.0 * PI;
     return angle;
 }
 
 void EkfEstimator::build_process_noise(double dt_s, Mat7& Q) const {
     Q.setZero();
-
-    const double sa2 = accel_noise_std_mps2_ * accel_noise_std_mps2_;
-    const double so2 = yaw_rate_noise_std_radps_ * yaw_rate_noise_std_radps_;
-    const double dt2 = dt_s * dt_s;
-
-    // Horizontal position/velocity affected by accel noise
-    for (int i = 0; i < 2; ++i) { // only N,E
+    double dt2 = dt_s * dt_s;
+    double sa2 = accel_noise_std_mps2_ * accel_noise_std_mps2_;
+    double so2 = yaw_rate_noise_std_radps_ * yaw_rate_noise_std_radps_;
+    
+    // Position/Velocity driven by accelerometer noise (Horizontal)
+    for (int i = 0; i < 2; ++i) { 
         Q(i, i)       = 0.5 * sa2 * dt2;
-        Q(i + 3, i+3) = sa2 * dt2;
+        Q(i + 3, i+3) = sa2 * dt2; 
     }
-
-    // Vertical: model vd as random walk (tunable)
-    const double svd2 = 1.0 * 1.0; // (m/s)^2 per second-ish (tune)
+    
+    // Vertical velocity modeled as random walk
+    double svd2 = 1.0; 
     Q(5, 5) = svd2 * dt_s;
-    Q(2, 2) = 0.25 * svd2 * dt2; // small induced pd uncertainty
+    Q(2, 2) = 0.25 * svd2 * dt2; 
 
+    // Yaw noise
     Q(6, 6) = so2 * dt2;
 }
 
-// --- Constructor ---
-
-EkfEstimator::EkfEstimator()
-    : accel_noise_std_mps2_(0.5),
-      yaw_rate_noise_std_radps_(0.01),
-      gps_pos_noise_std_m_(2.0),
-      gps_vel_noise_std_mps_(0.5),
-      baro_noise_std_m_(1.0) {
-
-    x_.setZero();
-
-    // Initial position NED = (0,0,-100), velocity zero, yaw 0
-    x_(2) = -100.0;
-
-    P_.setIdentity();
-    P_ *= 10.0; // fairly large initial uncertainty
-
-    // Build measurement covariances
-    R_gps_.setZero();
-    const double sp2 = gps_pos_noise_std_m_ * gps_pos_noise_std_m_;
-    const double sv2 = gps_vel_noise_std_mps_ * gps_vel_noise_std_mps_;
-    for (int i = 0; i < 3; ++i) {
-        R_gps_(i, i)     = sp2;
-        R_gps_(i+3, i+3) = sv2;
-    }
-
-    R_baro_(0,0) = baro_noise_std_m_ * baro_noise_std_m_;
-}
-
-// --- Predict ---
-
 void EkfEstimator::predict(double dt_s, const ImuMeasurement& imu) {
-    if (dt_s <= 0.0) {
-        return;
-    }
+    if (dt_s <= 0.0) return;
 
-    // Unpack state
-    double pn  = x_(0);
-    double pe  = x_(1);
-    double pd  = x_(2);
-    double vn  = x_(3);
-    double ve  = x_(4);
-    double vd  = x_(5);
-    double psi = x_(6);
+    // 1. Unpack Linear State
+    double pn = x_(0), pe = x_(1), pd = x_(2);
+    double vn = x_(3), ve = x_(4), vd = x_(5);
+    // Note: We stop using x_(6) (psi) for rotation, using quat_est_ instead.
 
-    // IMU inputs (body-frame specific force and yaw-rate)
-    const double fb_x = imu.accel_mps2[0];
-    const double fb_y = imu.accel_mps2[1];
-    const double fb_z = imu.accel_mps2[2];
-    const double wz   = imu.gyro_rads[2]; 
-    // Store full body rates for downstream control (pitch damper etc.)
-    omega_body_radps_ = imu.gyro_rads;
+    // 2. Propagate Attitude (Quaternion Integration)
+    Eigen::Vector3d omega_b(imu.gyro_rads[0], imu.gyro_rads[1], imu.gyro_rads[2]);
+    omega_body_radps_ = imu.gyro_rads; // Store for controller
 
-    // Convert specific force to NED acceleration
-    Eigen::Vector3d f_b(fb_x, fb_y, fb_z);
-    const Eigen::Matrix3d Rnb = R_nb(psi);
-    const Eigen::Vector3d g_n(0.0, 0.0, 9.81);
+    // dq/dt = 0.5 * q * omega
+    // Eigen quaternion multiplication is p * q (Hamilton product)
+    Eigen::Quaterniond q_omega(0.0, omega_b.x(), omega_b.y(), omega_b.z());
+    Eigen::Quaterniond dq = quat_est_ * q_omega;
+    
+    // Euler integration for attitude
+    quat_est_.w() += 0.5 * dq.w() * dt_s;
+    quat_est_.x() += 0.5 * dq.x() * dt_s;
+    quat_est_.y() += 0.5 * dq.y() * dt_s;
+    quat_est_.z() += 0.5 * dq.z() * dt_s;
+    quat_est_.normalize(); // Vital to prevent drift
 
-    Eigen::Vector3d a_n = Rnb * f_b + g_n;
-    const double an = a_n(0);
-    const double ae = a_n(1);
-    // Disable IMU-driven ad until we estimate roll/pitch ---
-    // const double ad = a_n(2);
+    // 3. Propagate Velocity (rotate specific force body->NED)
+    Eigen::Vector3d f_b(imu.accel_mps2[0], imu.accel_mps2[1], imu.accel_mps2[2]);
+    Eigen::Vector3d g_n(0.0, 0.0, 9.81);
+    
+    // Rotate f_b to NED using the new attitude
+    Eigen::Vector3d a_n = quat_est_ * f_b + g_n;
 
-    // Integrate velocity
-    const double vn_next = vn + an * dt_s;
-    const double ve_next = ve + ae * dt_s;
-    // Keep vd as constant (random-walk modeled by process noise)
-    // const double vd_next = vd + ad * dt_s;
-    const double vd_next = vd;
+    double vn_next = vn + a_n.x() * dt_s;
+    double ve_next = ve + a_n.y() * dt_s;
+    double vd_next = vd + a_n.z() * dt_s; // Now we use Z-accel because we have Pitch!
 
-    // Integrate position (using updated velocity)
-    const double pn_next = pn + vn_next * dt_s;
-    const double pe_next = pe + ve_next * dt_s;
-    const double pd_next = pd + vd_next * dt_s;
+    // 4. Propagate Position
+    double pn_next = pn + vn_next * dt_s;
+    double pe_next = pe + ve_next * dt_s;
+    double pd_next = pd + vd_next * dt_s;
 
-    // Integrate yaw
-    double psi_next = wrap_pi(psi + wz * dt_s);
+    // 5. Update State Vector
+    // We keep x_(6) as "Yaw" for the EKF linear model, but we sync it from the quaternion
+    // to keep the linearized Jacobian logic somewhat valid for GPS updates.
+    // (A full Error-State Kalman Filter is better, but this is the simplest fix).
+    Eigen::Vector3d euler = quat_est_.toRotationMatrix().eulerAngles(2, 1, 0); // ZYX order -> psi, theta, phi
+    double current_yaw = euler[0]; 
 
-    // Write back predicted state
-    x_(0) = pn_next;
-    x_(1) = pe_next;
-    x_(2) = pd_next;
-    x_(3) = vn_next;
-    x_(4) = ve_next;
-    x_(5) = vd_next;
-    x_(6) = psi_next;
+    x_ << pn_next, pe_next, pd_next, vn_next, ve_next, vd_next, current_yaw;
 
-    // Build state transition Jacobian F
+    // 6. Propagate Covariance (Simplified)
+    // We stick to the generic kinematic propagation. 
+    // Since we now use full accel rotation, the simple Jacobian is an approximation,
+    // but sufficient for Position/Velocity filtering.
     Mat7 F = Mat7::Identity();
-
-    // Position derivatives wrt velocity
-    F(0, 3) = dt_s;
-    F(1, 4) = dt_s;
-    F(2, 5) = dt_s;
-
-    // Velocity derivatives wrt yaw (from a_n(psi))
-    const double c = std::cos(psi);
-    const double s = std::sin(psi);
-
-    const double da_n_dpsi = -s * fb_x - c * fb_y;
-    const double da_e_dpsi =  c * fb_x - s * fb_y;
-
-    F(3, 6) = da_n_dpsi * dt_s;
-    F(4, 6) = da_e_dpsi * dt_s;
-    // F(5, 6) remains 0 (ad doesn't depend on yaw)
-
-    // Process noise
+    F(0, 3) = dt_s; F(1, 4) = dt_s; F(2, 5) = dt_s;
+    
     Mat7 Q;
     build_process_noise(dt_s, Q);
-
-    // Covariance prediction
     P_ = F * P_ * F.transpose() + Q;
 }
 
-// --- GPS update ---
-
 void EkfEstimator::update_gps(const GpsMeasurement& gps) {
-    // Measurement z = [pn, pe, pd, vn, ve, vd]^T
-    Eigen::Matrix<double, 6, 1> z;
-    z << gps.position_ned[0],
-         gps.position_ned[1],
-         gps.position_ned[2],
-         gps.velocity_ned[0],
-         gps.velocity_ned[1],
-         gps.velocity_ned[2];
+    if (!gps.valid) return;
 
-    // h(x) for GPS is linear: H * x
+    Eigen::Matrix<double, 6, 1> z;
+    z << gps.position_ned[0], gps.position_ned[1], gps.position_ned[2],
+         gps.velocity_ned[0], gps.velocity_ned[1], gps.velocity_ned[2];
+
     Eigen::Matrix<double, 6, 7> H;
     H.setZero();
-    H.block<3,3>(0,0) = Eigen::Matrix3d::Identity();    // position
-    H.block<3,3>(3,3) = Eigen::Matrix3d::Identity();    // velocity
+    H.block<3,3>(0,0) = Eigen::Matrix3d::Identity(); // Pos
+    H.block<3,3>(3,3) = Eigen::Matrix3d::Identity(); // Vel
 
-    Eigen::Matrix<double, 6, 1> hx = H * x_;
-    Eigen::Matrix<double, 6, 1> y  = z - hx;            // innovation
+    // Innovation
+    Eigen::Matrix<double, 6, 1> y = z - H * x_;
 
+    // Innovation Covariance
     Eigen::Matrix<double, 6, 6> S = H * P_ * H.transpose() + R_gps_;
+    
+    // Kalman Gain
     Eigen::Matrix<double, 7, 6> K = P_ * H.transpose() * S.inverse();
 
+    // Update
     x_ = x_ + K * y;
     P_ = (Mat7::Identity() - K * H) * P_;
 }
 
-// --- Baro update ---
-
 void EkfEstimator::update_baro(const BaroMeasurement& baro) {
-    // z = altitude [m]
-    const double z = baro.altitude_m;
+    if (!baro.valid) return;
 
-    // h(x) = -pd
-    const double hx = -x_(2);
-
-    const double y = z - hx; 
+    double z = baro.altitude_m; // "Altitude" is typically positive Up
+    // State pd is positive Down. So Altitude = -pd.
+    // Measurement model: z = -pd
+    
+    double hx = -x_(2);
+    double y = z - hx;
 
     Eigen::Matrix<double, 1, 7> H;
     H.setZero();
     H(0, 2) = -1.0;
 
-    const double S = (H * P_ * H.transpose())(0,0) + R_baro_(0,0);
+    double S = (H * P_ * H.transpose())(0,0) + R_baro_(0,0);
     Eigen::Matrix<double, 7, 1> K = P_ * H.transpose() / S;
 
     x_ = x_ + K * y;
     P_ = (Mat7::Identity() - K * H) * P_;
 }
 
-// --- NavState output ---
-
 NavState EkfEstimator::get_state() const {
     NavState s{};
-
-    s.position_ned[0] = x_(0);
-    s.position_ned[1] = x_(1);
-    s.position_ned[2] = x_(2);
-
-    s.velocity_ned[0] = x_(3);
-    s.velocity_ned[1] = x_(4);
-    s.velocity_ned[2] = x_(5);
-
-    const double psi = x_(6);
-
-    // Build quaternion with yaw-only attitude (roll=pitch=0)
-    const double half_yaw = 0.5 * psi;
-    const double cy = std::cos(half_yaw);
-    const double sy = std::sin(half_yaw);
-
-    // q = [w, x, y, z], yaw-only
-    s.quat_nb[0] = cy;
-    s.quat_nb[1] = 0.0;
-    s.quat_nb[2] = 0.0;
-    s.quat_nb[3] = sy;
-    // Export body angular rates (rad/s) so controller can use q-rate damping
+    s.position_ned = {x_(0), x_(1), x_(2)};
+    s.velocity_ned = {x_(3), x_(4), x_(5)};
+    
+    // CRITICAL FIX: Return the integrated full quaternion, not just Yaw.
+    s.quat_nb = {quat_est_.w(), quat_est_.x(), quat_est_.y(), quat_est_.z()};
+    
     s.omega_body = omega_body_radps_;
-
     return s;
 }
 

@@ -51,11 +51,7 @@ public:
     double elevator_trim() const { return elevator_trim_; }
     double throttle_trim() const { return throttle_trim_; }
     
-    double k_alt_p() const { return k_alt_p_; }
     double max_elevator_cmd() const { return max_elevator_cmd_; }
-
-    double elevator_rate() const { return max_elevator_change_per_sec_; }
-    double throttle_rate() const { return max_throttle_change_per_sec_; }
 
 private:
     struct Waypoint {
@@ -77,40 +73,47 @@ private:
     double target_altitude_m_{100.0};
     double desired_speed_mps_{15.0};
 
-    // Inner-loop gains and limits
+    // --- Cascaded Gains ---
     double k_heading_p_{1.2};
-    double max_aileron_cmd_{0.6};
+    double max_aileron_cmd_{0.349}; // 20 deg
 
-    double k_alt_p_{0.02};
-    double k_pitch_rate_d_{0.12};   // elevator damping using body pitch rate q [rad/s]
-    double max_elevator_cmd_{0.34906585}; // 20 degrees in radians
-    double k_alt_to_vz_ {0.25};     // m/s per m of alt error
-    double max_climb_mps_{1.5};     
-    // double k_vz_p_ {-0.05};    // elevator per climb-rate error
-    double k_vz_to_theta_{0.05};  // rad of pitch per (m/s) climb rate
+    // Inner Loop (Rate)
+    double k_pitch_rate_d_{0.25};   // Damping gain
+    
+    // Middle Loop (Attitude)
+    double k_theta_p_{0.15};        
+    double theta_max_rad_{0.35};   // ~25 degrees nose limit
+    
+    // Outer Loop (Altitude to Vertical Speed)
+    double k_alt_to_vz_{0.3};      // Slightly more aggressive climb
+    double max_climb_mps_{3.0};    
+    
+    // Integrator
+    double alt_int_{0.0};
+    double k_alt_i_{0.02};         
 
-    double k_speed_p_{0.05};
-    double k_theta_p_{0.2};
-    double throttle_trim_{0.6};
+    // Middle-Outer (Vertical Speed to Pitch)
+    double k_vz_to_theta_{0.15};    // rad pitch per m/s climb error
+
+    // Speed/Energy
+    double k_speed_p_{0.4};         
+    double throttle_trim_{0.55};
     double min_throttle_{0.1};
     double max_throttle_{1.0};
-    double theta_max_rad_{0.15}; 
 
-    double elevator_trim_{0.0};
+    double elevator_trim_{0.012};
+    double max_elevator_cmd_{0.8};
 
-    // To be tunned
-    double max_elevator_change_per_sec_{1.5};   // rad/s
-    double max_throttle_change_per_sec_{1.0};   // 1/s (full range per second)
-
-    // --- Helpers ---
-
+    // --- Refactored Helpers ---
     static double wrap_pi(double angle);
-
     GuidanceCommand compute_guidance(const NavState& state);
-
     double heading_control(double psi_cmd_rad, double psi_rad) const;
-    double altitude_control(double alt_cmd_m, double alt_m) const;
-    double speed_control(double speed_cmd_mps, double speed_mps) const;
+    
+    // Cascade Tiers
+    double run_altitude_loop(double alt_cmd_m, double alt_m, double dt);
+    double run_pitch_loop(double theta_cmd_rad, double theta_rad, double q_radps);
+    double run_speed_loop(double speed_cmd_mps, double speed_mps);
+
 };
 
 } // namespace aquila
