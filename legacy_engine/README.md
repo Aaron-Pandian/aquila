@@ -1,4 +1,4 @@
-# Aquila
+# Automation In Robotics
 
 Aquila is a small fixed-wing UAS “digital twin” and flight software stack.
 
