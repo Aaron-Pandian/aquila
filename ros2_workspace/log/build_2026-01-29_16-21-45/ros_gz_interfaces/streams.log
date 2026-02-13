@@ -1,0 +1,956 @@
+[0.063s] Invoking command in '/root/ros2_workspace/build/ros_gz_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /root/ros2_workspace/src/ros_gz/ros_gz_interfaces -DCMAKE_INSTALL_PREFIX=/root/ros2_workspace/install/ros_gz_interfaces
+[0.694s] -- The C compiler identification is GNU 11.4.0
+[0.887s] -- The CXX compiler identification is GNU 11.4.0
+[0.916s] -- Detecting C compiler ABI info
+[1.099s] -- Detecting C compiler ABI info - done
+[1.110s] -- Check for working C compiler: /usr/bin/cc - skipped
+[1.111s] -- Detecting C compile features
+[1.111s] -- Detecting C compile features - done
+[1.118s] -- Detecting CXX compiler ABI info
+[1.262s] -- Detecting CXX compiler ABI info - done
+[1.277s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.278s] -- Detecting CXX compile features
+[1.279s] -- Detecting CXX compile features - done
+[1.298s] -- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+[1.414s] -- Found Python3: /usr/bin/python3 (found version "3.10.12") found components: Interpreter 
+[1.519s] -- Found builtin_interfaces: 1.2.2 (/opt/ros/humble/share/builtin_interfaces/cmake)
+[1.559s] -- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+[1.566s] -- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)
+[1.574s] -- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+[1.590s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.611s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[1.630s] -- Found rcl_interfaces: 1.2.2 (/opt/ros/humble/share/rcl_interfaces/cmake)
+[1.648s] -- Found std_msgs: 4.9.0 (/opt/ros/humble/share/std_msgs/cmake)
+[1.670s] -- Found geometry_msgs: 4.9.0 (/opt/ros/humble/share/geometry_msgs/cmake)
+[1.684s] -- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)
+[4.384s] -- Found ament_cmake_cppcheck: 0.12.14 (/opt/ros/humble/share/ament_cmake_cppcheck/cmake)
+[4.391s] -- Found ament_cmake_cpplint: 0.12.14 (/opt/ros/humble/share/ament_cmake_cpplint/cmake)
+[4.401s] -- Found ament_cmake_uncrustify: 0.12.14 (/opt/ros/humble/share/ament_cmake_uncrustify/cmake)
+[4.411s] -- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)
+[7.233s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[8.150s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[8.198s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.10.12", minimum required is "3.6") 
+[8.201s] -- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)
+[8.238s] -- Found PythonLibs: /usr/lib/aarch64-linux-gnu/libpython3.10.so (found suitable version "3.10.12", minimum required is "3.5") 
+[8.240s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[8.241s] -- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10
+[8.242s] -- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so
+[8.264s] -- Found PythonExtra: .so  
+[8.715s] -- Found ament_cmake_flake8: 0.12.14 (/opt/ros/humble/share/ament_cmake_flake8/cmake)
+[8.721s] -- Found ament_cmake_pep257: 0.12.14 (/opt/ros/humble/share/ament_cmake_pep257/cmake)
+[8.945s] -- Configuring done
+[9.999s] -- Generating done
+[10.279s] -- Build files have been written to: /root/ros2_workspace/build/ros_gz_interfaces
+[10.311s] Invoked command in '/root/ros2_workspace/build/ros_gz_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake /root/ros2_workspace/src/ros_gz/ros_gz_interfaces -DCMAKE_INSTALL_PREFIX=/root/ros2_workspace/install/ros_gz_interfaces
+[10.321s] Invoking command in '/root/ros2_workspace/build/ros_gz_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/ros2_workspace/build/ros_gz_interfaces -- -j10 -l10
+[10.414s] [  1%] [34m[1mGenerating C code for ROS interfaces[0m
+[10.441s] [  1%] Built target ament_cmake_python_copy_ros_gz_interfaces
+[10.466s] [  1%] [34m[1mGenerating C++ code for ROS interfaces[0m
+[10.886s] running egg_info
+[10.890s] creating ros_gz_interfaces.egg-info
+[10.893s] writing ros_gz_interfaces.egg-info/PKG-INFO
+[10.898s] writing dependency_links to ros_gz_interfaces.egg-info/dependency_links.txt
+[10.905s] writing top-level names to ros_gz_interfaces.egg-info/top_level.txt
+[10.911s] writing manifest file 'ros_gz_interfaces.egg-info/SOURCES.txt'
+[10.923s] reading manifest file 'ros_gz_interfaces.egg-info/SOURCES.txt'
+[10.927s] writing manifest file 'ros_gz_interfaces.egg-info/SOURCES.txt'
+[10.986s] [  1%] Built target ament_cmake_python_build_ros_gz_interfaces_egg
+[15.047s] [  1%] Built target ros_gz_interfaces__cpp
+[15.124s] [  3%] [34m[1mGenerating C++ type support dispatch for ROS interfaces[0m
+[15.125s] [  3%] [34m[1mGenerating C++ type support for eProsima Fast-RTPS[0m
+[15.217s] [  4%] [34m[1mGenerating C++ introspection for ROS interfaces[0m
+[15.259s] [  6%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/contacts__functions.c.o[0m
+[15.266s] [  7%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/contact__functions.c.o[0m
+[15.268s] [  7%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/dataframe__functions.c.o[0m
+[15.270s] [  7%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/entity_factory__functions.c.o[0m
+[15.284s] [  7%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/altimeter__functions.c.o[0m
+[15.301s] [  7%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/entity_wrench__functions.c.o[0m
+[15.328s] [  7%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/entity__functions.c.o[0m
+[15.704s] [  7%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/float32_array__functions.c.o[0m
+[15.723s] [  8%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/joint_wrench__functions.c.o[0m
+[15.730s] [  8%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/gui_camera__functions.c.o[0m
+[15.740s] [  9%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/logical_camera_image__functions.c.o[0m
+[15.755s] [  9%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/light__functions.c.o[0m
+[15.776s] [ 10%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/logical_camera_image_model__functions.c.o[0m
+[15.793s] [ 10%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/material_color__functions.c.o[0m
+[16.331s] [ 11%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/param_vec__functions.c.o[0m
+[16.388s] [ 11%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/sensor_noise__functions.c.o[0m
+[16.390s] [ 11%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/string_vec__functions.c.o[0m
+[16.422s] [ 12%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/track_visual__functions.c.o[0m
+[16.476s] [ 13%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/video_record__functions.c.o[0m
+[16.478s] [ 13%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/world_control__functions.c.o[0m
+[16.479s] [ 13%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/msg/detail/world_reset__functions.c.o[0m
+[16.619s] [ 14%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/srv/detail/control_world__functions.c.o[0m
+[16.670s] [ 14%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/srv/detail/delete_entity__functions.c.o[0m
+[16.742s] [ 15%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/srv/detail/set_entity_pose__functions.c.o[0m
+[16.753s] [ 15%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_c.dir/rosidl_generator_c/ros_gz_interfaces/srv/detail/spawn_entity__functions.c.o[0m
+[17.072s] [ 16%] [32m[1mLinking C shared library libros_gz_interfaces__rosidl_generator_c.so[0m
+[17.625s] [ 16%] Built target ros_gz_interfaces__rosidl_generator_c
+[17.673s] [ 19%] [34m[1mGenerating C type support for eProsima Fast-RTPS[0m
+[17.676s] [ 19%] [34m[1mGenerating C type support dispatch for ROS interfaces[0m
+[17.683s] [ 19%] [34m[1mGenerating C introspection for ROS interfaces[0m
+[19.155s] [ 19%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/altimeter__type_support.cpp.o[0m
+[19.161s] [ 20%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/contact__type_support.cpp.o[0m
+[19.167s] [ 20%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/contacts__type_support.cpp.o[0m
+[19.169s] [ 20%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/dataframe__type_support.cpp.o[0m
+[19.174s] [ 21%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/entity__type_support.cpp.o[0m
+[21.122s] [ 22%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/entity_wrench__type_support.cpp.o[0m
+[21.131s] [ 22%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/entity_factory__type_support.cpp.o[0m
+[21.137s] [ 22%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/altimeter__type_support.cpp.o[0m
+[21.140s] [ 23%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/contact__type_support.cpp.o[0m
+[21.152s] [ 23%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/float32_array__type_support.cpp.o[0m
+[21.192s] [ 24%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/gui_camera__type_support.cpp.o[0m
+[21.639s] [ 24%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/altimeter__type_support.cpp.o[0m
+[22.028s] [ 24%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/joint_wrench__type_support.cpp.o[0m
+[22.086s] [ 25%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/contact__type_support.cpp.o[0m
+[22.305s] [ 25%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/altimeter__type_support.cpp.o[0m
+[22.308s] [ 26%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/contact__type_support.cpp.o[0m
+[22.313s] [ 27%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/light__type_support.cpp.o[0m
+[22.438s] [ 27%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/contacts__type_support.cpp.o[0m
+[22.452s] [ 27%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/contacts__type_support.cpp.o[0m
+[22.593s] [ 27%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/dataframe__type_support.cpp.o[0m
+[22.725s] [ 28%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/entity__type_support.cpp.o[0m
+[22.801s] [ 28%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/entity_factory__type_support.cpp.o[0m
+[22.861s] [ 29%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/entity_wrench__type_support.cpp.o[0m
+[22.886s] [ 29%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/float32_array__type_support.cpp.o[0m
+[22.946s] [ 30%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/gui_camera__type_support.cpp.o[0m
+[23.020s] [ 31%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/dataframe__type_support.cpp.o[0m
+[23.088s] [ 31%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/joint_wrench__type_support.cpp.o[0m
+[23.132s] [ 31%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/logical_camera_image__type_support.cpp.o[0m
+[23.185s] [ 31%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/contacts__type_support.cpp.o[0m
+[23.187s] [ 31%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/logical_camera_image_model__type_support.cpp.o[0m
+[23.201s] [ 32%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/light__type_support.cpp.o[0m
+[23.260s] [ 32%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/altimeter__type_support_c.cpp.o[0m
+[23.263s] [ 32%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/altimeter__type_support.c.o[0m
+[23.284s] [ 32%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/logical_camera_image__type_support.cpp.o[0m
+[23.399s] [ 33%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/dataframe__type_support.cpp.o[0m
+[23.421s] [ 33%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/logical_camera_image_model__type_support.cpp.o[0m
+[23.473s] [ 34%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/contact__type_support.c.o[0m
+[23.531s] [ 35%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/material_color__type_support.cpp.o[0m
+[23.609s] [ 35%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/entity__type_support.cpp.o[0m
+[23.613s] [ 35%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/param_vec__type_support.cpp.o[0m
+[23.670s] [ 35%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/contacts__type_support.c.o[0m
+[23.701s] [ 36%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/sensor_noise__type_support.cpp.o[0m
+[23.953s] [ 36%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/string_vec__type_support.cpp.o[0m
+[24.051s] [ 37%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/dataframe__type_support.c.o[0m
+[24.077s] [ 37%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/entity__type_support.cpp.o[0m
+[24.079s] [ 38%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/track_visual__type_support.cpp.o[0m
+[24.101s] [ 38%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/entity__type_support.c.o[0m
+[24.125s] [ 39%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/material_color__type_support.cpp.o[0m
+[24.168s] [ 39%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/video_record__type_support.cpp.o[0m
+[24.193s] [ 40%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/contact__type_support_c.cpp.o[0m
+[24.224s] [ 41%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/entity_factory__type_support.c.o[0m
+[24.319s] [ 41%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/entity_wrench__type_support.c.o[0m
+[24.323s] [ 42%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/world_control__type_support.cpp.o[0m
+[24.443s] [ 42%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/entity_factory__type_support.cpp.o[0m
+[24.464s] [ 42%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/msg/world_reset__type_support.cpp.o[0m
+[24.542s] [ 42%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/param_vec__type_support.cpp.o[0m
+[24.552s] [ 42%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/float32_array__type_support.c.o[0m
+[24.599s] [ 42%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/srv/control_world__type_support.cpp.o[0m
+[24.843s] [ 43%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/sensor_noise__type_support.cpp.o[0m
+[24.850s] [ 43%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/contacts__type_support_c.cpp.o[0m
+[24.861s] [ 44%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/srv/delete_entity__type_support.cpp.o[0m
+[24.879s] [ 45%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/gui_camera__type_support.c.o[0m
+[24.952s] [ 46%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/entity_factory__type_support.cpp.o[0m
+[24.972s] [ 46%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/string_vec__type_support.cpp.o[0m
+[24.988s] [ 46%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/srv/set_entity_pose__type_support.cpp.o[0m
+[25.100s] [ 47%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c.dir/rosidl_typesupport_c/ros_gz_interfaces/srv/spawn_entity__type_support.cpp.o[0m
+[25.103s] [ 47%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/entity_wrench__type_support.cpp.o[0m
+[25.111s] [ 47%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/joint_wrench__type_support.c.o[0m
+[25.204s] [ 47%] [32m[1mLinking CXX shared library libros_gz_interfaces__rosidl_typesupport_c.so[0m
+[25.280s] [ 48%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/dataframe__type_support_c.cpp.o[0m
+[25.336s] [ 50%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/light__type_support.c.o[0m
+[25.341s] [ 50%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/track_visual__type_support.cpp.o[0m
+[25.687s] [ 50%] Built target ros_gz_interfaces__rosidl_typesupport_c
+[25.693s] [ 50%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/entity__type_support_c.cpp.o[0m
+[25.695s] [ 50%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/float32_array__type_support.cpp.o[0m
+[25.713s] [ 50%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/logical_camera_image__type_support.c.o[0m
+[25.800s] [ 52%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/video_record__type_support.cpp.o[0m
+[25.806s] [ 52%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/gui_camera__type_support.cpp.o[0m
+[25.808s] [ 52%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/entity_wrench__type_support.cpp.o[0m
+[26.083s] [ 53%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/float32_array__type_support.cpp.o[0m
+[26.085s] [ 53%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support.c.o[0m
+[26.287s] [ 53%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/material_color__type_support.c.o[0m
+[26.380s] [ 53%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/entity_factory__type_support_c.cpp.o[0m
+[26.471s] [ 54%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/gui_camera__type_support.cpp.o[0m
+[26.474s] [ 55%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/param_vec__type_support.c.o[0m
+[26.649s] [ 55%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/joint_wrench__type_support.cpp.o[0m
+[26.671s] [ 55%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/sensor_noise__type_support.c.o[0m
+[26.702s] [ 56%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/world_control__type_support.cpp.o[0m
+[26.727s] [ 56%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/msg/world_reset__type_support.cpp.o[0m
+[26.865s] [ 56%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/string_vec__type_support.c.o[0m
+[27.038s] [ 57%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/track_visual__type_support.c.o[0m
+[27.080s] [ 58%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/light__type_support.cpp.o[0m
+[27.108s] [ 58%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/joint_wrench__type_support.cpp.o[0m
+[27.124s] [ 58%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/srv/control_world__type_support.cpp.o[0m
+[27.170s] [ 59%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/entity_wrench__type_support_c.cpp.o[0m
+[27.178s] [ 59%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/video_record__type_support.c.o[0m
+[27.345s] [ 60%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/world_control__type_support.c.o[0m
+[27.368s] [ 60%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/msg/detail/world_reset__type_support.c.o[0m
+[27.394s] [ 61%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/srv/delete_entity__type_support.cpp.o[0m
+[27.665s] [ 62%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/srv/detail/control_world__type_support.c.o[0m
+[27.667s] [ 62%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/float32_array__type_support_c.cpp.o[0m
+[27.715s] [ 63%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/srv/set_entity_pose__type_support.cpp.o[0m
+[27.730s] [ 63%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/light__type_support.cpp.o[0m
+[27.833s] [ 63%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/srv/detail/delete_entity__type_support.c.o[0m
+[27.995s] [ 64%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/srv/detail/set_entity_pose__type_support.c.o[0m
+[28.074s] [ 64%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/logical_camera_image__type_support.cpp.o[0m
+[28.153s] [ 64%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c.dir/rosidl_typesupport_introspection_c/ros_gz_interfaces/srv/detail/spawn_entity__type_support.c.o[0m
+[28.189s] [ 65%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/gui_camera__type_support_c.cpp.o[0m
+[28.227s] [ 65%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/joint_wrench__type_support_c.cpp.o[0m
+[28.368s] [ 65%] [32m[1mLinking C shared library libros_gz_interfaces__rosidl_typesupport_introspection_c.so[0m
+[28.389s] [ 66%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/logical_camera_image_model__type_support.cpp.o[0m
+[28.413s] [ 66%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/logical_camera_image__type_support.cpp.o[0m
+[28.464s] [ 67%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_cpp.dir/rosidl_typesupport_cpp/ros_gz_interfaces/srv/spawn_entity__type_support.cpp.o[0m
+[28.488s] [ 68%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support.cpp.o[0m
+[28.527s] [ 68%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/material_color__type_support.cpp.o[0m
+[28.695s] [ 68%] Built target ros_gz_interfaces__rosidl_typesupport_introspection_c
+[28.717s] [ 69%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/param_vec__type_support.cpp.o[0m
+[28.771s] [ 69%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/material_color__type_support.cpp.o[0m
+[28.973s] [ 69%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/sensor_noise__type_support.cpp.o[0m
+[28.989s] [ 70%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/light__type_support_c.cpp.o[0m
+[29.088s] [ 70%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/param_vec__type_support.cpp.o[0m
+[29.268s] [ 70%] [32m[1mLinking CXX shared library libros_gz_interfaces__rosidl_typesupport_cpp.so[0m
+[29.999s] [ 71%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/sensor_noise__type_support.cpp.o[0m
+[30.042s] [ 71%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/string_vec__type_support.cpp.o[0m
+[30.063s] [ 71%] Built target ros_gz_interfaces__rosidl_typesupport_cpp
+[30.085s] [ 72%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/track_visual__type_support.cpp.o[0m
+[30.113s] [ 72%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/string_vec__type_support.cpp.o[0m
+[30.124s] [ 72%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/video_record__type_support.cpp.o[0m
+[30.465s] [ 72%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/logical_camera_image__type_support_c.cpp.o[0m
+[30.531s] [ 73%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/world_control__type_support.cpp.o[0m
+[30.595s] [ 73%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/msg/detail/world_reset__type_support.cpp.o[0m
+[30.887s] [ 74%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/srv/detail/control_world__type_support.cpp.o[0m
+[30.908s] [ 75%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support_c.cpp.o[0m
+[31.793s] [ 75%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/material_color__type_support_c.cpp.o[0m
+[31.809s] [ 76%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/track_visual__type_support.cpp.o[0m
+[31.857s] [ 76%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/srv/detail/delete_entity__type_support.cpp.o[0m
+[31.862s] [ 77%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/srv/detail/set_entity_pose__type_support.cpp.o[0m
+[31.883s] [ 77%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/video_record__type_support.cpp.o[0m
+[31.909s] [ 77%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_cpp.dir/rosidl_typesupport_introspection_cpp/ros_gz_interfaces/srv/detail/spawn_entity__type_support.cpp.o[0m
+[32.106s] [ 78%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/world_control__type_support.cpp.o[0m
+[32.131s] [ 78%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/msg/detail/dds_fastrtps/world_reset__type_support.cpp.o[0m
+[32.354s] [ 78%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/param_vec__type_support_c.cpp.o[0m
+[32.477s] [ 79%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/sensor_noise__type_support_c.cpp.o[0m
+[32.727s] [ 79%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/string_vec__type_support_c.cpp.o[0m
+[32.824s] [ 80%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/srv/detail/dds_fastrtps/control_world__type_support.cpp.o[0m
+[32.917s] [ 80%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/srv/detail/dds_fastrtps/delete_entity__type_support.cpp.o[0m
+[32.934s] [ 81%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/track_visual__type_support_c.cpp.o[0m
+[32.986s] [ 82%] [32m[1mLinking CXX shared library libros_gz_interfaces__rosidl_typesupport_introspection_cpp.so[0m
+[33.061s] [ 82%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/srv/detail/dds_fastrtps/set_entity_pose__type_support.cpp.o[0m
+[33.099s] [ 83%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.dir/rosidl_typesupport_fastrtps_cpp/ros_gz_interfaces/srv/detail/dds_fastrtps/spawn_entity__type_support.cpp.o[0m
+[33.114s] [ 83%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/video_record__type_support_c.cpp.o[0m
+[33.248s] [ 84%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/world_control__type_support_c.cpp.o[0m
+[33.395s] [ 84%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/msg/detail/world_reset__type_support_c.cpp.o[0m
+[33.528s] [ 85%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/srv/detail/control_world__type_support_c.cpp.o[0m
+[33.535s] [ 85%] Built target ros_gz_interfaces__rosidl_typesupport_introspection_cpp
+[33.545s] [ 85%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/srv/detail/delete_entity__type_support_c.cpp.o[0m
+[33.673s] [ 85%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/srv/detail/set_entity_pose__type_support_c.cpp.o[0m
+[33.779s] [ 86%] [32mBuilding CXX object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c.dir/rosidl_typesupport_fastrtps_c/ros_gz_interfaces/srv/detail/spawn_entity__type_support_c.cpp.o[0m
+[33.989s] [ 86%] [32m[1mLinking CXX shared library libros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.so[0m
+[34.301s] [ 86%] Built target ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp
+[34.365s] [ 86%] [32m[1mLinking CXX shared library libros_gz_interfaces__rosidl_typesupport_fastrtps_c.so[0m
+[34.530s] [ 86%] Built target ros_gz_interfaces__rosidl_typesupport_fastrtps_c
+[34.569s] [ 86%] Built target ros_gz_interfaces
+[34.594s] [ 86%] [34m[1mGenerating Python code for ROS interfaces[0m
+[40.886s] [ 86%] Built target ros_gz_interfaces__py
+[40.937s] [ 87%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_contact_s.c.o[0m
+[40.939s] [ 87%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_dataframe_s.c.o[0m
+[40.940s] [ 88%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_float32_array_s.c.o[0m
+[40.943s] [ 89%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_joint_wrench_s.c.o[0m
+[40.946s] [ 88%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_contacts_s.c.o[0m
+[40.948s] [ 88%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_altimeter_s.c.o[0m
+[40.950s] [ 90%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_entity_factory_s.c.o[0m
+[40.960s] [ 90%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_entity_s.c.o[0m
+[40.966s] [ 90%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_entity_wrench_s.c.o[0m
+[40.968s] [ 90%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_gui_camera_s.c.o[0m
+[41.597s] [ 90%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_light_s.c.o[0m
+[41.609s] [ 91%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_logical_camera_image_s.c.o[0m
+[41.612s] [ 91%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_logical_camera_image_model_s.c.o[0m
+[41.619s] [ 92%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_material_color_s.c.o[0m
+[41.622s] [ 92%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_param_vec_s.c.o[0m
+[41.623s] [ 93%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_string_vec_s.c.o[0m
+[41.626s] [ 93%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_sensor_noise_s.c.o[0m
+[41.652s] [ 94%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_track_visual_s.c.o[0m
+[41.660s] [ 94%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_video_record_s.c.o[0m
+[41.662s] [ 94%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_world_control_s.c.o[0m
+[42.222s] [ 95%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/msg/_world_reset_s.c.o[0m
+[42.229s] [ 95%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/srv/_control_world_s.c.o[0m
+[42.244s] [ 96%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/srv/_delete_entity_s.c.o[0m
+[42.251s] [ 97%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/srv/_spawn_entity_s.c.o[0m
+[42.253s] [ 97%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_generator_py.dir/rosidl_generator_py/ros_gz_interfaces/srv/_set_entity_pose_s.c.o[0m
+[42.484s] [ 97%] [32m[1mLinking C shared library rosidl_generator_py/ros_gz_interfaces/libros_gz_interfaces__rosidl_generator_py.so[0m
+[42.632s] [ 97%] Built target ros_gz_interfaces__rosidl_generator_py
+[42.675s] [100%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_fastrtps_c__pyext.dir/rosidl_generator_py/ros_gz_interfaces/_ros_gz_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c.o[0m
+[42.675s] [100%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_c__pyext.dir/rosidl_generator_py/ros_gz_interfaces/_ros_gz_interfaces_s.ep.rosidl_typesupport_c.c.o[0m
+[42.677s] [100%] [32mBuilding C object CMakeFiles/ros_gz_interfaces__rosidl_typesupport_introspection_c__pyext.dir/rosidl_generator_py/ros_gz_interfaces/_ros_gz_interfaces_s.ep.rosidl_typesupport_introspection_c.c.o[0m
+[43.064s] [100%] [32m[1mLinking C shared library rosidl_generator_py/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so[0m
+[43.090s] [100%] [32m[1mLinking C shared library rosidl_generator_py/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so[0m
+[43.097s] [100%] [32m[1mLinking C shared library rosidl_generator_py/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so[0m
+[43.179s] [100%] Built target ros_gz_interfaces__rosidl_typesupport_c__pyext
+[43.214s] [100%] Built target ros_gz_interfaces__rosidl_typesupport_fastrtps_c__pyext
+[43.223s] [100%] Built target ros_gz_interfaces__rosidl_typesupport_introspection_c__pyext
+[43.390s] Invoked command in '/root/ros2_workspace/build/ros_gz_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /root/ros2_workspace/build/ros_gz_interfaces -- -j10 -l10
+[43.423s] Invoking command in '/root/ros2_workspace/build/ros_gz_interfaces': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/ros2_workspace/build/ros_gz_interfaces
+[43.433s] -- Install configuration: ""
+[43.436s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ament_index/resource_index/rosidl_interfaces/ros_gz_interfaces
+[43.442s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces
+[43.445s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg
+[43.449s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/sensor_noise.h
+[43.455s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/gui_camera.h
+[43.466s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/rosidl_generator_c__visibility_control.h
+[43.473s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity_wrench.h
+[43.480s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/altimeter.h
+[43.486s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/light.h
+[43.491s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/param_vec.h
+[43.497s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/material_color.h
+[43.502s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/track_visual.h
+[43.508s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/string_vec.h
+[43.514s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/contact.h
+[43.519s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail
+[43.522s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__struct.h
+[43.527s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__type_support.h
+[43.533s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__type_support.h
+[43.540s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__functions.h
+[43.549s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__functions.h
+[43.560s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__functions.h
+[43.568s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__type_support.h
+[43.575s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__struct.h
+[43.582s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__functions.h
+[43.587s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__functions.h
+[43.594s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__type_support.h
+[43.601s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__struct.h
+[43.607s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__functions.h
+[43.613s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__functions.h
+[43.619s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__struct.h
+[43.624s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__type_support.h
+[43.630s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__type_support.h
+[43.642s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__struct.h
+[43.648s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__functions.c
+[43.654s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__struct.h
+[43.660s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__struct.h
+[43.666s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__functions.h
+[43.672s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__functions.h
+[43.681s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__functions.c
+[43.691s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__functions.h
+[43.698s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__functions.c
+[43.707s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__functions.h
+[43.727s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__functions.h
+[43.734s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__functions.c
+[43.742s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__struct.h
+[43.748s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__struct.h
+[43.754s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__struct.h
+[43.764s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__struct.h
+[43.777s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__functions.h
+[43.783s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__functions.h
+[43.790s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__functions.c
+[43.797s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__functions.h
+[43.803s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__functions.c
+[43.810s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__type_support.h
+[43.816s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__type_support.h
+[43.822s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__functions.c
+[43.829s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__functions.c
+[43.838s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__type_support.h
+[43.846s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__functions.c
+[43.855s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__struct.h
+[43.861s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__struct.h
+[43.866s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__type_support.h
+[43.873s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__struct.h
+[43.878s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__type_support.h
+[43.884s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__struct.h
+[43.891s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__functions.c
+[43.900s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__struct.h
+[43.907s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support.h
+[43.913s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__type_support.h
+[43.918s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__type_support.h
+[43.924s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__type_support.h
+[43.931s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__functions.c
+[43.937s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__functions.c
+[43.943s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__struct.h
+[43.954s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__type_support.h
+[43.961s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__functions.c
+[43.968s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__struct.h
+[43.976s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__functions.c
+[43.982s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__functions.c
+[43.988s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__functions.h
+[43.995s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__functions.h
+[44.001s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__functions.c
+[44.011s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__functions.c
+[44.026s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__type_support.h
+[44.034s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__functions.c
+[44.042s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__functions.h
+[44.051s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__struct.h
+[44.058s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__type_support.h
+[44.065s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__struct.h
+[44.072s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__functions.h
+[44.079s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__functions.c
+[44.085s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__functions.h
+[44.098s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__functions.c
+[44.108s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__functions.c
+[44.117s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__type_support.h
+[44.125s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__struct.h
+[44.130s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__type_support.h
+[44.134s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__functions.h
+[44.140s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__type_support.h
+[44.145s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity.h
+[44.151s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/contacts.h
+[44.156s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/joint_wrench.h
+[44.161s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/video_record.h
+[44.166s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/logical_camera_image.h
+[44.172s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/dataframe.h
+[44.176s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/world_control.h
+[44.183s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/world_reset.h
+[44.189s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity_factory.h
+[44.196s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/float32_array.h
+[44.202s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/logical_camera_image_model.h
+[44.208s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv
+[44.212s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail
+[44.218s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__type_support.h
+[44.232s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__struct.h
+[44.239s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__type_support.h
+[44.245s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__struct.h
+[44.250s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__functions.c
+[44.260s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__functions.c
+[44.266s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__functions.c
+[44.271s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__functions.h
+[44.278s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__struct.h
+[44.282s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__type_support.h
+[44.287s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__functions.h
+[44.293s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__functions.h
+[44.299s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__struct.h
+[44.305s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__type_support.h
+[44.310s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__functions.c
+[44.317s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__functions.h
+[44.323s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/set_entity_pose.h
+[44.330s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/control_world.h
+[44.336s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/spawn_entity.h
+[44.340s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/delete_entity.h
+[44.346s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/library_path.sh
+[44.350s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/library_path.dsv
+[44.359s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_generator_c.so
+[44.375s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_generator_c.so" to ""
+[44.376s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces
+[44.378s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg
+[44.379s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail
+[44.385s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__rosidl_typesupport_fastrtps_c.h
+[44.393s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__rosidl_typesupport_fastrtps_c.h
+[44.400s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__rosidl_typesupport_fastrtps_c.h
+[44.405s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__rosidl_typesupport_fastrtps_c.h
+[44.409s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__rosidl_typesupport_fastrtps_c.h
+[44.416s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__rosidl_typesupport_fastrtps_c.h
+[44.421s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__rosidl_typesupport_fastrtps_c.h
+[44.426s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__rosidl_typesupport_fastrtps_c.h
+[44.434s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__rosidl_typesupport_fastrtps_c.h
+[44.440s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__rosidl_typesupport_fastrtps_c.h
+[44.446s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__rosidl_typesupport_fastrtps_c.h
+[44.452s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__rosidl_typesupport_fastrtps_c.h
+[44.458s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__rosidl_typesupport_fastrtps_c.h
+[44.466s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__rosidl_typesupport_fastrtps_c.h
+[44.471s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__rosidl_typesupport_fastrtps_c.h
+[44.475s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__rosidl_typesupport_fastrtps_c.h
+[44.481s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__rosidl_typesupport_fastrtps_c.h
+[44.485s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__rosidl_typesupport_fastrtps_c.h
+[44.490s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__rosidl_typesupport_fastrtps_c.h
+[44.497s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__rosidl_typesupport_fastrtps_c.h
+[44.502s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__rosidl_typesupport_fastrtps_c.h
+[44.507s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h
+[44.512s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv
+[44.514s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail
+[44.515s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__rosidl_typesupport_fastrtps_c.h
+[44.522s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__rosidl_typesupport_fastrtps_c.h
+[44.528s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__rosidl_typesupport_fastrtps_c.h
+[44.535s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__rosidl_typesupport_fastrtps_c.h
+[44.541s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_fastrtps_c.so
+[44.556s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_fastrtps_c.so" to ""
+[44.557s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces
+[44.558s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg
+[44.560s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/material_color.hpp
+[44.566s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/logical_camera_image_model.hpp
+[44.570s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/logical_camera_image.hpp
+[44.576s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/joint_wrench.hpp
+[44.581s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/video_record.hpp
+[44.592s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/sensor_noise.hpp
+[44.597s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/contact.hpp
+[44.607s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/altimeter.hpp
+[44.621s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/world_reset.hpp
+[44.627s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/param_vec.hpp
+[44.641s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail
+[44.644s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__builder.hpp
+[44.650s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__struct.hpp
+[44.661s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__type_support.hpp
+[44.675s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__traits.hpp
+[44.686s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__struct.hpp
+[44.704s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__builder.hpp
+[44.714s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__struct.hpp
+[44.726s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__builder.hpp
+[44.737s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__traits.hpp
+[44.819s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__type_support.hpp
+[44.832s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__struct.hpp
+[44.842s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__traits.hpp
+[44.850s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__type_support.hpp
+[44.856s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__builder.hpp
+[44.863s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__struct.hpp
+[44.872s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__type_support.hpp
+[44.879s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__struct.hpp
+[44.888s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__type_support.hpp
+[44.896s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__builder.hpp
+[44.909s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__type_support.hpp
+[44.917s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__builder.hpp
+[44.924s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__type_support.hpp
+[44.934s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__type_support.hpp
+[44.946s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__struct.hpp
+[44.954s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__traits.hpp
+[44.961s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__struct.hpp
+[44.971s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__type_support.hpp
+[44.977s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support.hpp
+[44.984s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__struct.hpp
+[44.990s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__struct.hpp
+[44.997s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__struct.hpp
+[45.013s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__traits.hpp
+[45.023s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__struct.hpp
+[45.038s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__struct.hpp
+[45.044s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__traits.hpp
+[45.052s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__traits.hpp
+[45.058s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__traits.hpp
+[45.064s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__struct.hpp
+[45.074s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__builder.hpp
+[45.080s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__traits.hpp
+[45.087s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__builder.hpp
+[45.099s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__builder.hpp
+[45.106s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__struct.hpp
+[45.113s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__traits.hpp
+[45.119s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__type_support.hpp
+[45.125s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__struct.hpp
+[45.133s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__traits.hpp
+[45.139s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__type_support.hpp
+[45.152s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__traits.hpp
+[45.159s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__builder.hpp
+[45.166s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__builder.hpp
+[45.173s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__builder.hpp
+[45.181s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__type_support.hpp
+[45.188s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__builder.hpp
+[45.194s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__builder.hpp
+[45.201s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__traits.hpp
+[45.206s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__traits.hpp
+[45.212s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__struct.hpp
+[45.224s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__type_support.hpp
+[45.232s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__traits.hpp
+[45.239s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__type_support.hpp
+[45.246s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__traits.hpp
+[45.254s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__type_support.hpp
+[45.261s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__traits.hpp
+[45.267s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__type_support.hpp
+[45.275s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__builder.hpp
+[45.282s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__builder.hpp
+[45.290s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__traits.hpp
+[45.299s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__traits.hpp
+[45.305s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__type_support.hpp
+[45.311s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__builder.hpp
+[45.319s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__traits.hpp
+[45.326s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__struct.hpp
+[45.331s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__struct.hpp
+[45.337s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__builder.hpp
+[45.344s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__builder.hpp
+[45.351s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__struct.hpp
+[45.356s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__type_support.hpp
+[45.363s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__builder.hpp
+[45.370s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__struct.hpp
+[45.377s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__type_support.hpp
+[45.390s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__traits.hpp
+[45.399s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__builder.hpp
+[45.410s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__type_support.hpp
+[45.416s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp
+[45.422s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/light.hpp
+[45.428s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity_wrench.hpp
+[45.434s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/dataframe.hpp
+[45.440s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/contacts.hpp
+[45.446s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/world_control.hpp
+[45.454s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/string_vec.hpp
+[45.461s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/track_visual.hpp
+[45.468s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity_factory.hpp
+[45.474s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/gui_camera.hpp
+[45.480s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity.hpp
+[45.486s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/float32_array.hpp
+[45.492s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv
+[45.495s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/set_entity_pose.hpp
+[45.504s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/control_world.hpp
+[45.512s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail
+[45.515s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__builder.hpp
+[45.522s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__traits.hpp
+[45.528s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__builder.hpp
+[45.536s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__builder.hpp
+[45.541s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__type_support.hpp
+[45.547s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__traits.hpp
+[45.553s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__type_support.hpp
+[45.561s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__struct.hpp
+[45.567s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__type_support.hpp
+[45.582s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__traits.hpp
+[45.587s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__builder.hpp
+[45.595s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__struct.hpp
+[45.603s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__struct.hpp
+[45.611s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__type_support.hpp
+[45.626s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__struct.hpp
+[45.633s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__traits.hpp
+[45.640s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/spawn_entity.hpp
+[45.647s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/delete_entity.hpp
+[45.657s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces
+[45.658s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg
+[45.660s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h
+[45.666s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail
+[45.668s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__rosidl_typesupport_fastrtps_cpp.hpp
+[45.674s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__rosidl_typesupport_fastrtps_cpp.hpp
+[45.680s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__rosidl_typesupport_fastrtps_cpp.hpp
+[45.689s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__rosidl_typesupport_fastrtps_cpp.hpp
+[45.700s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__rosidl_typesupport_fastrtps_cpp.hpp
+[45.706s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__rosidl_typesupport_fastrtps_cpp.hpp
+[45.716s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__rosidl_typesupport_fastrtps_cpp.hpp
+[45.723s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__rosidl_typesupport_fastrtps_cpp.hpp
+[45.729s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__rosidl_typesupport_fastrtps_cpp.hpp
+[45.736s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__rosidl_typesupport_fastrtps_cpp.hpp
+[45.745s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__rosidl_typesupport_fastrtps_cpp.hpp
+[45.758s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__rosidl_typesupport_fastrtps_cpp.hpp
+[45.766s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__rosidl_typesupport_fastrtps_cpp.hpp
+[45.782s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__rosidl_typesupport_fastrtps_cpp.hpp
+[45.793s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__rosidl_typesupport_fastrtps_cpp.hpp
+[45.798s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__rosidl_typesupport_fastrtps_cpp.hpp
+[45.804s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__rosidl_typesupport_fastrtps_cpp.hpp
+[45.812s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dds_fastrtps
+[45.823s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__rosidl_typesupport_fastrtps_cpp.hpp
+[45.835s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__rosidl_typesupport_fastrtps_cpp.hpp
+[45.849s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__rosidl_typesupport_fastrtps_cpp.hpp
+[45.858s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__rosidl_typesupport_fastrtps_cpp.hpp
+[45.867s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv
+[45.872s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail
+[45.875s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__rosidl_typesupport_fastrtps_cpp.hpp
+[45.890s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__rosidl_typesupport_fastrtps_cpp.hpp
+[45.912s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__rosidl_typesupport_fastrtps_cpp.hpp
+[45.928s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/dds_fastrtps
+[45.934s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__rosidl_typesupport_fastrtps_cpp.hpp
+[45.945s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.so
+[46.004s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.so" to ""
+[46.007s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces
+[46.009s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg
+[46.012s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail
+[46.019s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__rosidl_typesupport_introspection_c.h
+[46.034s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__rosidl_typesupport_introspection_c.h
+[46.046s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__rosidl_typesupport_introspection_c.h
+[46.055s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__type_support.c
+[46.063s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__type_support.c
+[46.073s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__type_support.c
+[46.083s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__type_support.c
+[46.096s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__rosidl_typesupport_introspection_c.h
+[46.111s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__type_support.c
+[46.124s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__type_support.c
+[46.136s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__rosidl_typesupport_introspection_c.h
+[46.144s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__type_support.c
+[46.160s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__rosidl_typesupport_introspection_c.h
+[46.173s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__rosidl_typesupport_introspection_c.h
+[46.188s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support.c
+[46.200s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__rosidl_typesupport_introspection_c.h
+[46.220s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__type_support.c
+[46.232s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__rosidl_typesupport_introspection_c.h
+[46.248s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__type_support.c
+[46.263s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__type_support.c
+[46.276s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__type_support.c
+[46.288s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__rosidl_typesupport_introspection_c.h
+[46.297s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__rosidl_typesupport_introspection_c.h
+[46.307s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__rosidl_typesupport_introspection_c.h
+[46.317s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__type_support.c
+[46.326s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__type_support.c
+[46.335s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__rosidl_typesupport_introspection_c.h
+[46.348s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__rosidl_typesupport_introspection_c.h
+[46.369s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__type_support.c
+[46.395s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__type_support.c
+[46.433s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__type_support.c
+[46.498s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__type_support.c
+[46.508s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__type_support.c
+[46.518s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__rosidl_typesupport_introspection_c.h
+[46.528s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__rosidl_typesupport_introspection_c.h
+[46.538s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__rosidl_typesupport_introspection_c.h
+[46.550s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__rosidl_typesupport_introspection_c.h
+[46.559s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__rosidl_typesupport_introspection_c.h
+[46.567s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__type_support.c
+[46.577s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__type_support.c
+[46.585s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__rosidl_typesupport_introspection_c.h
+[46.602s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__rosidl_typesupport_introspection_c.h
+[46.611s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h
+[46.620s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv
+[46.622s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail
+[46.626s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__type_support.c
+[46.638s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__rosidl_typesupport_introspection_c.h
+[46.649s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__type_support.c
+[46.660s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__rosidl_typesupport_introspection_c.h
+[46.672s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__rosidl_typesupport_introspection_c.h
+[46.680s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__type_support.c
+[46.690s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__rosidl_typesupport_introspection_c.h
+[46.697s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__type_support.c
+[46.711s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_introspection_c.so
+[46.732s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_introspection_c.so" to ""
+[46.735s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_c.so
+[46.750s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_c.so" to ""
+[46.754s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces
+[46.757s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg
+[46.764s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail
+[46.769s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__type_support.cpp
+[46.778s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__rosidl_typesupport_introspection_cpp.hpp
+[46.786s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__type_support.cpp
+[46.795s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__type_support.cpp
+[46.809s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__type_support.cpp
+[46.820s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__rosidl_typesupport_introspection_cpp.hpp
+[46.830s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__type_support.cpp
+[46.842s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__rosidl_typesupport_introspection_cpp.hpp
+[46.853s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__type_support.cpp
+[46.864s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__rosidl_typesupport_introspection_cpp.hpp
+[46.877s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__rosidl_typesupport_introspection_cpp.hpp
+[46.893s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__type_support.cpp
+[46.912s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__type_support.cpp
+[46.933s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__rosidl_typesupport_introspection_cpp.hpp
+[46.942s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__rosidl_typesupport_introspection_cpp.hpp
+[46.957s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__type_support.cpp
+[46.968s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__type_support.cpp
+[46.981s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__rosidl_typesupport_introspection_cpp.hpp
+[46.991s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__rosidl_typesupport_introspection_cpp.hpp
+[47.007s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__type_support.cpp
+[47.020s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__rosidl_typesupport_introspection_cpp.hpp
+[47.040s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__rosidl_typesupport_introspection_cpp.hpp
+[47.058s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__rosidl_typesupport_introspection_cpp.hpp
+[47.068s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__rosidl_typesupport_introspection_cpp.hpp
+[47.078s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support.cpp
+[47.086s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__type_support.cpp
+[47.098s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__rosidl_typesupport_introspection_cpp.hpp
+[47.110s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__rosidl_typesupport_introspection_cpp.hpp
+[47.118s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__rosidl_typesupport_introspection_cpp.hpp
+[47.128s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__rosidl_typesupport_introspection_cpp.hpp
+[47.136s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__type_support.cpp
+[47.150s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__rosidl_typesupport_introspection_cpp.hpp
+[47.162s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__type_support.cpp
+[47.174s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__rosidl_typesupport_introspection_cpp.hpp
+[47.184s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__rosidl_typesupport_introspection_cpp.hpp
+[47.200s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__type_support.cpp
+[47.211s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__type_support.cpp
+[47.224s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__type_support.cpp
+[47.234s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__rosidl_typesupport_introspection_cpp.hpp
+[47.253s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__type_support.cpp
+[47.262s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__type_support.cpp
+[47.285s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__type_support.cpp
+[47.296s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv
+[47.301s] -- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail
+[47.304s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__rosidl_typesupport_introspection_cpp.hpp
+[47.313s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__type_support.cpp
+[47.323s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__type_support.cpp
+[47.333s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__rosidl_typesupport_introspection_cpp.hpp
+[47.341s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__rosidl_typesupport_introspection_cpp.hpp
+[47.349s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__rosidl_typesupport_introspection_cpp.hpp
+[47.358s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__type_support.cpp
+[47.370s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__type_support.cpp
+[47.382s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_introspection_cpp.so
+[47.495s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_introspection_cpp.so" to ""
+[47.497s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_cpp.so
+[47.515s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_cpp.so" to ""
+[47.520s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/pythonpath.sh
+[47.530s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/pythonpath.dsv
+[47.538s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces-3.0.5-py3.10.egg-info
+[47.546s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces-3.0.5-py3.10.egg-info/PKG-INFO
+[47.554s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces-3.0.5-py3.10.egg-info/SOURCES.txt
+[47.562s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces-3.0.5-py3.10.egg-info/top_level.txt
+[47.572s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces-3.0.5-py3.10.egg-info/dependency_links.txt
+[47.581s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces
+[47.586s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[47.602s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg
+[47.609s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_track_visual_s.c
+[47.625s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_gui_camera.py
+[47.636s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_world_reset_s.c
+[47.646s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_world_reset.py
+[47.655s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_contacts.py
+[47.662s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_dataframe.py
+[47.672s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_sensor_noise.py
+[47.683s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_material_color_s.c
+[47.692s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_factory.py
+[47.698s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_logical_camera_image_model.py
+[47.708s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_logical_camera_image_model_s.c
+[47.717s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_light_s.c
+[47.724s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_float32_array.py
+[47.731s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_world_control.py
+[47.738s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity.py
+[47.745s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_light.py
+[47.754s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/__init__.py
+[47.762s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_contact_s.c
+[47.771s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_sensor_noise_s.c
+[47.781s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_logical_camera_image.py
+[47.792s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_altimeter.py
+[47.800s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_logical_camera_image_s.c
+[47.813s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_joint_wrench.py
+[47.822s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_video_record.py
+[47.832s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_wrench.py
+[47.838s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_wrench_s.c
+[47.851s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_param_vec.py
+[47.861s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_contacts_s.c
+[47.872s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_video_record_s.c
+[47.882s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_material_color.py
+[47.891s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_altimeter_s.c
+[47.905s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_world_control_s.c
+[47.914s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_s.c
+[47.928s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_factory_s.c
+[47.938s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_param_vec_s.c
+[47.948s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_joint_wrench_s.c
+[47.957s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_gui_camera_s.c
+[47.960s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_track_visual.py
+[47.965s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_contact.py
+[47.969s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_string_vec_s.c
+[47.977s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_float32_array_s.c
+[47.996s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_dataframe_s.c
+[48.009s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_string_vec.py
+[48.020s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/_ros_gz_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c
+[48.037s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[48.057s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/__init__.py
+[48.067s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/_ros_gz_interfaces_s.ep.rosidl_typesupport_c.c
+[48.086s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[48.109s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/_ros_gz_interfaces_s.ep.rosidl_typesupport_introspection_c.c
+[48.128s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/libros_gz_interfaces__rosidl_generator_py.so
+[48.147s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv
+[48.152s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_control_world_s.c
+[48.161s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_spawn_entity_s.c
+[48.172s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_control_world.py
+[48.181s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_delete_entity.py
+[48.187s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_set_entity_pose_s.c
+[48.193s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/__init__.py
+[48.201s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_set_entity_pose.py
+[48.213s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_spawn_entity.py
+[48.221s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_delete_entity_s.c
+[48.504s] Listing '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces'...
+[48.506s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/__init__.py'...
+[48.508s] Listing '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg'...
+[48.510s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/__init__.py'...
+[48.511s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_altimeter.py'...
+[48.512s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_contact.py'...
+[48.513s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_contacts.py'...
+[48.515s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_dataframe.py'...
+[48.516s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity.py'...
+[48.517s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_factory.py'...
+[48.518s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_wrench.py'...
+[48.519s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_float32_array.py'...
+[48.519s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_gui_camera.py'...
+[48.520s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_joint_wrench.py'...
+[48.521s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_light.py'...
+[48.522s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_logical_camera_image.py'...
+[48.524s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_logical_camera_image_model.py'...
+[48.525s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_material_color.py'...
+[48.525s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_param_vec.py'...
+[48.526s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_sensor_noise.py'...
+[48.527s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_string_vec.py'...
+[48.528s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_track_visual.py'...
+[48.529s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_video_record.py'...
+[48.530s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_world_control.py'...
+[48.531s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_world_reset.py'...
+[48.531s] Listing '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv'...
+[48.533s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/__init__.py'...
+[48.534s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_control_world.py'...
+[48.535s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_delete_entity.py'...
+[48.536s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_set_entity_pose.py'...
+[48.537s] Compiling '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_spawn_entity.py'...
+[48.551s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so
+[48.564s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so" to ""
+[48.570s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so
+[48.647s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so" to ""
+[48.653s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so
+[48.669s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so" to ""
+[48.672s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_generator_py.so
+[48.695s] -- Set runtime path of "/root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_generator_py.so" to ""
+[48.698s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Altimeter.idl
+[48.708s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Contact.idl
+[48.716s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Contacts.idl
+[48.723s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Dataframe.idl
+[48.734s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Entity.idl
+[48.743s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/EntityFactory.idl
+[48.754s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/EntityWrench.idl
+[48.765s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Float32Array.idl
+[48.777s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/GuiCamera.idl
+[48.790s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/JointWrench.idl
+[48.801s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Light.idl
+[48.809s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/LogicalCameraImage.idl
+[48.818s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/LogicalCameraImageModel.idl
+[48.886s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/MaterialColor.idl
+[48.896s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/ParamVec.idl
+[48.904s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/SensorNoise.idl
+[48.913s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/StringVec.idl
+[48.922s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/TrackVisual.idl
+[48.932s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/VideoRecord.idl
+[48.942s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/WorldControl.idl
+[48.952s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/WorldReset.idl
+[48.964s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/ControlWorld.idl
+[48.972s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/DeleteEntity.idl
+[48.982s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SetEntityPose.idl
+[48.991s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SpawnEntity.idl
+[49.001s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Altimeter.msg
+[49.020s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Contact.msg
+[49.042s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Contacts.msg
+[49.066s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Dataframe.msg
+[49.113s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Entity.msg
+[49.141s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/EntityFactory.msg
+[49.159s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/EntityWrench.msg
+[49.174s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Float32Array.msg
+[49.184s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/GuiCamera.msg
+[49.195s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/JointWrench.msg
+[49.201s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Light.msg
+[49.213s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/LogicalCameraImage.msg
+[49.228s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/LogicalCameraImageModel.msg
+[49.239s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/MaterialColor.msg
+[49.251s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/ParamVec.msg
+[49.264s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/SensorNoise.msg
+[49.289s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/StringVec.msg
+[49.302s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/TrackVisual.msg
+[49.311s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/VideoRecord.msg
+[49.323s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/WorldControl.msg
+[49.338s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/WorldReset.msg
+[49.349s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/ControlWorld.srv
+[49.361s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/ControlWorld_Request.msg
+[49.370s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/ControlWorld_Response.msg
+[49.381s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/DeleteEntity.srv
+[49.404s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/DeleteEntity_Request.msg
+[49.413s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/DeleteEntity_Response.msg
+[49.424s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SetEntityPose.srv
+[49.441s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SetEntityPose_Request.msg
+[49.449s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SetEntityPose_Response.msg
+[49.462s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SpawnEntity.srv
+[49.473s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SpawnEntity_Request.msg
+[49.488s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SpawnEntity_Response.msg
+[49.500s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ament_index/resource_index/package_run_dependencies/ros_gz_interfaces
+[49.511s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ament_index/resource_index/parent_prefix_path/ros_gz_interfaces
+[49.522s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/ament_prefix_path.sh
+[49.532s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/ament_prefix_path.dsv
+[49.543s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/path.sh
+[49.553s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/path.dsv
+[49.566s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/local_setup.bash
+[49.591s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/local_setup.sh
+[49.689s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/local_setup.zsh
+[49.713s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/local_setup.dsv
+[49.729s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/package.dsv
+[49.767s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ament_index/resource_index/packages/ros_gz_interfaces
+[49.782s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_generator_cExport.cmake
+[49.793s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_generator_cExport-noconfig.cmake
+[49.804s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_typesupport_fastrtps_cExport.cmake
+[49.851s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake
+[49.852s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_generator_cppExport.cmake
+[49.853s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake
+[49.854s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake
+[49.855s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_introspection_cExport.cmake
+[49.857s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake
+[49.865s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_cExport.cmake
+[49.876s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_cExport-noconfig.cmake
+[49.884s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_introspection_cppExport.cmake
+[49.893s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake
+[49.904s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_cppExport.cmake
+[49.914s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_cppExport-noconfig.cmake
+[49.923s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_generator_pyExport.cmake
+[49.935s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_generator_pyExport-noconfig.cmake
+[49.942s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/rosidl_cmake-extras.cmake
+[49.950s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake
+[49.961s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake
+[49.971s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ament_cmake_export_libraries-extras.cmake
+[49.979s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ament_cmake_export_targets-extras.cmake
+[49.990s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake
+[49.998s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake
+[50.007s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfacesConfig.cmake
+[50.023s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfacesConfig-version.cmake
+[50.035s] -- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/package.xml
+[50.069s] Invoked command in '/root/ros2_workspace/build/ros_gz_interfaces' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /root/ros2_workspace/build/ros_gz_interfaces

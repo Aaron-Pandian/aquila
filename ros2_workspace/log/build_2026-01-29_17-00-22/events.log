@@ -1,0 +1,278 @@
+[0.000000] (-) TimerEvent: {}
+[0.000627] (px4_msgs) JobQueued: {'identifier': 'px4_msgs', 'dependencies': OrderedDict()}
+[0.001092] (px4_msgs) JobStarted: {'identifier': 'px4_msgs'}
+[0.039718] (px4_msgs) JobProgress: {'identifier': 'px4_msgs', 'progress': 'cmake'}
+[0.051766] (px4_msgs) Command: {'cmd': ['/usr/bin/cmake', '/root/ros2_workspace/src/px4_msgs', '-DAMENT_CMAKE_SYMLINK_INSTALL=1', '-DCMAKE_INSTALL_PREFIX=/root/ros2_workspace/install/px4_msgs'], 'cwd': '/root/ros2_workspace/build/px4_msgs', 'env': OrderedDict([('HOSTNAME', 'e720e006096f'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root/ros2_workspace'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('GZ_PARTITION', 'aquila_sim'), ('LANG', 'C.UTF-8'), ('GZ_IP', '0.0.0.0'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/ros2_workspace/build/px4_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.098804] (-) TimerEvent: {}
+[0.171606] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[0.200071] (-) TimerEvent: {}
+[0.301801] (-) TimerEvent: {}
+[0.402882] (-) TimerEvent: {}
+[0.468337] (px4_msgs) StdoutLine: {'line': b'-- Override CMake install command with custom implementation using symlinks instead of copying resources\n'}
+[0.504527] (-) TimerEvent: {}
+[0.609089] (-) TimerEvent: {}
+[0.690069] (px4_msgs) StdoutLine: {'line': b'-- Found builtin_interfaces: 1.2.2 (/opt/ros/humble/share/builtin_interfaces/cmake)\n'}
+[0.709765] (-) TimerEvent: {}
+[0.795729] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[0.804432] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[0.810805] (-) TimerEvent: {}
+[0.846860] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[0.890230] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[0.912386] (-) TimerEvent: {}
+[0.923176] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[0.950881] (px4_msgs) StdoutLine: {'line': b'-- Found rosidl_default_generators: 1.2.0 (/opt/ros/humble/share/rosidl_default_generators/cmake)\n'}
+[1.013041] (-) TimerEvent: {}
+[1.114845] (-) TimerEvent: {}
+[1.219949] (-) TimerEvent: {}
+[1.321827] (-) TimerEvent: {}
+[1.428469] (-) TimerEvent: {}
+[1.531348] (-) TimerEvent: {}
+[1.656762] (-) TimerEvent: {}
+[1.768797] (-) TimerEvent: {}
+[1.955368] (-) TimerEvent: {}
+[2.079772] (-) TimerEvent: {}
+[2.185281] (-) TimerEvent: {}
+[2.316267] (-) TimerEvent: {}
+[2.422081] (-) TimerEvent: {}
+[2.529816] (-) TimerEvent: {}
+[2.678237] (-) TimerEvent: {}
+[2.809991] (-) TimerEvent: {}
+[2.916902] (-) TimerEvent: {}
+[3.028952] (-) TimerEvent: {}
+[3.135115] (-) TimerEvent: {}
+[3.238432] (-) TimerEvent: {}
+[3.347920] (-) TimerEvent: {}
+[3.454848] (-) TimerEvent: {}
+[3.556985] (-) TimerEvent: {}
+[3.658820] (-) TimerEvent: {}
+[3.760901] (-) TimerEvent: {}
+[3.862137] (-) TimerEvent: {}
+[3.966642] (-) TimerEvent: {}
+[4.068974] (-) TimerEvent: {}
+[4.171432] (-) TimerEvent: {}
+[4.280144] (-) TimerEvent: {}
+[4.386949] (-) TimerEvent: {}
+[4.488930] (-) TimerEvent: {}
+[4.590835] (-) TimerEvent: {}
+[4.692061] (-) TimerEvent: {}
+[4.792864] (-) TimerEvent: {}
+[4.925267] (-) TimerEvent: {}
+[5.046899] (-) TimerEvent: {}
+[5.151588] (-) TimerEvent: {}
+[5.253831] (-) TimerEvent: {}
+[5.355504] (-) TimerEvent: {}
+[5.456760] (-) TimerEvent: {}
+[5.557852] (-) TimerEvent: {}
+[5.660316] (-) TimerEvent: {}
+[5.764327] (-) TimerEvent: {}
+[5.873927] (-) TimerEvent: {}
+[5.984038] (-) TimerEvent: {}
+[6.087475] (-) TimerEvent: {}
+[6.189926] (-) TimerEvent: {}
+[6.293120] (-) TimerEvent: {}
+[6.394038] (-) TimerEvent: {}
+[6.495915] (-) TimerEvent: {}
+[6.596845] (-) TimerEvent: {}
+[6.700096] (-) TimerEvent: {}
+[6.802080] (-) TimerEvent: {}
+[6.918857] (-) TimerEvent: {}
+[7.024785] (-) TimerEvent: {}
+[7.129857] (-) TimerEvent: {}
+[7.232264] (-) TimerEvent: {}
+[7.333984] (-) TimerEvent: {}
+[7.434849] (-) TimerEvent: {}
+[7.538699] (-) TimerEvent: {}
+[7.640886] (-) TimerEvent: {}
+[7.743444] (-) TimerEvent: {}
+[7.855248] (-) TimerEvent: {}
+[7.960940] (-) TimerEvent: {}
+[8.064532] (-) TimerEvent: {}
+[8.165789] (-) TimerEvent: {}
+[8.266825] (-) TimerEvent: {}
+[8.368081] (-) TimerEvent: {}
+[8.469112] (-) TimerEvent: {}
+[8.569966] (-) TimerEvent: {}
+[8.671870] (-) TimerEvent: {}
+[8.773480] (-) TimerEvent: {}
+[8.877952] (-) TimerEvent: {}
+[8.982207] (-) TimerEvent: {}
+[9.085891] (-) TimerEvent: {}
+[9.188501] (-) TimerEvent: {}
+[9.289921] (-) TimerEvent: {}
+[9.390858] (-) TimerEvent: {}
+[9.493877] (-) TimerEvent: {}
+[9.595020] (-) TimerEvent: {}
+[9.698411] (-) TimerEvent: {}
+[9.800978] (-) TimerEvent: {}
+[9.902363] (-) TimerEvent: {}
+[10.004032] (-) TimerEvent: {}
+[10.106044] (-) TimerEvent: {}
+[10.207893] (-) TimerEvent: {}
+[10.308833] (-) TimerEvent: {}
+[10.409951] (-) TimerEvent: {}
+[10.511776] (-) TimerEvent: {}
+[10.617358] (-) TimerEvent: {}
+[10.762525] (-) TimerEvent: {}
+[10.878721] (-) TimerEvent: {}
+[10.984806] (-) TimerEvent: {}
+[11.013529] (px4_msgs) StdoutLine: {'line': b'-- Found ament_cmake_ros: 0.10.0 (/opt/ros/humble/share/ament_cmake_ros/cmake)\n'}
+[11.086837] (-) TimerEvent: {}
+[11.187985] (-) TimerEvent: {}
+[11.289405] (-) TimerEvent: {}
+[11.392842] (-) TimerEvent: {}
+[11.495885] (-) TimerEvent: {}
+[11.599737] (-) TimerEvent: {}
+[11.701884] (-) TimerEvent: {}
+[11.805830] (-) TimerEvent: {}
+[11.906989] (-) TimerEvent: {}
+[12.007763] (-) TimerEvent: {}
+[12.108953] (-) TimerEvent: {}
+[12.209887] (-) TimerEvent: {}
+[12.311706] (-) TimerEvent: {}
+[12.413757] (-) TimerEvent: {}
+[12.515049] (-) TimerEvent: {}
+[12.616491] (-) TimerEvent: {}
+[12.718883] (-) TimerEvent: {}
+[12.819861] (-) TimerEvent: {}
+[12.923364] (-) TimerEvent: {}
+[13.029089] (-) TimerEvent: {}
+[13.130977] (-) TimerEvent: {}
+[13.231919] (-) TimerEvent: {}
+[13.416782] (-) TimerEvent: {}
+[13.518340] (-) TimerEvent: {}
+[13.621881] (-) TimerEvent: {}
+[13.722863] (-) TimerEvent: {}
+[13.831162] (-) TimerEvent: {}
+[13.932855] (-) TimerEvent: {}
+[14.035718] (-) TimerEvent: {}
+[14.136890] (-) TimerEvent: {}
+[14.241718] (-) TimerEvent: {}
+[14.426064] (-) TimerEvent: {}
+[14.623544] (-) TimerEvent: {}
+[14.737178] (-) TimerEvent: {}
+[14.844958] (-) TimerEvent: {}
+[14.948538] (-) TimerEvent: {}
+[15.052978] (-) TimerEvent: {}
+[15.156143] (-) TimerEvent: {}
+[15.257976] (-) TimerEvent: {}
+[15.369060] (-) TimerEvent: {}
+[15.478754] (-) TimerEvent: {}
+[15.580965] (-) TimerEvent: {}
+[15.685033] (-) TimerEvent: {}
+[15.786895] (-) TimerEvent: {}
+[15.889327] (-) TimerEvent: {}
+[15.990798] (-) TimerEvent: {}
+[16.091890] (-) TimerEvent: {}
+[16.194305] (-) TimerEvent: {}
+[16.297047] (-) TimerEvent: {}
+[16.398994] (-) TimerEvent: {}
+[16.501371] (-) TimerEvent: {}
+[16.602774] (-) TimerEvent: {}
+[16.703778] (-) TimerEvent: {}
+[16.805136] (-) TimerEvent: {}
+[16.908077] (-) TimerEvent: {}
+[17.009866] (-) TimerEvent: {}
+[17.112127] (-) TimerEvent: {}
+[17.213830] (-) TimerEvent: {}
+[17.314767] (-) TimerEvent: {}
+[17.416392] (-) TimerEvent: {}
+[17.431436] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[17.517087] (-) TimerEvent: {}
+[17.618103] (-) TimerEvent: {}
+[17.719946] (-) TimerEvent: {}
+[17.821844] (-) TimerEvent: {}
+[17.922830] (-) TimerEvent: {}
+[18.023860] (-) TimerEvent: {}
+[18.125045] (-) TimerEvent: {}
+[18.226915] (-) TimerEvent: {}
+[18.327899] (-) TimerEvent: {}
+[18.430029] (-) TimerEvent: {}
+[18.531802] (-) TimerEvent: {}
+[18.612989] (px4_msgs) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[18.632847] (-) TimerEvent: {}
+[18.666000] (px4_msgs) StdoutLine: {'line': b'-- Found python_cmake_module: 0.10.0 (/opt/ros/humble/share/python_cmake_module/cmake)\n'}
+[18.707388] (px4_msgs) StdoutLine: {'line': b'-- Using PYTHON_EXECUTABLE: /usr/bin/python3\n'}
+[18.708194] (px4_msgs) StdoutLine: {'line': b'-- Using PYTHON_INCLUDE_DIRS: /usr/include/python3.10\n'}
+[18.708792] (px4_msgs) StdoutLine: {'line': b'-- Using PYTHON_LIBRARIES: /usr/lib/aarch64-linux-gnu/libpython3.10.so\n'}
+[18.733756] (-) TimerEvent: {}
+[18.834943] (-) TimerEvent: {}
+[18.935832] (-) TimerEvent: {}
+[19.037830] (-) TimerEvent: {}
+[19.138891] (-) TimerEvent: {}
+[19.239875] (-) TimerEvent: {}
+[19.341849] (-) TimerEvent: {}
+[19.445033] (-) TimerEvent: {}
+[19.547096] (-) TimerEvent: {}
+[19.650656] (-) TimerEvent: {}
+[19.752159] (-) TimerEvent: {}
+[19.853776] (-) TimerEvent: {}
+[19.954948] (-) TimerEvent: {}
+[20.057407] (-) TimerEvent: {}
+[20.160094] (-) TimerEvent: {}
+[20.261934] (-) TimerEvent: {}
+[20.295245] (px4_msgs) StdoutLine: {'line': b'-- Configuring done\n'}
+[20.362872] (-) TimerEvent: {}
+[20.477965] (-) TimerEvent: {}
+[20.579873] (-) TimerEvent: {}
+[20.680860] (-) TimerEvent: {}
+[20.781759] (-) TimerEvent: {}
+[20.882958] (-) TimerEvent: {}
+[20.983965] (-) TimerEvent: {}
+[21.086262] (-) TimerEvent: {}
+[21.187874] (-) TimerEvent: {}
+[21.289957] (-) TimerEvent: {}
+[21.391800] (-) TimerEvent: {}
+[21.492905] (-) TimerEvent: {}
+[21.594039] (-) TimerEvent: {}
+[21.696138] (-) TimerEvent: {}
+[21.797185] (-) TimerEvent: {}
+[21.850352] (px4_msgs) StdoutLine: {'line': b'-- Generating done\n'}
+[21.897806] (-) TimerEvent: {}
+[21.999911] (-) TimerEvent: {}
+[22.102484] (-) TimerEvent: {}
+[22.204643] (-) TimerEvent: {}
+[22.278817] (px4_msgs) StdoutLine: {'line': b'-- Build files have been written to: /root/ros2_workspace/build/px4_msgs\n'}
+[22.307056] (-) TimerEvent: {}
+[22.322446] (px4_msgs) CommandEnded: {'returncode': 0}
+[22.326543] (px4_msgs) JobProgress: {'identifier': 'px4_msgs', 'progress': 'build'}
+[22.329932] (px4_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ros2_workspace/build/px4_msgs', '--', '-j10', '-l10'], 'cwd': '/root/ros2_workspace/build/px4_msgs', 'env': OrderedDict([('HOSTNAME', 'e720e006096f'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root/ros2_workspace'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('GZ_PARTITION', 'aquila_sim'), ('LANG', 'C.UTF-8'), ('GZ_IP', '0.0.0.0'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/ros2_workspace/build/px4_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[22.407824] (-) TimerEvent: {}
+[22.508839] (-) TimerEvent: {}
+[22.609783] (-) TimerEvent: {}
+[22.710842] (-) TimerEvent: {}
+[22.811894] (-) TimerEvent: {}
+[22.912819] (-) TimerEvent: {}
+[23.013807] (-) TimerEvent: {}
+[23.115923] (-) TimerEvent: {}
+[23.217195] (-) TimerEvent: {}
+[23.321036] (-) TimerEvent: {}
+[23.423757] (-) TimerEvent: {}
+[23.524826] (-) TimerEvent: {}
+[23.626084] (-) TimerEvent: {}
+[23.727769] (-) TimerEvent: {}
+[23.829746] (-) TimerEvent: {}
+[23.930900] (-) TimerEvent: {}
+[24.034984] (-) TimerEvent: {}
+[24.149105] (-) TimerEvent: {}
+[24.249790] (-) TimerEvent: {}
+[24.355252] (-) TimerEvent: {}
+[24.458776] (-) TimerEvent: {}
+[24.628293] (-) TimerEvent: {}
+[24.738921] (-) TimerEvent: {}
+[24.841002] (-) TimerEvent: {}
+[24.942810] (-) TimerEvent: {}
+[25.045756] (-) TimerEvent: {}
+[25.117784] (px4_msgs) StdoutLine: {'line': b'[  0%] Built target px4_msgs__cpp\n'}
+[25.146958] (-) TimerEvent: {}
+[25.170882] (px4_msgs) StderrLine: {'line': b"failed to create symbolic link '/root/ros2_workspace/build/px4_msgs/ament_cmake_python/px4_msgs/px4_msgs' because existing path cannot be removed: Is a directory\n"}
+[25.173854] (px4_msgs) StderrLine: {'line': b'gmake[2]: *** [CMakeFiles/ament_cmake_python_symlink_px4_msgs.dir/build.make:70: CMakeFiles/ament_cmake_python_symlink_px4_msgs] Error 1\n'}
+[25.174761] (px4_msgs) StderrLine: {'line': b'gmake[1]: *** [CMakeFiles/Makefile2:421: CMakeFiles/ament_cmake_python_symlink_px4_msgs.dir/all] Error 2\n'}
+[25.175491] (px4_msgs) StderrLine: {'line': b'gmake: *** [Makefile:146: all] Error 2\n'}
+[25.180229] (px4_msgs) CommandEnded: {'returncode': 2}
+[25.248235] (-) TimerEvent: {}
+[25.352767] (-) TimerEvent: {}
+[25.461749] (-) TimerEvent: {}
+[25.567320] (-) TimerEvent: {}
+[25.638401] (px4_msgs) JobEnded: {'identifier': 'px4_msgs', 'rc': 2}
+[25.694156] (-) TimerEvent: {}
+[25.703350] (-) EventReactorShutdown: {}

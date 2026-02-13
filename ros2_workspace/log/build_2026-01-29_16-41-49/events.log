@@ -1,0 +1,766 @@
+[0.000000] (-) TimerEvent: {}
+[0.001022] (px4_msgs) JobQueued: {'identifier': 'px4_msgs', 'dependencies': OrderedDict()}
+[0.001153] (ros_gz_interfaces) JobQueued: {'identifier': 'ros_gz_interfaces', 'dependencies': OrderedDict()}
+[0.001236] (ros_gz_bridge) JobQueued: {'identifier': 'ros_gz_bridge', 'dependencies': OrderedDict([('ros_gz_interfaces', '/root/ros2_workspace/install/ros_gz_interfaces')])}
+[0.002463] (ros_gz_image) JobQueued: {'identifier': 'ros_gz_image', 'dependencies': OrderedDict([('ros_gz_interfaces', '/root/ros2_workspace/install/ros_gz_interfaces'), ('ros_gz_bridge', '/root/ros2_workspace/install/ros_gz_bridge')])}
+[0.003215] (ros_gz_sim) JobQueued: {'identifier': 'ros_gz_sim', 'dependencies': OrderedDict([('ros_gz_interfaces', '/root/ros2_workspace/install/ros_gz_interfaces'), ('ros_gz_bridge', '/root/ros2_workspace/install/ros_gz_bridge')])}
+[0.003291] (test_ros_gz_bridge) JobQueued: {'identifier': 'test_ros_gz_bridge', 'dependencies': OrderedDict([('ros_gz_interfaces', '/root/ros2_workspace/install/ros_gz_interfaces'), ('ros_gz_bridge', '/root/ros2_workspace/install/ros_gz_bridge')])}
+[0.003360] (ros_gz_sim_demos) JobQueued: {'identifier': 'ros_gz_sim_demos', 'dependencies': OrderedDict([('ros_gz_interfaces', '/root/ros2_workspace/install/ros_gz_interfaces'), ('ros_gz_bridge', '/root/ros2_workspace/install/ros_gz_bridge'), ('ros_gz_image', '/root/ros2_workspace/install/ros_gz_image'), ('ros_gz_sim', '/root/ros2_workspace/install/ros_gz_sim')])}
+[0.003428] (ros_gz) JobQueued: {'identifier': 'ros_gz', 'dependencies': OrderedDict([('ros_gz_interfaces', '/root/ros2_workspace/install/ros_gz_interfaces'), ('ros_gz_bridge', '/root/ros2_workspace/install/ros_gz_bridge'), ('ros_gz_image', '/root/ros2_workspace/install/ros_gz_image'), ('ros_gz_sim', '/root/ros2_workspace/install/ros_gz_sim'), ('ros_gz_sim_demos', '/root/ros2_workspace/install/ros_gz_sim_demos')])}
+[0.003777] (ros_gz_interfaces) JobStarted: {'identifier': 'ros_gz_interfaces'}
+[0.004749] (px4_msgs) JobStarted: {'identifier': 'px4_msgs'}
+[0.008901] (ros_gz_interfaces) JobProgress: {'identifier': 'ros_gz_interfaces', 'progress': 'cmake'}
+[0.012066] (ros_gz_interfaces) JobProgress: {'identifier': 'ros_gz_interfaces', 'progress': 'build'}
+[0.013232] (ros_gz_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ros2_workspace/build/ros_gz_interfaces', '--', '-j10', '-l10'], 'cwd': '/root/ros2_workspace/build/ros_gz_interfaces', 'env': OrderedDict([('HOSTNAME', 'e720e006096f'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root/ros2_workspace/src'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('GZ_PARTITION', 'aquila_sim'), ('LANG', 'C.UTF-8'), ('GZ_IP', '0.0.0.0'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/ros2_workspace/build/ros_gz_interfaces'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.020825] (px4_msgs) JobProgress: {'identifier': 'px4_msgs', 'progress': 'cmake'}
+[0.021110] (px4_msgs) JobProgress: {'identifier': 'px4_msgs', 'progress': 'build'}
+[0.021349] (px4_msgs) Command: {'cmd': ['/usr/bin/cmake', '--build', '/root/ros2_workspace/build/px4_msgs', '--', '-j10', '-l10'], 'cwd': '/root/ros2_workspace/build/px4_msgs', 'env': OrderedDict([('HOSTNAME', 'e720e006096f'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root/ros2_workspace/src'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('GZ_PARTITION', 'aquila_sim'), ('LANG', 'C.UTF-8'), ('GZ_IP', '0.0.0.0'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/ros2_workspace/build/px4_msgs'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.099308] (-) TimerEvent: {}
+[0.123495] (ros_gz_interfaces) StdoutLine: {'line': b'[  0%] Built target ros_gz_interfaces__cpp\n'}
+[0.172687] (ros_gz_interfaces) StdoutLine: {'line': b'[ 13%] Built target ros_gz_interfaces__rosidl_generator_c\n'}
+[0.200297] (-) TimerEvent: {}
+[0.252552] (ros_gz_interfaces) StdoutLine: {'line': b'[ 43%] Built target ros_gz_interfaces__rosidl_typesupport_cpp\n'}
+[0.259096] (ros_gz_interfaces) StdoutLine: {'line': b'[ 49%] Built target ros_gz_interfaces__rosidl_typesupport_introspection_cpp\n'}
+[0.263822] (ros_gz_interfaces) StdoutLine: {'line': b'[ 51%] Built target ros_gz_interfaces__rosidl_typesupport_fastrtps_cpp\n'}
+[0.280908] (ros_gz_interfaces) StdoutLine: {'line': b'[ 63%] Built target ros_gz_interfaces__rosidl_typesupport_c\n'}
+[0.291065] (ros_gz_interfaces) StdoutLine: {'line': b'[ 81%] Built target ros_gz_interfaces__rosidl_typesupport_introspection_c\n'}
+[0.294701] (ros_gz_interfaces) StdoutLine: {'line': b'[ 86%] Built target ros_gz_interfaces__rosidl_typesupport_fastrtps_c\n'}
+[0.301268] (-) TimerEvent: {}
+[0.312051] (ros_gz_interfaces) StdoutLine: {'line': b'[ 86%] Built target ros_gz_interfaces\n'}
+[0.332278] (ros_gz_interfaces) StdoutLine: {'line': b'[ 86%] Built target ros_gz_interfaces__py\n'}
+[0.378207] (ros_gz_interfaces) StdoutLine: {'line': b'[ 97%] Built target ros_gz_interfaces__rosidl_generator_py\n'}
+[0.403666] (-) TimerEvent: {}
+[0.407316] (ros_gz_interfaces) StdoutLine: {'line': b'[100%] Built target ros_gz_interfaces__rosidl_typesupport_c__pyext\n'}
+[0.407869] (ros_gz_interfaces) StdoutLine: {'line': b'[100%] Built target ros_gz_interfaces__rosidl_typesupport_introspection_c__pyext\n'}
+[0.408318] (ros_gz_interfaces) StdoutLine: {'line': b'[100%] Built target ros_gz_interfaces__rosidl_typesupport_fastrtps_c__pyext\n'}
+[0.425104] (ros_gz_interfaces) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_copy_ros_gz_interfaces\n'}
+[0.504276] (-) TimerEvent: {}
+[0.520747] (ros_gz_interfaces) StdoutLine: {'line': b'running egg_info\n'}
+[0.521205] (ros_gz_interfaces) StdoutLine: {'line': b'writing ros_gz_interfaces.egg-info/PKG-INFO\n'}
+[0.522021] (ros_gz_interfaces) StdoutLine: {'line': b'writing dependency_links to ros_gz_interfaces.egg-info/dependency_links.txt\n'}
+[0.522558] (ros_gz_interfaces) StdoutLine: {'line': b'writing top-level names to ros_gz_interfaces.egg-info/top_level.txt\n'}
+[0.527077] (ros_gz_interfaces) StdoutLine: {'line': b"reading manifest file 'ros_gz_interfaces.egg-info/SOURCES.txt'\n"}
+[0.528219] (ros_gz_interfaces) StdoutLine: {'line': b"writing manifest file 'ros_gz_interfaces.egg-info/SOURCES.txt'\n"}
+[0.545276] (ros_gz_interfaces) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_ros_gz_interfaces_egg\n'}
+[0.572470] (ros_gz_interfaces) CommandEnded: {'returncode': 0}
+[0.576500] (ros_gz_interfaces) JobProgress: {'identifier': 'ros_gz_interfaces', 'progress': 'install'}
+[0.582777] (ros_gz_interfaces) Command: {'cmd': ['/usr/bin/cmake', '--install', '/root/ros2_workspace/build/ros_gz_interfaces'], 'cwd': '/root/ros2_workspace/build/ros_gz_interfaces', 'env': OrderedDict([('HOSTNAME', 'e720e006096f'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root/ros2_workspace/src'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('GZ_PARTITION', 'aquila_sim'), ('LANG', 'C.UTF-8'), ('GZ_IP', '0.0.0.0'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/opt/ros/humble'), ('PWD', '/root/ros2_workspace/build/ros_gz_interfaces'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/opt/ros/humble')]), 'shell': False}
+[0.587704] (ros_gz_interfaces) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[0.588868] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ament_index/resource_index/rosidl_interfaces/ros_gz_interfaces\n'}
+[0.589554] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces\n'}
+[0.590315] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg\n'}
+[0.591767] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/sensor_noise.h\n'}
+[0.592170] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/gui_camera.h\n'}
+[0.592436] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/rosidl_generator_c__visibility_control.h\n'}
+[0.592842] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity_wrench.h\n'}
+[0.594322] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/altimeter.h\n'}
+[0.594826] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/light.h\n'}
+[0.595316] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/param_vec.h\n'}
+[0.595758] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/material_color.h\n'}
+[0.596112] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/track_visual.h\n'}
+[0.596396] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/string_vec.h\n'}
+[0.596888] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/contact.h\n'}
+[0.597913] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail\n'}
+[0.599120] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__struct.h\n'}
+[0.599712] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__type_support.h\n'}
+[0.600159] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__type_support.h\n'}
+[0.600911] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__functions.h\n'}
+[0.601474] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__functions.h\n'}
+[0.601900] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__functions.h\n'}
+[0.602670] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__type_support.h\n'}
+[0.603473] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__struct.h\n'}
+[0.603720] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__functions.h\n'}
+[0.604027] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__functions.h\n'}
+[0.604337] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__type_support.h\n'}
+[0.604555] (-) TimerEvent: {}
+[0.604735] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__struct.h\n'}
+[0.605370] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__functions.h\n'}
+[0.605872] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__functions.h\n'}
+[0.606310] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__struct.h\n'}
+[0.606816] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__type_support.h\n'}
+[0.607196] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__type_support.h\n'}
+[0.607943] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__struct.h\n'}
+[0.608803] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__functions.c\n'}
+[0.609175] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__struct.h\n'}
+[0.609800] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__struct.h\n'}
+[0.610300] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__functions.h\n'}
+[0.610901] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__functions.h\n'}
+[0.611462] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__functions.c\n'}
+[0.611698] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__functions.h\n'}
+[0.612348] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__functions.c\n'}
+[0.612865] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__functions.h\n'}
+[0.613204] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__functions.h\n'}
+[0.613576] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__functions.c\n'}
+[0.613998] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__struct.h\n'}
+[0.614621] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__struct.h\n'}
+[0.615254] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__struct.h\n'}
+[0.615795] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__struct.h\n'}
+[0.616259] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__functions.h\n'}
+[0.616625] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__functions.h\n'}
+[0.617017] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__functions.c\n'}
+[0.617286] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__functions.h\n'}
+[0.617901] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__functions.c\n'}
+[0.618357] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__type_support.h\n'}
+[0.618877] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__type_support.h\n'}
+[0.619614] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__functions.c\n'}
+[0.619952] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__functions.c\n'}
+[0.620433] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__type_support.h\n'}
+[0.620812] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__functions.c\n'}
+[0.621076] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__struct.h\n'}
+[0.621345] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__struct.h\n'}
+[0.621912] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__type_support.h\n'}
+[0.622168] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__struct.h\n'}
+[0.622694] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__type_support.h\n'}
+[0.623010] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__struct.h\n'}
+[0.623615] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__functions.c\n'}
+[0.624069] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__struct.h\n'}
+[0.624520] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support.h\n'}
+[0.624850] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__type_support.h\n'}
+[0.625345] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__type_support.h\n'}
+[0.625856] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__type_support.h\n'}
+[0.626209] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__functions.c\n'}
+[0.626719] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__functions.c\n'}
+[0.627004] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__struct.h\n'}
+[0.627336] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__type_support.h\n'}
+[0.627596] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__functions.c\n'}
+[0.627958] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__struct.h\n'}
+[0.628340] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__functions.c\n'}
+[0.628699] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__functions.c\n'}
+[0.629084] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__functions.h\n'}
+[0.629349] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__functions.h\n'}
+[0.629683] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__functions.c\n'}
+[0.630052] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__functions.c\n'}
+[0.630454] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__type_support.h\n'}
+[0.630727] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__functions.c\n'}
+[0.631144] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__functions.h\n'}
+[0.631705] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__struct.h\n'}
+[0.631970] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__type_support.h\n'}
+[0.632244] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__struct.h\n'}
+[0.632592] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__functions.h\n'}
+[0.633028] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__functions.c\n'}
+[0.633491] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__functions.h\n'}
+[0.633703] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__functions.c\n'}
+[0.633961] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__functions.c\n'}
+[0.634344] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__type_support.h\n'}
+[0.634763] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__struct.h\n'}
+[0.635143] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__type_support.h\n'}
+[0.635462] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__functions.h\n'}
+[0.635864] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__type_support.h\n'}
+[0.636492] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity.h\n'}
+[0.636984] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/contacts.h\n'}
+[0.637454] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/joint_wrench.h\n'}
+[0.637905] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/video_record.h\n'}
+[0.638196] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/logical_camera_image.h\n'}
+[0.638466] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/dataframe.h\n'}
+[0.638814] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/world_control.h\n'}
+[0.639344] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/world_reset.h\n'}
+[0.639723] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity_factory.h\n'}
+[0.640028] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/float32_array.h\n'}
+[0.640638] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/logical_camera_image_model.h\n'}
+[0.640950] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv\n'}
+[0.641609] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail\n'}
+[0.642356] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__type_support.h\n'}
+[0.642782] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__struct.h\n'}
+[0.643008] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__type_support.h\n'}
+[0.643272] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__struct.h\n'}
+[0.643620] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__functions.c\n'}
+[0.643952] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__functions.c\n'}
+[0.644359] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__functions.c\n'}
+[0.644609] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__functions.h\n'}
+[0.644943] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__struct.h\n'}
+[0.645253] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__type_support.h\n'}
+[0.645754] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__functions.h\n'}
+[0.646155] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__functions.h\n'}
+[0.646780] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__struct.h\n'}
+[0.647330] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__type_support.h\n'}
+[0.647765] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__functions.c\n'}
+[0.648044] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__functions.h\n'}
+[0.648364] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/set_entity_pose.h\n'}
+[0.648550] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/control_world.h\n'}
+[0.648810] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/spawn_entity.h\n'}
+[0.649086] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/delete_entity.h\n'}
+[0.649780] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/library_path.sh\n'}
+[0.650119] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/library_path.dsv\n'}
+[0.651369] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_generator_c.so\n'}
+[0.652024] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces\n'}
+[0.652405] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg\n'}
+[0.652825] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail\n'}
+[0.653526] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__rosidl_typesupport_fastrtps_c.h\n'}
+[0.653837] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__rosidl_typesupport_fastrtps_c.h\n'}
+[0.654588] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__rosidl_typesupport_fastrtps_c.h\n'}
+[0.654946] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__rosidl_typesupport_fastrtps_c.h\n'}
+[0.655421] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__rosidl_typesupport_fastrtps_c.h\n'}
+[0.655685] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__rosidl_typesupport_fastrtps_c.h\n'}
+[0.655974] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__rosidl_typesupport_fastrtps_c.h\n'}
+[0.656377] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__rosidl_typesupport_fastrtps_c.h\n'}
+[0.656691] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__rosidl_typesupport_fastrtps_c.h\n'}
+[0.657087] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__rosidl_typesupport_fastrtps_c.h\n'}
+[0.659579] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__rosidl_typesupport_fastrtps_c.h\n'}
+[0.660121] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__rosidl_typesupport_fastrtps_c.h\n'}
+[0.660548] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__rosidl_typesupport_fastrtps_c.h\n'}
+[0.661013] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__rosidl_typesupport_fastrtps_c.h\n'}
+[0.661386] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__rosidl_typesupport_fastrtps_c.h\n'}
+[0.661704] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__rosidl_typesupport_fastrtps_c.h\n'}
+[0.662241] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__rosidl_typesupport_fastrtps_c.h\n'}
+[0.662708] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__rosidl_typesupport_fastrtps_c.h\n'}
+[0.663090] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__rosidl_typesupport_fastrtps_c.h\n'}
+[0.663506] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__rosidl_typesupport_fastrtps_c.h\n'}
+[0.663879] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__rosidl_typesupport_fastrtps_c.h\n'}
+[0.664370] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/rosidl_typesupport_fastrtps_c__visibility_control.h\n'}
+[0.664869] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv\n'}
+[0.665364] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail\n'}
+[0.665914] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__rosidl_typesupport_fastrtps_c.h\n'}
+[0.666408] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__rosidl_typesupport_fastrtps_c.h\n'}
+[0.666864] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__rosidl_typesupport_fastrtps_c.h\n'}
+[0.667307] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__rosidl_typesupport_fastrtps_c.h\n'}
+[0.668577] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_fastrtps_c.so\n'}
+[0.669281] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces\n'}
+[0.669935] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg\n'}
+[0.671080] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/material_color.hpp\n'}
+[0.671538] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/logical_camera_image_model.hpp\n'}
+[0.672014] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/logical_camera_image.hpp\n'}
+[0.672231] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/joint_wrench.hpp\n'}
+[0.672667] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/video_record.hpp\n'}
+[0.672890] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/sensor_noise.hpp\n'}
+[0.673342] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/contact.hpp\n'}
+[0.673516] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/altimeter.hpp\n'}
+[0.673778] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/world_reset.hpp\n'}
+[0.674017] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/param_vec.hpp\n'}
+[0.674282] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail\n'}
+[0.675241] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__builder.hpp\n'}
+[0.675592] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__struct.hpp\n'}
+[0.677027] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__type_support.hpp\n'}
+[0.677646] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__traits.hpp\n'}
+[0.678051] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__struct.hpp\n'}
+[0.678573] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__builder.hpp\n'}
+[0.678868] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__struct.hpp\n'}
+[0.680521] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__builder.hpp\n'}
+[0.681053] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__traits.hpp\n'}
+[0.681526] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__type_support.hpp\n'}
+[0.682215] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__struct.hpp\n'}
+[0.682712] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__traits.hpp\n'}
+[0.683293] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__type_support.hpp\n'}
+[0.683727] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__builder.hpp\n'}
+[0.684140] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__struct.hpp\n'}
+[0.684825] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__type_support.hpp\n'}
+[0.685356] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__struct.hpp\n'}
+[0.685705] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__type_support.hpp\n'}
+[0.686153] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__builder.hpp\n'}
+[0.686915] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__type_support.hpp\n'}
+[0.687327] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__builder.hpp\n'}
+[0.687816] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__type_support.hpp\n'}
+[0.688301] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__type_support.hpp\n'}
+[0.688781] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__struct.hpp\n'}
+[0.689179] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__traits.hpp\n'}
+[0.689866] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__struct.hpp\n'}
+[0.690482] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__type_support.hpp\n'}
+[0.691038] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support.hpp\n'}
+[0.691510] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__struct.hpp\n'}
+[0.692115] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__struct.hpp\n'}
+[0.692816] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__struct.hpp\n'}
+[0.693291] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__traits.hpp\n'}
+[0.694109] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__struct.hpp\n'}
+[0.695012] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__struct.hpp\n'}
+[0.695798] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__traits.hpp\n'}
+[0.696401] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__traits.hpp\n'}
+[0.696852] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__traits.hpp\n'}
+[0.697494] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__struct.hpp\n'}
+[0.697986] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__builder.hpp\n'}
+[0.698690] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__traits.hpp\n'}
+[0.699404] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__builder.hpp\n'}
+[0.700086] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__builder.hpp\n'}
+[0.700950] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__struct.hpp\n'}
+[0.701976] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__traits.hpp\n'}
+[0.702858] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__type_support.hpp\n'}
+[0.703342] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__struct.hpp\n'}
+[0.703735] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__traits.hpp\n'}
+[0.704244] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__type_support.hpp\n'}
+[0.704717] (-) TimerEvent: {}
+[0.704880] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__traits.hpp\n'}
+[0.705951] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__builder.hpp\n'}
+[0.706570] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__builder.hpp\n'}
+[0.707170] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__builder.hpp\n'}
+[0.707788] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__type_support.hpp\n'}
+[0.708298] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__builder.hpp\n'}
+[0.709347] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__builder.hpp\n'}
+[0.710172] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__traits.hpp\n'}
+[0.711067] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__traits.hpp\n'}
+[0.711704] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__struct.hpp\n'}
+[0.712074] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__type_support.hpp\n'}
+[0.712697] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__traits.hpp\n'}
+[0.713240] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__type_support.hpp\n'}
+[0.714986] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__traits.hpp\n'}
+[0.715795] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__type_support.hpp\n'}
+[0.716153] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__traits.hpp\n'}
+[0.716643] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__type_support.hpp\n'}
+[0.717166] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__builder.hpp\n'}
+[0.717825] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__builder.hpp\n'}
+[0.718529] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__traits.hpp\n'}
+[0.719123] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__traits.hpp\n'}
+[0.719726] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__type_support.hpp\n'}
+[0.720329] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__builder.hpp\n'}
+[0.720917] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__traits.hpp\n'}
+[0.721729] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__struct.hpp\n'}
+[0.722747] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__struct.hpp\n'}
+[0.723651] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__builder.hpp\n'}
+[0.723855] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__builder.hpp\n'}
+[0.724364] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__struct.hpp\n'}
+[0.725467] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__type_support.hpp\n'}
+[0.726018] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__builder.hpp\n'}
+[0.727387] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__struct.hpp\n'}
+[0.729048] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__type_support.hpp\n'}
+[0.730903] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__traits.hpp\n'}
+[0.731825] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__builder.hpp\n'}
+[0.732581] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__type_support.hpp\n'}
+[0.733220] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/rosidl_generator_cpp__visibility_control.hpp\n'}
+[0.733867] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/light.hpp\n'}
+[0.734746] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity_wrench.hpp\n'}
+[0.735524] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/dataframe.hpp\n'}
+[0.736079] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/contacts.hpp\n'}
+[0.736876] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/world_control.hpp\n'}
+[0.737805] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/string_vec.hpp\n'}
+[0.738500] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/track_visual.hpp\n'}
+[0.739297] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity_factory.hpp\n'}
+[0.740197] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/gui_camera.hpp\n'}
+[0.741038] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/entity.hpp\n'}
+[0.741877] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/float32_array.hpp\n'}
+[0.742618] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv\n'}
+[0.743611] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/set_entity_pose.hpp\n'}
+[0.744646] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/control_world.hpp\n'}
+[0.747245] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail\n'}
+[0.749606] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__builder.hpp\n'}
+[0.750293] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__traits.hpp\n'}
+[0.750976] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__builder.hpp\n'}
+[0.752039] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__builder.hpp\n'}
+[0.752889] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__type_support.hpp\n'}
+[0.753482] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__traits.hpp\n'}
+[0.754122] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__type_support.hpp\n'}
+[0.754772] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__struct.hpp\n'}
+[0.755701] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__type_support.hpp\n'}
+[0.756255] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__traits.hpp\n'}
+[0.757405] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__builder.hpp\n'}
+[0.757924] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__struct.hpp\n'}
+[0.758850] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__struct.hpp\n'}
+[0.759787] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__type_support.hpp\n'}
+[0.760832] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__struct.hpp\n'}
+[0.762029] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__traits.hpp\n'}
+[0.762849] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/spawn_entity.hpp\n'}
+[0.763666] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/delete_entity.hpp\n'}
+[0.764168] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces\n'}
+[0.765717] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg\n'}
+[0.766858] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/rosidl_typesupport_fastrtps_cpp__visibility_control.h\n'}
+[0.767470] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail\n'}
+[0.769535] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.770447] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.771447] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.772115] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.772625] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.773325] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.774186] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.775233] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.775884] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.776910] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.777294] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.778325] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.779053] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.779767] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.780505] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.781159] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.782227] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.782925] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dds_fastrtps\n'}
+[0.784655] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.785201] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.785818] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.786283] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.786986] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv\n'}
+[0.788002] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail\n'}
+[0.788746] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.789410] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.790227] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.791155] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/dds_fastrtps\n'}
+[0.792580] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__rosidl_typesupport_fastrtps_cpp.hpp\n'}
+[0.794080] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_fastrtps_cpp.so\n'}
+[0.795476] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces\n'}
+[0.796501] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg\n'}
+[0.797500] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail\n'}
+[0.800236] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__rosidl_typesupport_introspection_c.h\n'}
+[0.802109] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__rosidl_typesupport_introspection_c.h\n'}
+[0.802966] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__rosidl_typesupport_introspection_c.h\n'}
+[0.803756] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__type_support.c\n'}
+[0.804545] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__type_support.c\n'}
+[0.805575] (-) TimerEvent: {}
+[0.805852] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__type_support.c\n'}
+[0.806475] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__type_support.c\n'}
+[0.807138] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__rosidl_typesupport_introspection_c.h\n'}
+[0.807898] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__type_support.c\n'}
+[0.808831] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__type_support.c\n'}
+[0.809587] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__rosidl_typesupport_introspection_c.h\n'}
+[0.810349] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__type_support.c\n'}
+[0.811581] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__rosidl_typesupport_introspection_c.h\n'}
+[0.814122] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__rosidl_typesupport_introspection_c.h\n'}
+[0.815353] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support.c\n'}
+[0.816768] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__rosidl_typesupport_introspection_c.h\n'}
+[0.817607] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__type_support.c\n'}
+[0.818493] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__rosidl_typesupport_introspection_c.h\n'}
+[0.819684] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__type_support.c\n'}
+[0.821312] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__type_support.c\n'}
+[0.823313] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__type_support.c\n'}
+[0.826060] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__rosidl_typesupport_introspection_c.h\n'}
+[0.827661] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__rosidl_typesupport_introspection_c.h\n'}
+[0.830111] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__rosidl_typesupport_introspection_c.h\n'}
+[0.832753] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__type_support.c\n'}
+[0.835023] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__type_support.c\n'}
+[0.837384] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__rosidl_typesupport_introspection_c.h\n'}
+[0.839524] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__rosidl_typesupport_introspection_c.h\n'}
+[0.841756] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__type_support.c\n'}
+[0.845378] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__type_support.c\n'}
+[0.848207] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__type_support.c\n'}
+[0.849373] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__type_support.c\n'}
+[0.851082] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__type_support.c\n'}
+[0.853030] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__rosidl_typesupport_introspection_c.h\n'}
+[0.855199] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__rosidl_typesupport_introspection_c.h\n'}
+[0.857055] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__rosidl_typesupport_introspection_c.h\n'}
+[0.861715] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__rosidl_typesupport_introspection_c.h\n'}
+[0.864781] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__rosidl_typesupport_introspection_c.h\n'}
+[0.868478] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__type_support.c\n'}
+[0.871214] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__type_support.c\n'}
+[0.873037] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__rosidl_typesupport_introspection_c.h\n'}
+[0.875433] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__rosidl_typesupport_introspection_c.h\n'}
+[0.878494] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/rosidl_typesupport_introspection_c__visibility_control.h\n'}
+[0.880404] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv\n'}
+[0.882631] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail\n'}
+[0.885322] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__type_support.c\n'}
+[0.888099] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__rosidl_typesupport_introspection_c.h\n'}
+[0.893580] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__type_support.c\n'}
+[0.896701] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__rosidl_typesupport_introspection_c.h\n'}
+[0.899208] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__rosidl_typesupport_introspection_c.h\n'}
+[0.900755] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__type_support.c\n'}
+[0.903198] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__rosidl_typesupport_introspection_c.h\n'}
+[0.904760] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__type_support.c\n'}
+[0.906606] (-) TimerEvent: {}
+[0.908055] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_introspection_c.so\n'}
+[0.916909] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_c.so\n'}
+[0.920309] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces\n'}
+[0.923758] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg\n'}
+[0.926977] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail\n'}
+[0.930961] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__type_support.cpp\n'}
+[0.932648] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.934148] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__type_support.cpp\n'}
+[0.936159] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/joint_wrench__type_support.cpp\n'}
+[0.937448] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__type_support.cpp\n'}
+[0.939851] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.941432] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__type_support.cpp\n'}
+[0.943761] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.945444] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__type_support.cpp\n'}
+[0.948558] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_control__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.951020] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.952536] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__type_support.cpp\n'}
+[0.954017] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__type_support.cpp\n'}
+[0.955204] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.957973] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.959715] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__type_support.cpp\n'}
+[0.960885] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__type_support.cpp\n'}
+[0.962395] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/material_color__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.963847] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/dataframe__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.965909] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__type_support.cpp\n'}
+[0.976077] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.978106] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.979717] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contact__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.980596] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.981796] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/logical_camera_image_model__type_support.cpp\n'}
+[0.984323] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__type_support.cpp\n'}
+[0.985684] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/gui_camera__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.987346] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.989004] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_wrench__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.990340] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.992427] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/light__type_support.cpp\n'}
+[0.994002] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.995426] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/contacts__type_support.cpp\n'}
+[0.997239] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/param_vec__rosidl_typesupport_introspection_cpp.hpp\n'}
+[0.998939] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/world_reset__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.001225] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/sensor_noise__type_support.cpp\n'}
+[1.003753] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/track_visual__type_support.cpp\n'}
+[1.005551] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/string_vec__type_support.cpp\n'}
+[1.007225] (-) TimerEvent: {}
+[1.007766] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/entity_factory__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.009022] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/float32_array__type_support.cpp\n'}
+[1.009800] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/altimeter__type_support.cpp\n'}
+[1.011709] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/msg/detail/video_record__type_support.cpp\n'}
+[1.014447] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv\n'}
+[1.016112] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail\n'}
+[1.017504] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.018991] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/spawn_entity__type_support.cpp\n'}
+[1.020026] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__type_support.cpp\n'}
+[1.022349] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/control_world__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.023533] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.024863] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__rosidl_typesupport_introspection_cpp.hpp\n'}
+[1.026230] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/delete_entity__type_support.cpp\n'}
+[1.028237] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/include/ros_gz_interfaces/ros_gz_interfaces/srv/detail/set_entity_pose__type_support.cpp\n'}
+[1.030349] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_introspection_cpp.so\n'}
+[1.034765] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_typesupport_cpp.so\n'}
+[1.037706] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/pythonpath.sh\n'}
+[1.040661] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/pythonpath.dsv\n'}
+[1.041921] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces-3.0.5-py3.10.egg-info\n'}
+[1.043739] (ros_gz_interfaces) StdoutLine: {'line': b'-- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces-3.0.5-py3.10.egg-info/PKG-INFO\n'}
+[1.048850] (ros_gz_interfaces) StdoutLine: {'line': b'-- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces-3.0.5-py3.10.egg-info/SOURCES.txt\n'}
+[1.055744] (ros_gz_interfaces) StdoutLine: {'line': b'-- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces-3.0.5-py3.10.egg-info/top_level.txt\n'}
+[1.096368] (ros_gz_interfaces) StdoutLine: {'line': b'-- Installing: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces-3.0.5-py3.10.egg-info/dependency_links.txt\n'}
+[1.104987] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces\n'}
+[1.107201] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[1.108379] (-) TimerEvent: {}
+[1.108561] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg\n'}
+[1.110387] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_track_visual_s.c\n'}
+[1.111013] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_gui_camera.py\n'}
+[1.111900] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_world_reset_s.c\n'}
+[1.113017] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_world_reset.py\n'}
+[1.113687] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_contacts.py\n'}
+[1.116148] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_dataframe.py\n'}
+[1.117474] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_sensor_noise.py\n'}
+[1.118316] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_material_color_s.c\n'}
+[1.119346] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_factory.py\n'}
+[1.121132] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_logical_camera_image_model.py\n'}
+[1.124707] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_logical_camera_image_model_s.c\n'}
+[1.127097] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_light_s.c\n'}
+[1.128541] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_float32_array.py\n'}
+[1.131672] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_world_control.py\n'}
+[1.134423] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity.py\n'}
+[1.137960] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_light.py\n'}
+[1.141378] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/__init__.py\n'}
+[1.143387] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_contact_s.c\n'}
+[1.144597] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_sensor_noise_s.c\n'}
+[1.145419] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_logical_camera_image.py\n'}
+[1.146723] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_altimeter.py\n'}
+[1.148489] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_logical_camera_image_s.c\n'}
+[1.150300] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_joint_wrench.py\n'}
+[1.154042] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_video_record.py\n'}
+[1.157488] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_wrench.py\n'}
+[1.162604] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_wrench_s.c\n'}
+[1.163654] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_param_vec.py\n'}
+[1.164941] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_contacts_s.c\n'}
+[1.165892] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_video_record_s.c\n'}
+[1.166594] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_material_color.py\n'}
+[1.167975] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_altimeter_s.c\n'}
+[1.168830] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_world_control_s.c\n'}
+[1.169994] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_s.c\n'}
+[1.171159] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_entity_factory_s.c\n'}
+[1.172575] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_param_vec_s.c\n'}
+[1.173495] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_joint_wrench_s.c\n'}
+[1.174562] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_gui_camera_s.c\n'}
+[1.176240] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_track_visual.py\n'}
+[1.179397] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_contact.py\n'}
+[1.180426] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_string_vec_s.c\n'}
+[1.181681] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_float32_array_s.c\n'}
+[1.182328] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_dataframe_s.c\n'}
+[1.183030] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg/_string_vec.py\n'}
+[1.183644] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/_ros_gz_interfaces_s.ep.rosidl_typesupport_fastrtps_c.c\n'}
+[1.184581] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[1.185971] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/__init__.py\n'}
+[1.187212] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/_ros_gz_interfaces_s.ep.rosidl_typesupport_c.c\n'}
+[1.188323] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[1.188877] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/_ros_gz_interfaces_s.ep.rosidl_typesupport_introspection_c.c\n'}
+[1.190031] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/libros_gz_interfaces__rosidl_generator_py.so\n'}
+[1.191750] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv\n'}
+[1.193263] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_control_world_s.c\n'}
+[1.193978] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_spawn_entity_s.c\n'}
+[1.194558] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_control_world.py\n'}
+[1.195147] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_delete_entity.py\n'}
+[1.195572] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_set_entity_pose_s.c\n'}
+[1.198247] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/__init__.py\n'}
+[1.200919] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_set_entity_pose.py\n'}
+[1.203522] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_spawn_entity.py\n'}
+[1.205238] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv/_delete_entity_s.c\n'}
+[1.209260] (-) TimerEvent: {}
+[1.229027] (px4_msgs) StdoutLine: {'line': b'[  0%] Built target px4_msgs__cpp\n'}
+[1.310664] (-) TimerEvent: {}
+[1.412293] (ros_gz_interfaces) StdoutLine: {'line': b"Listing '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces'...\n"}
+[1.414224] (-) TimerEvent: {}
+[1.414737] (ros_gz_interfaces) StdoutLine: {'line': b"Listing '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/msg'...\n"}
+[1.416335] (ros_gz_interfaces) StdoutLine: {'line': b"Listing '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/srv'...\n"}
+[1.422235] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_fastrtps_c.cpython-310-aarch64-linux-gnu.so\n'}
+[1.431962] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_introspection_c.cpython-310-aarch64-linux-gnu.so\n'}
+[1.442289] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages/ros_gz_interfaces/ros_gz_interfaces_s__rosidl_typesupport_c.cpython-310-aarch64-linux-gnu.so\n'}
+[1.452896] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/lib/libros_gz_interfaces__rosidl_generator_py.so\n'}
+[1.463894] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Altimeter.idl\n'}
+[1.466718] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Contact.idl\n'}
+[1.469877] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Contacts.idl\n'}
+[1.472775] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Dataframe.idl\n'}
+[1.474890] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Entity.idl\n'}
+[1.477048] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/EntityFactory.idl\n'}
+[1.479713] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/EntityWrench.idl\n'}
+[1.481054] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Float32Array.idl\n'}
+[1.484018] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/GuiCamera.idl\n'}
+[1.487534] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/JointWrench.idl\n'}
+[1.490621] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Light.idl\n'}
+[1.492534] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/LogicalCameraImage.idl\n'}
+[1.495758] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/LogicalCameraImageModel.idl\n'}
+[1.497414] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/MaterialColor.idl\n'}
+[1.498765] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/ParamVec.idl\n'}
+[1.500363] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/SensorNoise.idl\n'}
+[1.501331] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/StringVec.idl\n'}
+[1.502402] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/TrackVisual.idl\n'}
+[1.506744] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/VideoRecord.idl\n'}
+[1.508832] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/WorldControl.idl\n'}
+[1.511083] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/WorldReset.idl\n'}
+[1.514414] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/ControlWorld.idl\n'}
+[1.517378] (-) TimerEvent: {}
+[1.518153] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/DeleteEntity.idl\n'}
+[1.520724] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SetEntityPose.idl\n'}
+[1.524147] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SpawnEntity.idl\n'}
+[1.526694] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Altimeter.msg\n'}
+[1.531219] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Contact.msg\n'}
+[1.533859] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Contacts.msg\n'}
+[1.535480] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Dataframe.msg\n'}
+[1.537634] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Entity.msg\n'}
+[1.539332] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/EntityFactory.msg\n'}
+[1.541213] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/EntityWrench.msg\n'}
+[1.544183] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Float32Array.msg\n'}
+[1.546633] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/GuiCamera.msg\n'}
+[1.549235] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/JointWrench.msg\n'}
+[1.550845] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/Light.msg\n'}
+[1.552705] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/LogicalCameraImage.msg\n'}
+[1.555537] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/LogicalCameraImageModel.msg\n'}
+[1.608979] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/MaterialColor.msg\n'}
+[1.616622] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/ParamVec.msg\n'}
+[1.619792] (-) TimerEvent: {}
+[1.623028] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/SensorNoise.msg\n'}
+[1.638349] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/StringVec.msg\n'}
+[1.640577] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/TrackVisual.msg\n'}
+[1.642911] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/VideoRecord.msg\n'}
+[1.646415] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/WorldControl.msg\n'}
+[1.648938] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/msg/WorldReset.msg\n'}
+[1.650524] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/ControlWorld.srv\n'}
+[1.652908] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/ControlWorld_Request.msg\n'}
+[1.655028] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/ControlWorld_Response.msg\n'}
+[1.656837] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/DeleteEntity.srv\n'}
+[1.658237] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/DeleteEntity_Request.msg\n'}
+[1.659758] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/DeleteEntity_Response.msg\n'}
+[1.661720] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SetEntityPose.srv\n'}
+[1.664901] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SetEntityPose_Request.msg\n'}
+[1.666993] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SetEntityPose_Response.msg\n'}
+[1.669752] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SpawnEntity.srv\n'}
+[1.672582] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SpawnEntity_Request.msg\n'}
+[1.674252] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/srv/SpawnEntity_Response.msg\n'}
+[1.676445] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ament_index/resource_index/package_run_dependencies/ros_gz_interfaces\n'}
+[1.678567] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ament_index/resource_index/parent_prefix_path/ros_gz_interfaces\n'}
+[1.681661] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/ament_prefix_path.sh\n'}
+[1.684454] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/ament_prefix_path.dsv\n'}
+[1.686937] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/path.sh\n'}
+[1.689881] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/environment/path.dsv\n'}
+[1.692729] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/local_setup.bash\n'}
+[1.694229] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/local_setup.sh\n'}
+[1.695157] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/local_setup.zsh\n'}
+[1.697210] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/local_setup.dsv\n'}
+[1.700236] (ros_gz_interfaces) StdoutLine: {'line': b'-- Installing: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/package.dsv\n'}
+[1.714159] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ament_index/resource_index/packages/ros_gz_interfaces\n'}
+[1.719589] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_generator_cExport.cmake\n'}
+[1.723847] (-) TimerEvent: {}
+[1.724694] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_generator_cExport-noconfig.cmake\n'}
+[1.739358] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_typesupport_fastrtps_cExport.cmake\n'}
+[1.741957] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_typesupport_fastrtps_cExport-noconfig.cmake\n'}
+[1.746571] (px4_msgs) StdoutLine: {'line': b'[ 12%] Built target px4_msgs__rosidl_generator_c\n'}
+[1.752031] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_generator_cppExport.cmake\n'}
+[1.766595] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_typesupport_fastrtps_cppExport.cmake\n'}
+[1.769856] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_typesupport_fastrtps_cppExport-noconfig.cmake\n'}
+[1.774879] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_introspection_cExport.cmake\n'}
+[1.776746] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_introspection_cExport-noconfig.cmake\n'}
+[1.782215] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_cExport.cmake\n'}
+[1.785745] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_cExport-noconfig.cmake\n'}
+[1.790051] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_introspection_cppExport.cmake\n'}
+[1.792017] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_introspection_cppExport-noconfig.cmake\n'}
+[1.797211] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_cppExport.cmake\n'}
+[1.800114] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfaces__rosidl_typesupport_cppExport-noconfig.cmake\n'}
+[1.804645] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_generator_pyExport.cmake\n'}
+[1.806554] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/export_ros_gz_interfaces__rosidl_generator_pyExport-noconfig.cmake\n'}
+[1.809037] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/rosidl_cmake-extras.cmake\n'}
+[1.811315] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[1.813558] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[1.816758] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ament_cmake_export_libraries-extras.cmake\n'}
+[1.818514] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ament_cmake_export_targets-extras.cmake\n'}
+[1.823691] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/rosidl_cmake_export_typesupport_targets-extras.cmake\n'}
+[1.826264] (-) TimerEvent: {}
+[1.826751] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/rosidl_cmake_export_typesupport_libraries-extras.cmake\n'}
+[1.829228] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfacesConfig.cmake\n'}
+[1.831253] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/cmake/ros_gz_interfacesConfig-version.cmake\n'}
+[1.833939] (ros_gz_interfaces) StdoutLine: {'line': b'-- Up-to-date: /root/ros2_workspace/install/ros_gz_interfaces/share/ros_gz_interfaces/package.xml\n'}
+[1.846159] (ros_gz_interfaces) CommandEnded: {'returncode': 0}
+[1.927587] (-) TimerEvent: {}
+[1.946124] (px4_msgs) StdoutLine: {'line': b'[ 24%] Built target px4_msgs__rosidl_typesupport_cpp\n'}
+[2.029501] (-) TimerEvent: {}
+[2.081678] (px4_msgs) StdoutLine: {'line': b'[ 36%] Built target px4_msgs__rosidl_typesupport_fastrtps_cpp\n'}
+[2.130444] (-) TimerEvent: {}
+[2.138250] (px4_msgs) StdoutLine: {'line': b'[ 49%] Built target px4_msgs__rosidl_typesupport_introspection_cpp\n'}
+[2.169389] (px4_msgs) StdoutLine: {'line': b'[ 62%] Built target px4_msgs__rosidl_typesupport_c\n'}
+[2.184704] (ros_gz_interfaces) JobEnded: {'identifier': 'ros_gz_interfaces', 'rc': 0}
+[2.194170] (ros_gz_bridge) JobStarted: {'identifier': 'ros_gz_bridge'}
+[2.211652] (ros_gz_bridge) JobProgress: {'identifier': 'ros_gz_bridge', 'progress': 'cmake'}
+[2.216857] (ros_gz_bridge) Command: {'cmd': ['/usr/bin/cmake', '/root/ros2_workspace/src/ros_gz/ros_gz_bridge', '-DCMAKE_INSTALL_PREFIX=/root/ros2_workspace/install/ros_gz_bridge'], 'cwd': '/root/ros2_workspace/build/ros_gz_bridge', 'env': OrderedDict([('HOSTNAME', 'e720e006096f'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/root/ros2_workspace/install/ros_gz_interfaces/lib:/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/aarch64-linux-gnu:/opt/ros/humble/lib'), ('HOME', '/root'), ('OLDPWD', '/root/ros2_workspace/src'), ('ROS_PYTHON_VERSION', '3'), ('ROS_DISTRO', 'humble'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('PATH', '/opt/ros/humble/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('GZ_PARTITION', 'aquila_sim'), ('LANG', 'C.UTF-8'), ('GZ_IP', '0.0.0.0'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/root/ros2_workspace/install/ros_gz_interfaces:/opt/ros/humble'), ('PWD', '/root/ros2_workspace/build/ros_gz_bridge'), ('LC_ALL', 'C.UTF-8'), ('PYTHONPATH', '/root/ros2_workspace/install/ros_gz_interfaces/local/lib/python3.10/dist-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages'), ('COLCON', '1'), ('CMAKE_PREFIX_PATH', '/root/ros2_workspace/install/ros_gz_interfaces:/opt/ros/humble')]), 'shell': False}
+[2.231735] (-) TimerEvent: {}
+[2.238832] (px4_msgs) StdoutLine: {'line': b'[ 75%] Built target px4_msgs__rosidl_typesupport_introspection_c\n'}
+[2.253611] (ros_gz_bridge) StdoutLine: {'line': b'-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)\n'}
+[2.325875] (px4_msgs) StdoutLine: {'line': b'[ 88%] Built target px4_msgs__rosidl_typesupport_fastrtps_c\n'}
+[2.332260] (-) TimerEvent: {}
+[2.365807] (px4_msgs) StdoutLine: {'line': b'[ 88%] Built target px4_msgs\n'}
+[2.418321] (ros_gz_bridge) StdoutLine: {'line': b'-- Found rclcpp: 16.0.17 (/opt/ros/humble/share/rclcpp/cmake)\n'}
+[2.433365] (-) TimerEvent: {}
+[2.441303] (ros_gz_bridge) StdoutLine: {'line': b'-- Found rosidl_generator_c: 3.1.8 (/opt/ros/humble/share/rosidl_generator_c/cmake)\n'}
+[2.442658] (ros_gz_bridge) StdoutLine: {'line': b'-- Found rosidl_adapter: 3.1.8 (/opt/ros/humble/share/rosidl_adapter/cmake)\n'}
+[2.446777] (ros_gz_bridge) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 3.1.8 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)\n'}
+[2.453255] (px4_msgs) StdoutLine: {'line': b'[ 88%] Built target px4_msgs__py\n'}
+[2.455268] (ros_gz_bridge) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[2.472041] (ros_gz_bridge) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[2.513175] (ros_gz_bridge) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)\n'}
+[2.515669] (ros_gz_bridge) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 6.2.9 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)\n'}
+[2.534472] (-) TimerEvent: {}
+[2.636617] (-) TimerEvent: {}
+[2.676215] (ros_gz_bridge) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[2.717065] (px4_msgs) StdoutLine: {'line': b'[100%] Built target px4_msgs__rosidl_generator_py\n'}
+[2.720087] (ros_gz_bridge) StdoutLine: {'line': b'-- Found rclcpp_components: 16.0.17 (/opt/ros/humble/share/rclcpp_components/cmake)\n'}
+[2.734954] (ros_gz_bridge) StdoutLine: {'line': b'-- Found yaml_cpp_vendor: 8.0.2 (/opt/ros/humble/share/yaml_cpp_vendor/cmake)\n'}
+[2.737056] (-) TimerEvent: {}
+[2.760904] (px4_msgs) StdoutLine: {'line': b'[100%] Built target px4_msgs__rosidl_typesupport_c__pyext\n'}
+[2.762527] (px4_msgs) StdoutLine: {'line': b'[100%] Built target px4_msgs__rosidl_typesupport_fastrtps_c__pyext\n'}
+[2.764244] (px4_msgs) StdoutLine: {'line': b'[100%] Built target px4_msgs__rosidl_typesupport_introspection_c__pyext\n'}
+[2.766980] (ros_gz_bridge) StderrLine: {'line': b'\x1b[31mCMake Error at CMakeLists.txt:20 (find_package):\n'}
+[2.767526] (ros_gz_bridge) StderrLine: {'line': b'  By not providing "Findgz_transport_vendor.cmake" in CMAKE_MODULE_PATH this\n'}
+[2.768481] (ros_gz_bridge) StderrLine: {'line': b'  project has asked CMake to find a package configuration file provided by\n'}
+[2.769147] (ros_gz_bridge) StderrLine: {'line': b'  "gz_transport_vendor", but CMake did not find one.\n'}
+[2.769975] (ros_gz_bridge) StderrLine: {'line': b'\n'}
+[2.770836] (ros_gz_bridge) StderrLine: {'line': b'  Could not find a package configuration file provided by\n'}
+[2.771585] (ros_gz_bridge) StderrLine: {'line': b'  "gz_transport_vendor" with any of the following names:\n'}
+[2.772857] (ros_gz_bridge) StderrLine: {'line': b'\n'}
+[2.773480] (ros_gz_bridge) StderrLine: {'line': b'    gz_transport_vendorConfig.cmake\n'}
+[2.776795] (ros_gz_bridge) StderrLine: {'line': b'    gz_transport_vendor-config.cmake\n'}
+[2.778028] (ros_gz_bridge) StderrLine: {'line': b'\n'}
+[2.780403] (ros_gz_bridge) StderrLine: {'line': b'  Add the installation prefix of "gz_transport_vendor" to CMAKE_PREFIX_PATH\n'}
+[2.781397] (ros_gz_bridge) StderrLine: {'line': b'  or set "gz_transport_vendor_DIR" to a directory containing one of the above\n'}
+[2.782490] (ros_gz_bridge) StderrLine: {'line': b'  files.  If "gz_transport_vendor" provides a separate development package or\n'}
+[2.785383] (ros_gz_bridge) StderrLine: {'line': b'  SDK, be sure it has been installed.\n'}
+[2.785789] (ros_gz_bridge) StderrLine: {'line': b'\n'}
+[2.786090] (ros_gz_bridge) StderrLine: {'line': b'\x1b[0m\n'}
+[2.786339] (ros_gz_bridge) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[2.786594] (ros_gz_bridge) StdoutLine: {'line': b'See also "/root/ros2_workspace/build/ros_gz_bridge/CMakeFiles/CMakeOutput.log".\n'}
+[2.786854] (ros_gz_bridge) CommandEnded: {'returncode': 1}
+[2.805492] (ros_gz_bridge) JobEnded: {'identifier': 'ros_gz_bridge', 'rc': 1}
+[2.837347] (-) TimerEvent: {}
+[2.938270] (-) TimerEvent: {}
+[3.039331] (-) TimerEvent: {}
+[3.140347] (-) TimerEvent: {}
+[3.241249] (-) TimerEvent: {}
+[3.290790] (px4_msgs) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_copy_px4_msgs\n'}
+[3.342383] (-) TimerEvent: {}
+[3.443867] (px4_msgs) StdoutLine: {'line': b'running egg_info\n'}
+[3.444281] (-) TimerEvent: {}
+[3.444413] (px4_msgs) StdoutLine: {'line': b'writing px4_msgs.egg-info/PKG-INFO\n'}
+[3.445141] (px4_msgs) StdoutLine: {'line': b'writing dependency_links to px4_msgs.egg-info/dependency_links.txt\n'}
+[3.446372] (px4_msgs) StdoutLine: {'line': b'writing top-level names to px4_msgs.egg-info/top_level.txt\n'}
+[3.480540] (px4_msgs) StdoutLine: {'line': b"reading manifest file 'px4_msgs.egg-info/SOURCES.txt'\n"}
+[3.484680] (px4_msgs) StdoutLine: {'line': b"writing manifest file 'px4_msgs.egg-info/SOURCES.txt'\n"}
+[3.518063] (px4_msgs) StdoutLine: {'line': b'[100%] Built target ament_cmake_python_build_px4_msgs_egg\n'}
+[3.545305] (-) TimerEvent: {}
+[3.573817] (px4_msgs) JobEnded: {'identifier': 'px4_msgs', 'rc': 'SIGINT'}
+[3.586292] (ros_gz_image) JobSkipped: {'identifier': 'ros_gz_image'}
+[3.586494] (ros_gz_sim) JobSkipped: {'identifier': 'ros_gz_sim'}
+[3.586666] (test_ros_gz_bridge) JobSkipped: {'identifier': 'test_ros_gz_bridge'}
+[3.586750] (ros_gz_sim_demos) JobSkipped: {'identifier': 'ros_gz_sim_demos'}
+[3.586933] (ros_gz) JobSkipped: {'identifier': 'ros_gz'}
+[3.587027] (-) EventReactorShutdown: {}

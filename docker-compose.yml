@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  # --- Service 1: PX4 Simulation (The Host) ---
+  px4_sitl:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: px4_sitl_dev
+    privileged: true
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix:ro
+      - .:/src
+    environment:
+      - DISPLAY=host.docker.internal:0
+      - UXRCE_DDS_AG_IP=127.0.0.1
+      - GZ_PARTITION=aquila_sim
+      # Bind strictly to localhost
+      - GZ_IP=127.0.0.1
+    ports:
+      - "14551:14550/udp"
+      - "14540:14540/udp"
+      - "5600:5600/udp"
+      - "8888:8888/udp"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    stdin_open: true
+    tty: true
+    networks:
+      - aquila_net
+
+  # --- Service 2: ROS 2 ---
+  ros2_env:
+    build:
+      context: .
+      dockerfile: Dockerfile.ROS2
+    container_name: ros2_env
+    volumes:
+      - ./ros2_workspace:/root/ros2_workspace
+      - ./ros_bridge.sh:/root/ros_bridge.sh
+    environment:
+      - GZ_PARTITION=aquila_sim
+      # Bind to localhost (same as PX4)
+      - GZ_IP=127.0.0.1
+    # SERVICE MODE. This fuses the networks.
+    network_mode: service:px4_sitl
+    command: MicroXRCEAgent udp4 -p 8888
+    stdin_open: true
+    tty: true
+
+networks:
+  aquila_net:
